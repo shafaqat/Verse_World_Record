@@ -1,0 +1,275 @@
+body {
+    font-family: "lato";
+    color: #ffffff;
+}
+
+.landing-content,
+.content-poem {
+    padding: 100px 0px 0px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    margin-bottom: 0;
+    border: none;
+}
+
+.tabs-bg li.active,
+.tabs-bg li.active a {
+    color: white !important;
+    background-color: #BA861F;
+    /*border: none;*/
+}
+
+
+/*stanza starts*/
+
+.inner-container h2,
+.inner-container p {
+    color: #3c2603;
+}
+
+.stanza-starts p {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+
+/*end*/
+
+
+/*penal-starts*/
+
+.penal-background {
+    /*  max-height: 1400px;
+    min-height: 600px;
+    overflow-y: auto;*/
+    background: #ffffff;
+}
+
+.panel-container .form-group input {
+    height: 24px;
+    border-radius: 0;
+    margin: 5px;
+}
+
+.tabs-bg {
+    background-color: rgba(60, 37, 3, .3);
+}
+
+.tabs-bg .navbar-default .navbar-nav>li>a:hover {
+    background-color: brown;
+}
+
+.tabs-bg li:hover {
+    background-color: #BA861F;
+}
+
+
+/*sdsss*/
+
+.panel-container .slider {
+    padding: 20px;
+}
+
+.panel-container .carousel ol.carousel-indicators li.next-prev-icon {
+    text-indent: 0;
+    border: none;
+    color: #BA861F;
+    font-size: 20px;
+}
+
+.panel-container .carousel-indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.panel-container .carousel-indicators li {
+    border: 1px solid #BA861F;
+}
+
+.panel-container .carousel-indicators .active {
+    background-color: #BA861F;
+}
+
+
+/*end*/
+
+
+/*edit-penal*/
+
+.penal-background h5 {
+    color: #000;
+}
+
+.penal-background .green {
+    color: #3f7028;
+}
+
+.penal-background .red {
+    color: #972f30;
+}
+
+.next-btn {
+    background: #FFF;
+    padding: 5px 6px;
+    color: #825A0C;
+}
+
+.penal-background .m-b {
+    margin-bottom: 20px;
+}
+
+.penal-background .edit-bg:hover {
+    background-color: #e8e3b9;
+    cursor: pointer;
+}
+
+.penal-background .edit-bg .hover-display {
+    opacity: 0;
+}
+
+.text-left {
+    /*width: 80%;*/
+    /*margin: auto;*/
+}
+
+.penal-background .edit-bg:hover .hover-display {
+    opacity: 1;
+}
+
+.penal-background .p_stanza:hover {
+    background-color: #e8e3b9;
+    cursor: pointer;
+    border: none;
+}
+
+.panel-container .edit-bg .stanza-starts {
+    border: 1px solid #DCD089;
+    /*border: none;*/
+}
+
+.edit-bg:hover .inner-penal-bg {
+    display: block;
+}
+
+.panel-container .stanza-starts {
+    /*border: 1px solid #ffffff;*/
+}
+
+.panel-container .keyboard {
+    padding: 10px;
+}
+
+.panel-container .inner-penal-bg {
+    background-color: #DCD089;
+}
+
+.panel-container .btn-group {
+    margin-top: 5px;
+}
+
+.panel-container .btn-finised {
+    color: #fff;
+    background-color: #b88a3d;
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px 6px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.panel-container .btn-cancel {
+    color: #b88a3d;
+    background-color: transparent;
+    padding: 5px 10px 5px;
+    border: 1px solid #b88a3d;
+    margin-right: 10px;
+    border-radius: 0px;
+    margin-top: 0px;
+}
+
+.edit-icons {
+    padding: 8px 0 0;
+}
+
+.edit-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.edit-icons span {
+    display: block;
+}
+
+
+/*end*/
+
+
+/*edit-penal*/
+
+.penal-background h5 {
+    color: #000;
+}
+
+.penal-background .green {
+    color: #3f7028;
+}
+
+.penal-background .red {
+    color: #972f30;
+}
+
+.next-btn {
+    background: #FFF;
+    padding: 5px 6px;
+    color: #825A0C;
+}
+
+.penal-background .m-b {
+    margin-bottom: 20px;
+}
+
+.penal-background .edit-bg {
+    background-color: #e8e3b9;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.penal-background .stanza-bg .hover-display {
+    opacity: 0;
+}
+
+.penal-background .stanza-bg:hover .hover-display {
+    opacity: 1;
+}
+
+.edit-bg {
+    display: none();
+}
+
+.edit-icons {
+    padding: 8px 0 0;
+}
+
+.edit-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.edit-icons span {
+    display: block;
+}
+
+
+/*end*/

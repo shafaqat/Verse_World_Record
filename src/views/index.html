@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="<%= lang %>" dir="<%= lang_dir %>">
+
+<head>
+    <title>
+        <%= gettext('Website title') %>
+    </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="public/libs/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="public/libs/bootstrap-rtl.min.css">-->
+
+    <link rel="stylesheet" type="text/css" href="public/libs/msdropdown/dd.css" />
+    <link rel="stylesheet" type="text/css" href="public/libs/msdropdown/flags.css" />
+
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/panel.css">
+    <link rel="stylesheet" href="public/css/form-common.css">
+
+</head>
+
+
+<body class=" main-background img-responsive" ng-controller="appController" dir="<%= lang_dir %>">
+    <div class="message_banner sample-show-hide" ng-hide="hide_message_banner">
+        <div class="text-right">
+            <a href="" ng-click="server_message='';hide_message_banner=true" aria-label="Toggle ngHide"><i class="fa fa-close form-btn"></i></a>
+        </div>
+        <div class="message_banner_text">{{server_message}}</div>
+    </div>
+
+    <script id="navigation_header" type="text/template">
+        <header class="navigation">
+            <nav class="navbar navbar-default  navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#verseTopNav" aria-expanded="false">
+			        <span class="sr-only"><%= gettext('Toggle navigation') %></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+                        <a class="navbar-brand" href="#">
+                            <%= gettext('Website title') %>
+                        </a>
+                    </div>
+                    <ul id="verseTopNav" class="nav navbar-nav navbar-right main-menu navbar-collapse collapse">
+                        <li ng-class="{active: location.includes('home')}">
+                            <a href="/">
+                                <%= gettext('HOME') %>
+                            </a>
+                        </li>
+                        <li><a href="#">|</a></li>
+                        <li ng-show="!isJudgeLogin" ng-class="{active: location.includes('login')}">
+                            <a href="/login">
+                                <%= gettext('LOGIN') %>
+                            </a>
+                        </li>
+                        <li ng-click="logout()" ng-show="isJudgeLogin">
+                            <a href="#">
+                                <%= gettext('LOGOUT') %>
+                            </a>
+                        </li>
+                        <li>
+                            <select name="countries" id="countries" style="margin-top:8%;width:110%;" onchange="changeLocale(value)">
+                                    <option value='ar' data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates"  ><%= gettext('U.A.E') %></option>
+                                    
+                                    <option value='en' data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag us" data-title="United States"><%= gettext('US') %></option>
+                                </select>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </script>
+
+    <div id="ng_view_container" ng-view dir="<%= lang_dir %>" id="ng-container">
+
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="public/libs/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="public/libs/jquery.countdown.js"></script>
+    <script type="text/javascript" src="public/libs/jquery.arabisk.js"></script>
+
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/libs/bootbox.min.js"></script>
+
+    <script type="text/javascript" src="public/libs/msdropdown/jquery.dd.min.js"></script>
+
+    <script type="text/javascript" src="public/libs/ejs.js"></script>
+    <script type="text/javascript" src="public/libs/angular.min.js"></script>
+    <script type="text/javascript" src="public/libs/angular-route.min.js"></script>
+    <script type="text/javascript" src="public/libs/angular-messages.js"></script>
+    <!--<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>-->
+    <script type="text/javascript" src="public/libs/yk_dropdown_flags.js"></script>
+
+    <script type="text/javascript" src="client/app.js"></script>
+    <script type="text/javascript" src="client/routes.js"></script>
+
+    <script type="text/javascript" src="client/controllers/homeController.js"></script>
+    <script type="text/javascript" src="client/controllers/panelController.js"></script>
+    <script type="text/javascript" src="client/controllers/loginController.js"></script>
+
+    <script type="text/javascript" src="client/services/localizationService.js"></script>
+    <script type="text/javascript" src="client/services/authService.js"></script>
+    <script type="text/javascript" src="client/services/userService.js"></script>
+    <script type="text/javascript" src="client/services/stanzaService.js"></script>
+</body>
+
+</html>

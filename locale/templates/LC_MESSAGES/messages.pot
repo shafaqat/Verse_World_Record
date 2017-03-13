@@ -1,0 +1,394 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2017-03-13 04:06+0000\n"
+
+#: src/views/index.html:6
+#: src/views/reset-password.html:6
+#: src/views/templates/home.html:15
+#: src/views/templates/panel.html:15
+#: src/views/templates/panel.html:86
+#: src/views/index.html:48
+#: src/views/reset-password.html:46
+#: src/views/templates/panel.html:56
+msgid "Website title"
+msgstr ""
+
+#: src/views/reset-password.html:38
+#: src/views/reset-password.html:102
+msgid "CONFIRM PASSWORD head"
+msgstr ""
+
+#: src/views/reset-password.html:44
+#: src/views/reset-password.html:109
+msgid "Enter Validation Code lbl"
+msgstr ""
+
+#: src/views/reset-password.html:45
+#: src/views/reset-password.html:110
+msgid "Enter Name txt"
+msgstr ""
+
+#: src/views/reset-password.html:48
+#: src/views/reset-password.html:121
+msgid "Enter new password lbl"
+msgstr ""
+
+#: src/views/reset-password.html:49
+#: src/views/reset-password.html:122
+msgid "Enter Password txt"
+msgstr ""
+
+#: src/views/reset-password.html:52
+msgid "Confirm password txt"
+msgstr ""
+
+#: src/views/reset-password.html:53
+msgid "Confirm Password btn"
+msgstr ""
+
+#: src/views/reset-password.html:62
+#: src/views/reset-password.html:150
+msgid "CHANGE PASSWORD"
+msgstr ""
+
+#: src/views/templates/forget-password.html:14
+#: src/views/templates/forget-password.html:16
+msgid "FORGOT YOUR PASSWORD? head"
+msgstr ""
+
+#: src/views/templates/forget-password.html:20
+#: src/views/templates/forget-password.html:23
+msgid "E-mail lbl"
+msgstr ""
+
+#: src/views/templates/forget-password.html:21
+#: src/views/templates/forget-password.html:24
+msgid "Enter email address txt"
+msgstr ""
+
+#: src/views/templates/forget-password.html:30
+#: src/views/templates/forget-password.html:47
+msgid "SEND VALIDATION CODE "
+msgstr ""
+
+#: src/views/templates/home.html:9
+#: src/views/templates/panel.html:9
+#: src/views/templates/panel.html:42
+#: src/views/index.html:42
+#: src/views/reset-password.html:40
+#: src/views/templates/panel.html:12
+msgid "Toggle navigation"
+msgstr ""
+
+#: src/views/templates/home.html:21
+#: src/views/templates/panel.html:21
+#: src/views/index.html:54
+#: src/views/reset-password.html:52
+msgid "HOME"
+msgstr ""
+
+#: src/views/templates/home.html:27
+#: src/views/templates/login.html:14
+#: src/views/templates/login.html:36
+#: src/views/index.html:60
+#: src/views/reset-password.html:58
+#: src/views/templates/login.html:62
+msgid "LOGIN"
+msgstr ""
+
+#: src/views/templates/home.html:32
+#: src/views/templates/panel.html:27
+#: src/views/index.html:65
+#: src/views/reset-password.html:63
+msgid "LOGOUT"
+msgstr ""
+
+#: src/views/templates/home.html:53
+#: src/views/templates/submit.html:17
+#: src/views/templates/home.html:10
+msgid "motivational quote"
+msgstr ""
+
+#: src/views/templates/home.html:55
+#: src/views/templates/submit.html:80
+#: src/views/templates/submit.html:85
+#: src/views/templates/home.html:12
+#: src/views/templates/submit.html:143
+msgid "SUBMIT NOW"
+msgstr ""
+
+#: src/views/templates/home.html:57
+#: src/views/templates/home.html:14
+msgid "Time Remaining For Submission"
+msgstr ""
+
+#: src/views/templates/home.html:69
+#: src/views/templates/home.html:26
+msgid "All verses"
+msgstr ""
+
+#: src/views/templates/home.html:71
+#: src/views/templates/panel.html:88
+#: src/views/templates/home.html:28
+#: src/views/templates/panel.html:58
+msgid "Verse Submitted"
+msgstr ""
+
+#: src/views/templates/login.html:20
+#: src/views/templates/login.html:22
+msgid "USERNAME"
+msgstr ""
+
+#: src/views/templates/login.html:21
+#: src/views/templates/login.html:23
+msgid "Enter email address"
+msgstr ""
+
+#: src/views/templates/login.html:25
+#: src/views/templates/login.html:43
+msgid "PASSWORD"
+msgstr ""
+
+#: src/views/templates/login.html:26
+#: src/views/templates/login.html:44
+msgid "enter password"
+msgstr ""
+
+#: src/views/templates/login.html:28
+msgid "Forgot Passwor"
+msgstr ""
+
+#: src/views/templates/panel.html:54
+#: src/views/templates/panel.html:24
+msgid "Draft"
+msgstr ""
+
+#: src/views/templates/panel.html:54
+#: src/views/templates/panel.html:24
+msgid "current"
+msgstr ""
+
+#: src/views/templates/panel.html:58
+#: src/views/templates/panel.html:28
+msgid "Pending"
+msgstr ""
+
+#: src/views/templates/panel.html:63
+#: src/views/templates/panel.html:33
+msgid "Rejected"
+msgstr ""
+
+#: src/views/templates/panel.html:68
+#: src/views/templates/panel.html:38
+msgid "Published"
+msgstr ""
+
+#: src/views/templates/panel.html:75
+#: src/views/templates/panel.html:45
+msgid "Search"
+msgstr ""
+
+#: src/views/templates/panel.html:151
+#: src/views/templates/panel.html:199
+#: src/views/templates/panel.html:150
+#: src/views/templates/panel.html:206
+msgid "Accepted"
+msgstr ""
+
+#: src/views/templates/panel.html:155
+#: src/views/templates/panel.html:203
+#: src/views/templates/panel.html:154
+#: src/views/templates/panel.html:210
+msgid "Edit"
+msgstr ""
+
+#: src/views/templates/panel.html:159
+#: src/views/templates/panel.html:207
+#: src/views/templates/panel.html:158
+#: src/views/templates/panel.html:214
+msgid "Reject"
+msgstr ""
+
+#: src/views/templates/submit.html:14
+msgid "SUBMIT YOUR VERSE"
+msgstr ""
+
+#: src/views/templates/submit.html:23
+msgid "Note :"
+msgstr ""
+
+#: src/views/templates/submit.html:28
+msgid "You can submit one verse only."
+msgstr ""
+
+#: src/views/templates/submit.html:31
+msgid "You will not be able to edit or delete the verse once you have sumitted it."
+msgstr ""
+
+#: src/views/templates/submit.html:39
+#: src/views/templates/submit.html:44
+#: src/views/templates/submit.html:40
+msgid "enter your verse here"
+msgstr ""
+
+#: src/views/templates/submit.html:48
+#: src/views/templates/submit.html:53
+#: src/views/templates/submit.html:55
+msgid "FULL NAME"
+msgstr ""
+
+#: src/views/templates/submit.html:49
+#: src/views/templates/submit.html:54
+#: src/views/templates/submit.html:56
+msgid "Enter your name"
+msgstr ""
+
+#: src/views/templates/submit.html:56
+#: src/views/templates/submit.html:61
+#: src/views/templates/submit.html:80
+msgid "NATIONAL ID"
+msgstr ""
+
+#: src/views/templates/submit.html:57
+#: src/views/templates/submit.html:62
+#: src/views/templates/submit.html:81
+msgid "enter 12 to 16 numbered National ID"
+msgstr ""
+
+#: src/views/templates/submit.html:65
+#: src/views/templates/submit.html:70
+#: src/views/templates/submit.html:105
+msgid "TWITTER ACCOUNT"
+msgstr ""
+
+#: src/views/templates/submit.html:66
+#: src/views/templates/submit.html:71
+#: src/views/templates/submit.html:106
+msgid "Enter account username"
+msgstr ""
+
+#: src/views/templates/submit.html:71
+#: src/views/templates/submit.html:76
+#: src/views/templates/submit.html:121
+msgid "MOBILE NUMBER"
+msgstr ""
+
+#: src/views/templates/submit.html:72
+#: src/views/templates/submit.html:77
+#: src/views/templates/submit.html:122
+msgid "Enter mobile number"
+msgstr ""
+
+#: src/views/templates/submit.html:72
+#: src/views/templates/submit.html:77
+msgid "enter 12 to 16 numbers"
+msgstr ""
+
+#: src/views/index.html:70
+msgid "U.A.E"
+msgstr ""
+
+#: src/views/index.html:72
+msgid "US"
+msgstr ""
+
+#: src/views/reset-password.html:114
+msgid "Your token is required."
+msgstr ""
+
+#: src/views/reset-password.html:126
+#: src/views/reset-password.html:140
+#: src/views/templates/login.html:51
+msgid "Your password is too short."
+msgstr ""
+
+#: src/views/reset-password.html:129
+#: src/views/reset-password.html:143
+#: src/views/templates/login.html:54
+msgid "Your password is required."
+msgstr ""
+
+#: src/views/reset-password.html:136
+msgid "Confirm password"
+msgstr ""
+
+#: src/views/reset-password.html:137
+msgid "Confirm password btn"
+msgstr ""
+
+#: src/views/templates/login.html:27
+#: src/views/templates/forget-password.html:28
+msgid "Your username is too short."
+msgstr ""
+
+#: src/views/templates/login.html:30
+#: src/views/templates/forget-password.html:31
+msgid "Your username is too long."
+msgstr ""
+
+#: src/views/templates/login.html:33
+msgid "This needs to be a valid email."
+msgstr ""
+
+#: src/views/templates/login.html:36
+#: src/views/templates/forget-password.html:37
+msgid "Your username is required."
+msgstr ""
+
+#: src/views/templates/login.html:47
+msgid "Forgot Password"
+msgstr ""
+
+#: src/views/templates/forget-password.html:34
+msgid "This needs to be a valid email"
+msgstr ""
+
+#: src/views/templates/submit.html:44
+msgid "To submit, stanza is required."
+msgstr ""
+
+#: src/views/templates/submit.html:60
+#: src/views/templates/submit.html:110
+msgid "This needs to be a valid NAME."
+msgstr ""
+
+#: src/views/templates/submit.html:63
+msgid "Your name is too short."
+msgstr ""
+
+#: src/views/templates/submit.html:66
+#: src/views/templates/submit.html:113
+msgid "Your name is too long."
+msgstr ""
+
+#: src/views/templates/submit.html:69
+msgid "Your name is required."
+msgstr ""
+
+#: src/views/templates/submit.html:85
+#: src/views/templates/submit.html:126
+msgid "This needs to be a valid NUMBER."
+msgstr ""
+
+#: src/views/templates/submit.html:88
+#: src/views/templates/submit.html:129
+msgid "Your number is too short."
+msgstr ""
+
+#: src/views/templates/submit.html:91
+#: src/views/templates/submit.html:132
+msgid "Your number is too long."
+msgstr ""
+
+#: src/views/templates/submit.html:94
+#: src/views/templates/submit.html:135
+msgid "Your number is required."
+msgstr ""

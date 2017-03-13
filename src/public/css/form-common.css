@@ -1,0 +1,105 @@
+body {
+    font-family: "lato";
+    color: #ffffff;
+}
+
+.main-background {
+    background-image: url(../images/Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-container .time-section {
+    background: rgba(60, 37, 3, .6);
+    margin-top: 80px;
+    padding: 10px 10px 60px;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 3px 0px;
+    width: 70%;
+    font-size: 18px;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.landing-content {
+    padding: 20px 20px 100px;
+}
+
+
+/*submit-form*/
+
+.form-btn {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+p.submit-note {
+    margin-top: 0px;
+    margin-bottom: 0px
+}
+
+p.note-submit {
+    margin-bottom: 0px;
+}
+
+p.submit-note,
+p.note-submit {
+    font-size: 14px;
+}
+
+.p-r {
+    padding-right: 0px;
+}
+
+.p-l {
+    padding-left: 0px;
+}
+
+.input-group,
+.p-t {
+    padding-top: 20px;
+}
+
+.form-container .form-control {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.time-section h3,
+.time-section h2 {
+    color: #ffffff;
+}
+
+.form-container .form-group {
+    margin: 15px 0;
+}
+
+.form-container .form-group input {
+    height: 40px;
+    margin: 5px 0;
+    border-radius: 0;
+}
+
+.color {
+    color: #ffffff;
+}
+
+.custom-control {
+    background-color: #E8E3B9;
+}
+
+button.btn-primary.btn-sm:hover,
+button.btn-primary.btn-sm:focus,
+button.btn-primary.btn-sm:active {
+    background-color: #5F4510;
+    cursor: pointer;
+    border-color: white;
+    outline: none;
+}
+
+
+/*end*/

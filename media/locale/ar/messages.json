@@ -1,0 +1,303 @@
+{
+  "messages": {
+   "": {
+      "project-id-version": "PACKAGE VERSION",
+      "report-msgid-bugs-to": "",
+      "pot-creation-date": "2017-03-13 04:06+0000",
+      "po-revision-date": "2017-03-09 13:04+0000",
+      "last-translator": "Automatically generated",
+      "language-team": "none",
+      "mime-version": "1.0",
+      "content-type": "text/plain; charset=UTF-8",
+      "content-transfer-encoding": "8bit",
+      "language": ""
+   },
+   "Website title": [
+      null,
+      "بيت شعر"
+   ],
+   "CONFIRM PASSWORD head": [
+      null,
+      "تأكيد كلمة المرور"
+   ],
+   "Enter Validation Code lbl": [
+      null,
+      "أدخل رمز التأكيد"
+   ],
+   "Enter Name txt": [
+      null,
+      "أدخل الاسم"
+   ],
+   "Enter new password lbl": [
+      null,
+      "أدخل كلمة المرور الجديدة"
+   ],
+   "Enter Password txt": [
+      null,
+      "أدخل كلمة المرور"
+   ],
+   "Confirm password txt": [
+      null,
+      "تأكيد كلمة المرور"
+   ],
+   "Confirm Password btn": [
+      null,
+      "تأكيد كلمة المرور"
+   ],
+   "CHANGE PASSWORD": [
+      null,
+      "تغيير كلمة السر"
+   ],
+   "FORGOT YOUR PASSWORD? head": [
+      null,
+      "نسيت رقمك السري؟"
+   ],
+   "E-mail lbl": [
+      null,
+      "البريد الإلكتروني"
+   ],
+   "Enter email address txt": [
+      null,
+      "أدخل عنوان البريد الالكتروني"
+   ],
+   "SEND VALIDATION CODE ": [
+      null,
+      "أرسل التحقق من صحة رمز"
+   ],
+   "Toggle navigation": [
+      null,
+      "الملاحة تبديل"
+   ],
+   "HOME": [
+      null,
+      "الصفحة الرئيسية"
+   ],
+   "LOGIN": [
+      null,
+      "تسجيل الدخول"
+   ],
+   "LOGOUT": [
+      null,
+      "الخروج"
+   ],
+   "motivational quote": [
+      null,
+      "التفاؤل هو الإيمان الذي يؤدي إلى الإنجاز. لا شيء يمكن أن يتم دون الأمل والثقة. هيلين كيلر"
+   ],
+   "SUBMIT NOW": [
+      null,
+      "تقدم الآن"
+   ],
+   "Time Remaining For Submission": [
+      null,
+      "الوقت المتبقي لتقديم"
+   ],
+   "All verses": [
+      null,
+      "كل الآيات"
+   ],
+   "Verse Submitted": [
+      null,
+      "الآية ارسل"
+   ],
+   "USERNAME": [
+      null,
+      "اسم المستخدم"
+   ],
+   "Enter email address": [
+      null,
+      "أدخل عنوان البريد الالكتروني"
+   ],
+   "PASSWORD": [
+      null,
+      "كلمه السر"
+   ],
+   "enter password": [
+      null,
+      "أدخل كلمة المرور"
+   ],
+   "Forgot Passwor": [
+      null,
+      "هل نسيت كلمة المرور"
+   ],
+   "Draft": [
+      null,
+      "مشروع"
+   ],
+   "current": [
+      null,
+      "تيار"
+   ],
+   "Pending": [
+      null,
+      "قيد الانتظار"
+   ],
+   "Rejected": [
+      null,
+      "مرفوض"
+   ],
+   "Published": [
+      null,
+      "نشرت"
+   ],
+   "Search": [
+      null,
+      "بحث"
+   ],
+   "Accepted": [
+      null,
+      "قبلت"
+   ],
+   "Edit": [
+      null,
+      "تصحيح"
+   ],
+   "Reject": [
+      null,
+      "رفض"
+   ],
+   "SUBMIT YOUR VERSE": [
+      null,
+      "ترسل أي الآية الخاص بك"
+   ],
+   "Note :": [
+      null,
+      "ملحوظة :"
+   ],
+   "You can submit one verse only.": [
+      null,
+      "يمكنك تقديم آية واحدة فقط."
+   ],
+   "You will not be able to edit or delete the verse once you have sumitted it.": [
+      null,
+      "فإنك لن تكون قادرا على تعديل أو حذف الآية بمجرد تقديمه."
+   ],
+   "enter your verse here": [
+      null,
+      "إدخال الآية هنا"
+   ],
+   "FULL NAME": [
+      null,
+      "الاسم الكامل"
+   ],
+   "Enter your name": [
+      null,
+      "أدخل أسمك"
+   ],
+   "NATIONAL ID": [
+      null,
+      "الهوية الوطنية"
+   ],
+   "enter 12 to 16 numbered National ID": [
+      null,
+      "إدخال ١٢ إلى ١٦ مرقمة الهوية الوطنية"
+   ],
+   "TWITTER ACCOUNT": [
+      null,
+      "حساب على موقع تويتر"
+   ],
+   "Enter account username": [
+      null,
+      "إدخال اسم مستخدم الحساب"
+   ],
+   "MOBILE NUMBER": [
+      null,
+      "رقم الهاتف المحمول"
+   ],
+   "Enter mobile number": [
+      null,
+      "أدخل رقم الجوال"
+   ],
+   "enter 12 to 16 numbers": [
+      null,
+      "إدخال ١٢ إلى ١٦ أرقام"
+   ],
+   "U.A.E": [
+      null,
+      "عربى"
+   ],
+   "US": [
+      null,
+      "الإنجليزية"
+   ],
+   "Your token is required.": [
+      null,
+      "مطلوب رمزك."
+   ],
+   "Your password is too short.": [
+      null,
+      "كلمة المرور الخاصة بك قصيرة جدا."
+   ],
+   "Your password is required.": [
+      null,
+      "مطلوب كلمة المرور الخاصة بك."
+   ],
+   "Confirm password": [
+      null,
+      "تأكيد كلمة المرور"
+   ],
+   "Confirm password btn": [
+      null,
+      "تأكيد كلمة المرور"
+   ],
+   "Your username is too short.": [
+      null,
+      "اسم المستخدم الخاص بك قصيرة جدا."
+   ],
+   "Your username is too long.": [
+      null,
+      "اسم المستخدم الخاص بك قصيرة جدا."
+   ],
+   "This needs to be a valid email.": [
+      null,
+      "هذا يجب أن يكون عنوان بريد إلكتروني صالح."
+   ],
+   "Your username is required.": [
+      null,
+      "مطلوب اسم المستخدم الخاص بك."
+   ],
+   "Forgot Password": [
+      null,
+      "هل نسيت كلمة المرور"
+   ],
+   "This needs to be a valid email": [
+      null,
+      "هذا يجب أن يكون عنوان بريد إلكتروني صالح"
+   ],
+   "To submit, stanza is required.": [
+      null,
+      "أن يقدم، مطلوب مقطع."
+   ],
+   "This needs to be a valid NAME.": [
+      null,
+      "هذا يحتاج إلى أن يكون اسما صالحا."
+   ],
+   "Your name is too short.": [
+      null,
+      "اسمك قصيرة جدا."
+   ],
+   "Your name is too long.": [
+      null,
+      "اسمك طويل جدا."
+   ],
+   "Your name is required.": [
+      null,
+      "مطلوب اسمك."
+   ],
+   "This needs to be a valid NUMBER.": [
+      null,
+      "هذا يحتاج إلى أن يكون عدد صحيح."
+   ],
+   "Your number is too short.": [
+      null,
+      "رقمك قصيرة جدا."
+   ],
+   "Your number is too long.": [
+      null,
+      "الرقم الخاص بك وقتا طويلا."
+   ],
+   "Your number is required.": [
+      null,
+      "مطلوب رقم هاتفك."
+   ]
+}}

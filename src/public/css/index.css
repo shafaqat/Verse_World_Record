@@ -1,0 +1,165 @@
+body {
+    font-family: "lato";
+    color: #ffffff;
+}
+
+.main-background {
+    background-image: url(../images/Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index-container .landing-content,
+.index-container .content-poem {
+    padding: 30px 0px 0px;
+}
+
+.index-container {
+    margin-top: 10%;
+}
+
+.index-container .time-section {
+    padding: 20px;
+    background: rgba(60, 37, 3, .3);
+}
+
+.index-container .time-section p {
+    margin: 20px 0px 10px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    margin-bottom: 0;
+    border: none;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a,
+.time-section h2 {
+    color: #ffffff;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 3px 0px;
+    width: 70%;
+    font-size: 18px;
+    padding: 15px;
+    color: #ffffff;
+}
+
+
+/*stanza arae start*/
+
+li.active,
+li.active a {
+    color: white !important;
+    border-bottom: .5px solid white;
+}
+
+.poem-bg {
+    background-image: url(../images/PoemBg.jpg);
+    max-height: 1400px;
+    min-height: 600px;
+    overflow-y: auto;
+}
+
+.inner-container {
+    padding-top: 30px;
+}
+
+.inner-container h2,
+.inner-container p {
+    color: #3c2603;
+}
+
+.stanza-starts p {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hover-display {
+    opacity: 0;
+}
+
+.home-container:hover {
+    background-color: #D1C988;
+    cursor: pointer;
+}
+
+.home-container:hover .hover-display {
+    opacity: 1;
+}
+
+#countries {
+    width: 110%;
+}
+
+.dd {
+    margin-right: 4%;
+    margin-left: 4%;
+}
+
+
+/*end*/
+
+
+/*timer*/
+
+.styled div {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 1;
+    text-align: right;
+}
+
+
+/* IE7 inline-block hack */
+
+*+html .styled div {
+    display: inline;
+    zoom: 1;
+}
+
+.styled div:first-child {
+    margin-left: 0;
+}
+
+.styled div span {
+    display: block;
+    border-top: 1px solid #cecece;
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.message_banner {
+    text-align: center;
+    position: fixed;
+    height: 81px;
+    width: 100%;
+    z-index: 100000000000000;
+    background: rgba(60, 37, 3, .6);
+    padding: 12px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/*******/
+
+.sample-show-hide {
+    transition: all linear 0.5s;
+}
+
+.sample-show-hide.ng-hide {
+    opacity: 0;
+}

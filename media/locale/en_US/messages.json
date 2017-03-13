@@ -1,0 +1,292 @@
+{
+  "messages": {
+   "": {
+      "project-id-version": "PACKAGE VERSION",
+      "report-msgid-bugs-to": "",
+      "pot-creation-date": "2017-03-13 04:06+0000",
+      "po-revision-date": "2017-03-09 13:04+0000",
+      "last-translator": "Automatically generated",
+      "language-team": "none",
+      "mime-version": "1.0",
+      "content-type": "text/plain; charset=UTF-8",
+      "content-transfer-encoding": "8bit",
+      "language": "",
+      "plural-forms": "nplurals=2; plural=(n != 1);"
+   },
+   "Website title": [
+      null,
+      "Verse"
+   ],
+   "CONFIRM PASSWORD head": [
+      null,
+      "CONFIRM PASSWORD"
+   ],
+   "Enter Validation Code lbl": [
+      null,
+      "Enter Validation Code"
+   ],
+   "Enter Name txt": [
+      null,
+      "Enter Name"
+   ],
+   "Enter new password lbl": [
+      null,
+      "Enter new password"
+   ],
+   "Enter Password txt": [
+      null,
+      "Enter Password"
+   ],
+   "Confirm password txt": [
+      null,
+      "Confirm password"
+   ],
+   "Confirm Password btn": [
+      null,
+      "Confirm Password"
+   ],
+   "CHANGE PASSWORD": [
+      null,
+      "CHANGE PASSWORD"
+   ],
+   "FORGOT YOUR PASSWORD? head": [
+      null,
+      "FORGOT YOUR PASSWORD?"
+   ],
+   "E-mail lbl": [
+      null,
+      "E-mail"
+   ],
+   "Enter email address txt": [
+      null,
+      "Enter email address"
+   ],
+   "SEND VALIDATION CODE ": [
+      null,
+      "SEND VALIDATION CODE"
+   ],
+   "Toggle navigation": [
+      null,
+      "Toggle navigation"
+   ],
+   "HOME": [
+      null,
+      "HOME"
+   ],
+   "LOGIN": [
+      null,
+      "LOGIN"
+   ],
+   "LOGOUT": [
+      null,
+      "LOGOUT"
+   ],
+   "motivational quote": [
+      null,
+      "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence. Helen Keller"
+   ],
+   "SUBMIT NOW": [
+      null,
+      "SUBMIT NOW"
+   ],
+   "Time Remaining For Submission": [
+      null,
+      "Time Remaining For Submission"
+   ],
+   "All verses": [
+      null,
+      "All verses"
+   ],
+   "Verse Submitted": [
+      null,
+      "Verses Submitted"
+   ],
+   "USERNAME": [
+      null,
+      "USERNAME"
+   ],
+   "Enter email address": [
+      null,
+      "Enter email address"
+   ],
+   "PASSWORD": [
+      null,
+      "PASSWORD"
+   ],
+   "enter password": [
+      null,
+      "enter password"
+   ],
+   "Forgot Passwor": [
+      null,
+      "Forgot Password"
+   ],
+   "Draft": [
+      null,
+      "Draft"
+   ],
+   "current": [
+      null,
+      "current"
+   ],
+   "Pending": [
+      null,
+      "Pending"
+   ],
+   "Rejected": [
+      null,
+      "Rejected"
+   ],
+   "Published": [
+      null,
+      "Published"
+   ],
+   "Search": [
+      null,
+      "Search"
+   ],
+   "Accepted": [
+      null,
+      "Accepted"
+   ],
+   "Edit": [
+      null,
+      "Edit"
+   ],
+   "Reject": [
+      null,
+      "Reject"
+   ],
+   "SUBMIT YOUR VERSE": [
+      null,
+      "SUBMIT YOUR VERSE"
+   ],
+   "Note :": [
+      null,
+      "Note :"
+   ],
+   "You can submit one verse only.": [
+      null,
+      "You can submit one verse only."
+   ],
+   "You will not be able to edit or delete the verse once you have sumitted it.": [
+      null,
+      "You will not be able to edit or delete the verse once you have sumitted it."
+   ],
+   "enter your verse here": [
+      null,
+      "enter your verse here"
+   ],
+   "FULL NAME": [
+      null,
+      "FULL NAME"
+   ],
+   "Enter your name": [
+      null,
+      "Enter your name"
+   ],
+   "NATIONAL ID": [
+      null,
+      "NATIONAL ID"
+   ],
+   "enter 12 to 16 numbered National ID": [
+      null,
+      "enter 12 to 16 numbered National ID"
+   ],
+   "TWITTER ACCOUNT": [
+      null,
+      "TWITTER ACCOUNT"
+   ],
+   "Enter account username": [
+      null,
+      "Enter account username"
+   ],
+   "MOBILE NUMBER": [
+      null,
+      "MOBILE NUMBER"
+   ],
+   "Enter mobile number": [
+      null,
+      "Enter mobile number"
+   ],
+   "enter 12 to 16 numbers": [
+      null,
+      "enter 12 to 16 numbers"
+   ],
+   "U.A.E": [
+      null,
+      "Arabic"
+   ],
+   "US": [
+      null,
+      "English"
+   ],
+   "Your token is required.": [
+      null,
+      "Your token is required."
+   ],
+   "Your password is too short.": [
+      null,
+      "Your password is too short."
+   ],
+   "Your password is required.": [
+      null,
+      "Your password is required."
+   ],
+   "Your username is too short.": [
+      null,
+      "Your username is too short."
+   ],
+   "Your username is too long.": [
+      null,
+      "Your username is too long."
+   ],
+   "This needs to be a valid email.": [
+      null,
+      "This needs to be a valid email."
+   ],
+   "Your username is required.": [
+      null,
+      "Your username is required."
+   ],
+   "This needs to be a valid email": [
+      null,
+      "This needs to be a valid email."
+   ],
+   "To submit, stanza is required.": [
+      null,
+      "To submit, stanza is required."
+   ],
+   "This needs to be a valid NAME.": [
+      null,
+      "This needs to be a valid NAME."
+   ],
+   "Your name is too short.": [
+      null,
+      "Your name is too short."
+   ],
+   "Your name is too long.": [
+      null,
+      "Your name is too long."
+   ],
+   "Your name is required.": [
+      null,
+      "Your name is required."
+   ],
+   "This needs to be a valid NUMBER.": [
+      null,
+      "This needs to be a valid NUMBER."
+   ],
+   "Your number is too short.": [
+      null,
+      "Your number is too short."
+   ],
+   "Your number is too long.": [
+      null,
+      "Your number is too long."
+   ],
+   "Your number is required.": [
+      null,
+      "Your number is required."
+   ]
+}}

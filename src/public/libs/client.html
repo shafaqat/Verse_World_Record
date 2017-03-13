@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script src="ejs.js"></script>
+	
+	<h2 id="x">QWERTY</h2>
+	<script id="users" type="text/template">
+	<h2> gettext = <%= gettext("Website title") %> </h2>
+	<h2> gettext = <%= gettext("num") %> </h2>
+	<h2> gettext = <%= gettext("Toggle navigation") %> </h2>
+	<h2><%= y%></h2>
+	<!-- (names.indexOf(key)) -->
+	</script>
+    <script>
+	var y="keypad";
+	var names = {
+			   "num": {
+				  "project-id-version": "PACKAGE VERSION",
+				  "language-team": "none",
+				  "report-msgid-bugs-to": "",
+				  "po-revision-date": "2017-03-06 05:14+0000",
+				  "language": "",
+				  "mime-version": "1.0",
+				  "content-type": "text/plain; charset=UTF-8",
+				  "content-transfer-encoding": "8bit",
+				  "pot-creation-date": "2017-03-06 05:14+0000",
+				  "last-translator": "Automatically generated",
+				  "plural-forms": "nplurals=2; plural=(n != 1);"
+			   },
+			   "Website title": [
+				  null,
+				  "Website title1"
+			   ],
+			   "Toggle navigation": [
+				  null,
+				  "asd"
+			   ],
+			   "Link: HOME": [
+				  null,
+				  "Link: HOME"
+			   ]
+	   }
+		var gettext1 = function(key){
+			return names.indexOf(key);
+		}
+		function gettext(key) {
+			return names[key][1];
+		}
+      onload = function(){
+        var users = document.getElementById('users').innerHTML;
+        var names1 = ['loki', 'tobi', 'jane'];
+		
+
+        var html = ejs.render(users, { names: names }); 
+        document.body.innerHTML = html; 
+      }
+    </script>
+
+
+  </head>
+  <body>
+  </body>
+</html>

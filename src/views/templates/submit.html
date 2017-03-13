@@ -1,0 +1,158 @@
+<div>
+    <script id="ngView" type="text/template">
+        <!-- First  -->
+        <section class="form-container landing-content">
+            <div class="clearfix text-center">
+                <div class="col-md-6 col-md-offset-3 time-section">
+                    <div class="clearfix">
+                        <div class="col-xs-12">
+                            <div class="text-right">
+                                <a href="/"><i class="fa fa-close form-btn"></i></a>
+                            </div>
+
+                            <h2 class="text-center">
+                                <%= gettext('SUBMIT YOUR VERSE') %>
+                            </h2>
+                            <h3>
+                                <%= gettext('motivational quote') %>
+                            </h3>
+
+                            <div class="clearfix">
+                                <div class="col-xs-2 p-r">
+                                    <p class="note-submit">
+                                        <%= gettext('Note :') %>
+                                    </p>
+                                </div>
+                                <div class="col-xs-10 text-left p-l">
+                                    <p class="note-submit">
+                                        <%= gettext('You can submit one verse only.') %>
+                                    </p>
+                                    <p class="submit-note">
+                                        <%= gettext('You will not be able to edit or delete the verse once you have sumitted it.') %>
+                                    </p>
+                                </div>
+                            </div>
+                            <form name="stanzaForm" class="form" novalidate ng-submit="submitStanza()">
+                                <div class="clearfix">
+                                    <div class="col-xs-12">
+                                        <div class="input-group" ng-class="{ 'has-error': stanzaForm.stanza_text_area.$touched && stanzaForm.stanza_text_area.$invalid }">
+
+                                            <textarea id="stanza_text_area" name="stanza_text_area" class="form-control custom-control" rows="8" cols="100" style="resize:none" ng-model="stanza_text" placeholder="<%= gettext('enter your verse here') %>" required></textarea>
+
+                                            <div class="help-block text-left" ng-messages="stanzaForm.stanza_text_area.$error" ng-if="stanzaForm.stanza_text_area.$touched">
+                                                <p ng-message="required">
+                                                    <%= gettext('To submit, stanza is required.') %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix">
+                                    <div class="col-xs-12">
+                                        <div class="form-group text-left" ng-class="{ 'has-error': stanzaForm.user_fname.$touched && stanzaForm.user_fname.$invalid }">
+
+                                            <label for="user_fname"><%= gettext('FULL NAME') %> *</label>
+                                            <input type="text" id="submitter_name" class="form-control" ng-minlength="3" ng-maxlength="25" ng-pattern="/^[A-z \s]*$/" name="user_fname" ng-model="submitter_name" placeholder="<%= gettext('Enter your name') %>" required/>
+
+                                            <div class="help-block" ng-messages="stanzaForm.user_fname.$error" ng-if="stanzaForm.user_fname.$touched">
+                                                <p ng-message="pattern">
+                                                    <%= gettext('This needs to be a valid NAME.') %>
+                                                </p>
+                                                <p ng-message="minlength">
+                                                    <%= gettext('Your name is too short.') %>
+                                                </p>
+                                                <p ng-message="maxlength">
+                                                    <%= gettext('Your name is too long.') %>
+                                                </p>
+                                                <p ng-message="required">
+                                                    <%= gettext('Your name is required.') %>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="col-xs-12">
+                                        <div class="form-group text-left" ng-class="{ 'has-error': stanzaForm.submitter_n_id.$touched && stanzaForm.submitter_n_id.$invalid }">
+
+                                            <label for="submitter_n_id"><%= gettext('NATIONAL ID') %> *</label>
+                                            <input type="text" id="submitter_n_id" class="form-control" ng-minlength="12" ng-maxlength="16" ng-pattern="/^[\d+]*$/" name="submitter_n_id" ng-model="submitter_n_id" placeholder="<%= gettext('enter 12 to 16 numbered National ID') %>" required/>
+
+                                            <div class="help-block" ng-messages="stanzaForm.submitter_n_id.$error" ng-if="stanzaForm.submitter_n_id.$touched">
+                                                <p ng-message="pattern">
+                                                    <%= gettext('This needs to be a valid NUMBER.') %>
+                                                </p>
+                                                <p ng-message="minlength">
+                                                    <%= gettext('Your number is too short.') %>
+                                                </p>
+                                                <p ng-message="maxlength">
+                                                    <%= gettext('Your number is too long.') %>
+                                                </p>
+                                                <p ng-message="required">
+                                                    <%= gettext('Your number is required.') %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix">
+                                    <div class="col-xs-6">
+                                        <div class="form-group text-left" ng-class="{ 'has-error': stanzaForm.twitter_account.$touched && stanzaForm.twitter_account.$invalid }">
+
+                                            <label for="twitter_account"><%= gettext('TWITTER ACCOUNT') %></label>
+                                            <input type="text" id="twitter_account" class="form-control" ng-maxlength="25" ng-pattern="/^[A-z.\d+]*$/" name="twitter_account" ng-model="twitter_account" placeholder="<%= gettext('Enter account username') %>" />
+
+                                            <div class="help-block" ng-messages="stanzaForm.twitter_account.$error" ng-if="stanzaForm.twitter_account.$touched">
+                                                <p ng-message="pattern">
+                                                    <%= gettext('This needs to be a valid NAME.') %>
+                                                </p>
+                                                <p ng-message="maxlength">
+                                                    <%= gettext('Your name is too long.') %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group text-left" ng-class="{ 'has-error': stanzaForm.mobile_number.$touched && stanzaForm.mobile_number.$invalid }">
+
+                                            <label for="mobile_number"><%= gettext('MOBILE NUMBER') %> *</label>
+                                            <input type="text" id="mobile_number" class="form-control" ng-minlength="12" ng-maxlength="16" ng-pattern="/^[\d+]*$/" name="mobile_number" ng-model="mobile_number" placeholder="<%= gettext('Enter mobile number') %>" required/>
+
+                                            <div class="help-block" ng-messages="stanzaForm.mobile_number.$error" ng-if="stanzaForm.mobile_number.$touched">
+                                                <p ng-message="pattern">
+                                                    <%= gettext('This needs to be a valid NUMBER.') %>
+                                                </p>
+                                                <p ng-message="minlength">
+                                                    <%= gettext('Your number is too short.') %>
+                                                </p>
+                                                <p ng-message="maxlength">
+                                                    <%= gettext('Your number is too long.') %>
+                                                </p>
+                                                <p ng-message="required">
+                                                    <%= gettext('Your number is required.') %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class="col-xs-12">
+                                            <div class="p-t">
+                                                <button ng-disabled="userForm.$invalid" type="submit" class="btn-primary btn-sm"><%= gettext('SUBMIT NOW') %></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+</div>
+</section>
+</script>
+</div>
