@@ -4,7 +4,7 @@ var DbConnection = dbController.connection;
 class stanzaManager {
     load(status, currentPage, callback) {
         var offset = currentPage * 50;
-        var stanzasLimit = 49;
+        var stanzasLimit = 50;
 
 
         DbConnection.query('SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND statuses.type = ? LIMIT ? OFFSET ?', [status, stanzasLimit, offset], function(err, results) {

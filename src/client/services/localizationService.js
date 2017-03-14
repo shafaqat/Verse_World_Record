@@ -4,6 +4,7 @@ app.factory('localizationService', function($http, $q) {
     var deferred;
 
     function successhandler(response) {
+        console.log('response: ', response.data);
         deferred.resolve(response.data);
     }
 

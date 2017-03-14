@@ -117,7 +117,7 @@
       null,
       "enter password"
    ],
-   "Forgot Passwor": [
+   "Forgot Password": [
       null,
       "Forgot Password"
    ],
@@ -241,6 +241,10 @@
       null,
       "Your username is too long."
    ],
+   "This needs to be a valid Stanza.": [
+      null,
+      "This needs to be a valid Stanza."
+   ],
    "This needs to be a valid email.": [
       null,
       "This needs to be a valid email."
@@ -288,5 +292,49 @@
    "Your number is required.": [
       null,
       "Your number is required."
+   ],
+   "stanza has already created, you cannot create anymore": [
+      null,
+      "stanza has already created, you cannot create anymore"
+   ],
+   "stanza submitted for approval, after approval, will be available to the public": [
+      null,
+      "stanza submitted for approval, after approval, will be available to the public"
+   ],
+   "login failed": [
+      null,
+      "login failed"
+   ],
+   "url sent": [
+      null,
+      "url sent"
+   ],
+   "Passwords do not match": [
+      null,
+      "Passwords do not match"
+   ],
+   "password changed successfully": [
+      null,
+      "password changed successfully"
+   ],
+   "reset failed": [
+      null,
+      "reset failed"
+   ],
+   "The stanza is published": [
+      null,
+      "The stanza is published"
+   ],
+   "The stanza is updated": [
+      null,
+      "The stanza is updated"
+   ],
+   "The stanza is rejected": [
+      null,
+      "The stanza is rejected"
+   ],
+   "The stanza is approved": [
+      null,
+      "The stanza is approved"
    ]
 }}

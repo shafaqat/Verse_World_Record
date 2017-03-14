@@ -26,7 +26,7 @@ baseController.locale = function(req, res) {
     //     // "Our default is: " + locale.Locale["default"] + "\n" +
     //     "The best match is: " + req.locale + "\n"
     // );
-
+    console.log('locale:', path.resolve('media/locale/' + lang + '/messages.json'));
     var locale = req.headers["accept-language"].split(',')[0].replace('-', '_');
     fs.readFile(path.resolve('media/locale/' + locale + '/messages.json'), 'utf8', function(err, contents) {
         if (!err) {
@@ -40,6 +40,7 @@ baseController.changedLocale = function(req, res) {
     if (!lang.includes('ar') && !lang.includes('en_US'))
         lang = 'en_US';
 
+    console.log('changedLocale: ', path.resolve('media/locale/' + lang + '/messages.json'));
     fs.readFile(path.resolve('media/locale/' + lang + '/messages.json'), 'utf8', function(err, contents) {
         if (!err) {
             res.json(JSON.parse(contents));

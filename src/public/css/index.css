@@ -15,7 +15,11 @@ body {
 }
 
 .index-container {
-    margin-top: 10%;
+    margin-top: 4%;
+}
+
+li>a.nav-separator {
+    padding: 14px 0px;
 }
 
 .index-container .time-section {
@@ -41,6 +45,19 @@ body {
     color: #ffffff;
 }
 
+.btn {
+    padding: 15px 12px 7px;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+    color: #fff;
+    background: transparent;
+    border: none;
+    margin-top: 0px;
+}
+
 .btn-primary,
 .btn-primary:hover {
     background-color: transparent;
@@ -52,20 +69,71 @@ body {
     color: #ffffff;
 }
 
+.dd .ddTitle .ddTitleText {
+    padding: 7px 20px 5px 9px;
+}
+
+.dd .ddTitle {
+    color: white;
+    background: transparent url(title-bg.gif) repeat-x left top;
+}
+
+.dd {
+    cursor: pointer;
+}
+
+.dd .divider {
+    border: none;
+}
+
+.ddcommon .shadow {
+    box-shadow: none;
+}
+
+.dd .arrow {
+    background: none;
+}
+
+.dd .ddChild li .ddlabel:hover {
+    border-bottom: 1px solid white;
+}
+
+.dd .ddChild li .ddlabel,
+.dd .ddChild,
+.dd .ddChild li,
+.dd .ddChild li.hover,
+.dd .ddChild li.selected {
+    color: white;
+    border: none;
+    background: transparent;
+}
+
+
+/*timer*/
+
+.styled div p {
+    font-size: 38px;
+    display: inline;
+    padding: 0 8px;
+}
+
+.styled div span {
+    border-top: 0 !important;
+}
+
 
 /*stanza arae start*/
 
 li.active,
 li.active a {
     color: white !important;
-    border-bottom: .5px solid white;
 }
 
 .poem-bg {
     background-image: url(../images/PoemBg.jpg);
-    max-height: 1400px;
-    min-height: 600px;
-    overflow-y: auto;
+    /*max-height: 1400px;*/
+    /*min-height: 600px;*/
+    /*overflow-y: auto;*/
 }
 
 .inner-container {

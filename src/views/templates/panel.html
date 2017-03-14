@@ -54,7 +54,7 @@
                         <div class="penal-background">
                             <div class="inner-container">
                                 <h2><strong><%= gettext('Website title') %></strong></h2>
-                                <p>{{no_of_submissions.toLocaleString(lang)}}
+                                <p>{{no_of_submissions.toLocaleString(lang)}} &nbsp;&nbsp;
                                     <%= gettext('Verse Submitted') %>
                                 </p>
 
@@ -70,7 +70,7 @@
                                                     <i class="fa fa-angle-left"></i>
                                                 </li>
                                                 <% for(var i=0; i < 10; i++) { %>
-                                                    <li ng-class="{active:current_page.level == pagination_level+<%=i%>}" ng-click="get_stanzas_from_navigation($event,  pagination_level+<%=i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{((pagination_level+<%=i%>)*50).toLocaleString(lang)}}-{{((pagination_level+<%=i%>)*50+50).toLocaleString(lang)}}">
+                                                    <li class="nav-dots" ng-class="{active:current_page.level == pagination_level+<%=i%>}" ng-click="get_stanzas_from_navigation($event,  pagination_level+<%=i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{((pagination_level+<%=i%>)*50).toLocaleString(lang)}}&nbsp;-&nbsp;{{((pagination_level+<%=i%>)*50+50).toLocaleString(lang)}}">
                                                     </li>
                                                     <% } %>
 
@@ -89,7 +89,12 @@
                                     </div>
                                     <div class="col-xs-8 ">
                                         <div class="stanza-starts ">
-                                            <p>{{stanza.stanza_text}}</p>
+                                            <div>
+                                                <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                            </div>
+                                            <div>
+                                                <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-xs-2 hover-display ">
@@ -100,14 +105,21 @@
 
                             <div class="clearfix " ng-show="tab == 'rejected'">
                                 <div class="col-xs-12 ">
-                                    <div class="stanza-starts p_stanza" ng-repeat="stanza in rejected_stanzas">
-                                        <p>{{stanza.stanza_text}}</p>
+                                    <div class="clearfix p_stanza" ng-repeat="stanza in rejected_stanzas">
+                                        <div class="stanza-starts ">
+                                            <div class="col-xs-4 col-xs-offset-2">
+                                                <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="clearfix" ng-show="tab == 'approved'">
-                                <div class="clearfix p_stanza" ng-repeat="stanza in approved_stanzas">
+                                <div class=" p_stanza" ng-repeat="stanza in approved_stanzas">
                                     <div class="col-xs-12 edit-bg" ng-show="show_edit_area">
                                         <div class="col-xs-3 hover-display edit-bg " style="margin-top: 9%;">
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
@@ -133,22 +145,27 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 stanza-bg" ng-show="!show_edit_area">
-                                        <div class="col-xs-3 hover-display ">
+                                        <div class="col-xs-2 hover-display ">
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                         </div>
-                                        <div class="col-xs-6 ">
-                                            <div class="stanza-starts ">
-                                                <p>{{stanza.stanza_text}}</p>
+                                        <div class="col-xs-7 ">
+                                            <div class="clearfix stanza-starts ">
+                                                <div class="pull-left col-xs-6 ">
+                                                    <p class="">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                                </div>
+                                                <div class=" pull-right col-xs-6">
+                                                    <p class="">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-xs-3 hover-display ">
-                                            <div class="edit-icons" ng-show="isChiefJudge">
+                                        <div class="col-xs-3 hover-display  ">
+                                            <div class="edit-icons " ng-show="isChiefJudge ">
                                                 <a href=" " ng-click="update_stanza( 'published', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
                                                     <span><%= gettext('Accepted') %></span>
                                                 </a>
-                                                <a href=" " ng-click="show_edit_area = true;set_edit_stanza_vars($index)">
+                                                <a href=" " ng-click="show_edit_area=t rue;set_edit_stanza_vars($index) ">
                                                     <i class="fa fa-pencil "></i>
                                                     <span><%= gettext('Edit') %></span>
                                                 </a>
@@ -162,17 +179,18 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix" ng-show="tab == 'pending approval'">
-                                <div class="clearfix p_stanza" ng-repeat="stanza in pending_stanzas ">
-                                    <div class="col-xs-12 edit-bg" ng-show="show_edit_area">
-                                        <div class="col-xs-3 hover-display edit-bg " style="margin-top: 9%;">
+                            <div class="clearfix " ng-show="tab=='pending approval' ">
+                                <div class="clearfix p_stanza " ng-repeat="stanza in pending_stanzas ">
+                                    <div class="col-xs-12 edit-bg " ng-show="show_edit_area ">
+                                        <div class="col-xs-3 hover-display edit-bg " style="margin-top: 9%; ">
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                         </div>
-                                        <div class="col-xs-6">
-                                            <div class="stanza-starts">
-                                                <form class="form" ng-submit="update_stanza('pending approval',null, edit_stanza_index, edit_stanza_text)">
+                                        <div class="col-xs-6 ">
+                                            <div class="stanza-starts ">
+                                                <form class="form " ng-submit="update_stanza( 'pending approval',null, edit_stanza_index, edit_stanza_text) ">
 
-                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="stanza_text_area" class="form-control custom-control" rows="7" cols="<80></80>" style="resize:none" required ng-model="edit_stanza_text">{{edit_stanza_text}</textarea>
+                                                    <textarea dir='rtl' id="edit_stanza_text_area " name="stanza_text_area " class="form-control custom-control " rows="7 " cols="<80>
+                                                    </80>" style="resize:none" required ng-model="edit_stanza_text">{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-xs-3">
                                                             <img src="public/images/keyboard.png" class="keyboard">
@@ -189,17 +207,22 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 stanza-bg" ng-show="!show_edit_area">
-                                        <div class="col-xs-3 hover-display ">
+                                        <div class="col-xs-2 hover-display ">
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                         </div>
-                                        <div class="col-xs-6 ">
-                                            <div class="stanza-starts ">
-                                                <p>{{stanza.stanza_text}}</p>
+                                        <div class="col-xs-7 ">
+                                            <div class="clearfix stanza-starts ">
+                                                <div class=" pull-right col-xs-6 ">
+                                                    <p class="">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                                </div>
+                                                <div class=" pull-left col-xs-6">
+                                                    <p class="  ">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="col-xs-3 hover-display ">
-                                            <div class="edit-icons" ng-show="!isChiefJudge">
+                                            <div class="edit-icons" ng-show="isChiefJudge">
                                                 <a href=" " ng-click="update_stanza( 'approved', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
                                                     <span><%= gettext('Accepted') %></span>

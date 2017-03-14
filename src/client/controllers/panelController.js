@@ -61,7 +61,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
                             $scope.stanzas_to_add = $scope.published_stanzas;
                         }
 
-                        $scope.$parent.server_message = ('The stanza is ' + update_behavior);
+                        $scope.$parent.server_message = gettext('The stanza is ' + update_behavior);
                         $scope.$parent.hide_message_banner = false;
 
                         $timeout(function() {

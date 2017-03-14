@@ -16,9 +16,10 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
 
     $scope.login = function() {
         UserService.logIn($scope.userEmail, $scope.userPassword).then(function(payload) {
-            $scope.$parent.server_message = payload;
+            $scope.$parent.server_message = gettext(payload);
             $scope.$parent.hide_message_banner = false;
             $scope.$parent.isJudgeLogin = true;
+
             $scope.setJudgeInfo();
 
             $timeout(function() {
@@ -35,7 +36,7 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
     $scope.forgotPassword = function() {
         UserService.forgotPassword($scope.userEmail).then(
             function(payload) {
-                $scope.$parent.server_message = payload;
+                $scope.$parent.server_message = gettext(payload);
                 $scope.$parent.hide_message_banner = false;
 
                 $timeout(function() {
@@ -47,7 +48,7 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
 
     $scope.resetPassword = function() {
         if ($scope.userPassword != $scope.confirmUserPassword) {
-            $scope.$parent.server_message = "Passwords do not match";
+            $scope.$parent.server_message = gettext("Passwords do not match");
             $scope.$parent.hide_message_banner = false;
 
             $timeout(function() {
@@ -66,10 +67,10 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
                 function(data) {
                     if (data.updateStatus) {
                         $scope.updateStatus = true;
-                        $scope.$parent.server_message = 'password changed successfully';
+                        $scope.$parent.server_message = gettext('password changed successfully');
                     } else if (!data.updateStatus) {
                         $scope.updateStatus = true;
-                        $scope.$parent.server_message = 'reset failed';
+                        $scope.$parent.server_message = gettext('reset failed');
                     }
                     $scope.$parent.hide_message_banner = false;
 

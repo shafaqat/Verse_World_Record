@@ -24,6 +24,8 @@ body {
 
 /*stanza starts*/
 
+.no-padding {}
+
 .inner-container h2,
 .inner-container p {
     color: #3c2603;

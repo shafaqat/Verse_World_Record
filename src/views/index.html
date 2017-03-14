@@ -48,29 +48,30 @@
                             <%= gettext('Website title') %>
                         </a>
                     </div>
-                    <ul id="verseTopNav" class="nav navbar-nav navbar-right main-menu navbar-collapse collapse">
+                    <ul id="verseTopNav" class="nav navbar-nav navbar-right main-menu navbar-collapse collapse breadcrumbs">
                         <li ng-class="{active: location.includes('home')}">
                             <a href="/">
                                 <%= gettext('HOME') %>
                             </a>
                         </li>
-                        <li><a href="#">|</a></li>
+                        <li><a href="#" class="nav-separator">|</a></li>
                         <li ng-show="!isJudgeLogin" ng-class="{active: location.includes('login')}">
                             <a href="/login">
                                 <%= gettext('LOGIN') %>
                             </a>
                         </li>
+                        <li><a href="#" class="nav-separator">|</a></li>
                         <li ng-click="logout()" ng-show="isJudgeLogin">
                             <a href="#">
                                 <%= gettext('LOGOUT') %>
                             </a>
                         </li>
                         <li>
-                            <select name="countries" id="countries" style="margin-top:8%;width:110%;" onchange="changeLocale(value)">
+                            <select name="countries" id="countries" style="margin-top:8%;width:110%; border:none;" onchange="changeLocale(value)">
                                     <option value='ar' data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates"  ><%= gettext('U.A.E') %></option>
                                     
                                     <option value='en' data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag us" data-title="United States"><%= gettext('US') %></option>
-                                </select>
+                            </select>
                         </li>
                     </ul>
                 </div>

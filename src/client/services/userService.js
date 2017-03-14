@@ -59,7 +59,6 @@ app.factory('UserService', function($http, authService, $location, $q) {
 
             $http.post('signup', user).then(function(response) {
                 var reset_password_message = (response.data.signup) ? 'signup successfull' : 'User already exists';
-                // bootbox.alert(reset_password_message);
             }, errorhandler);
 
         },

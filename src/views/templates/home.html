@@ -5,11 +5,11 @@
         <section class="index-container">
             <section class="landing-content">
                 <div class="clearfix text-center">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-8 col-md-offset-2">
                         <div class="time-section">
                             <h2><b> <%= gettext('motivational quote') %></b></h2>
                             <a href="/submit">
-                                <button type="button" class="btn-primary btn-sm"><%= gettext('SUBMIT NOW') %></button>
+                                <button type="button" class="btn-primary btn-sm-main"><%= gettext('SUBMIT NOW') %></button>
                             </a>
                             <p><strong><%= gettext('Time Remaining For Submission') %></strong></p>
                             <div class="countdown styled"></div>
@@ -20,11 +20,11 @@
 
             <section class="content-poem">
                 <div class="clearfix text-center">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-8 col-md-offset-2">
                         <div class=" poem-bg">
                             <div class="inner-container">
                                 <h2><strong><%= gettext('All verses') %></strong></h2>
-                                <p>{{no_of_submissions.toLocaleString(lang)}}
+                                <p>{{no_of_submissions.toLocaleString(lang)}} &nbsp;&nbsp;
                                     <%= gettext('Verse Submitted') %>
                                 </p>
                             </div>
@@ -40,7 +40,7 @@
                                                         <i class="fa fa-angle-left"></i>
                                                     </li>
                                                     <% for(var i=0; i < 10; i++) { %>
-                                                        <li ng-class="{active:current_page.level == pagination_level+<%=i%>}" ng-click="get_stanzas_from_navigation($event,  pagination_level+<%=i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{((pagination_level+<%=i%>)*50).toLocaleString(lang)}}-{{((pagination_level+<%=i%>)*50+50).toLocaleString(lang)}}">
+                                                        <li ng-class="{active:current_page.level == pagination_level+<%=i%>}" ng-click="get_stanzas_from_navigation($event,  pagination_level+<%=i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{((pagination_level+<%=i%>)*50).toLocaleString(lang)}}&nbsp;-&nbsp;{{((pagination_level+<%=i%>)*50+50).toLocaleString(lang)}}">
 
                                                         </li>
                                                         <% } %>
@@ -54,16 +54,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix edit-bg home-container " ng-repeat="stanza in published_stanzas;">
+                            <div class="clearfix edit-bg home-container" ng-repeat="stanza in published_stanzas;">
                                 <div class="col-xs-2 hover-display ">
                                     <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                 </div>
-                                <div class="col-xs-8 ">
+                                <div class="col-xs-8">
                                     <div class="stanza-starts ">
-                                        <p>{{stanza.stanza_text}}</p>
+                                        <div>
+                                            <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-2 hover-display ">
+                                <div class="col-xs-1 hover-display ">
                                     <h5 class="text-centre "><strong>{{(pagination_level+$index+1).toLocaleString(lang)}}</strong></h5>
                                 </div>
                             </div>

@@ -27,7 +27,7 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
 
         stanzaService.submitStanza(stanza).then(
             function(results) {
-                $scope.$parent.server_message = results.submitMessage;
+                $scope.$parent.server_message = gettext(results.submitMessage);
                 $scope.$parent.hide_message_banner = false;
 
                 $timeout(function() {

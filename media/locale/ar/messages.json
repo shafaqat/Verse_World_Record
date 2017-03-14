@@ -272,6 +272,10 @@
       null,
       "هذا يحتاج إلى أن يكون اسما صالحا."
    ],
+   "This needs to be a valid Stanza.": [
+      null,
+      "هذا يحتاج إلى أن يكون مقطع صالح."
+   ],
    "Your name is too short.": [
       null,
       "اسمك قصيرة جدا."
@@ -299,5 +303,49 @@
    "Your number is required.": [
       null,
       "مطلوب رقم هاتفك."
+   ],
+   "stanza has already created, you cannot create anymore": [
+      null,
+      "stanza has already created, you cannot create anymore"
+   ],
+   "stanza submitted for approval, after approval, will be available to the public": [
+      null,
+      "مقطع المقدمة للموافقة عليها، بعد الموافقة عليها، وسوف تكون متاحة للجمهور"
+   ],
+   "login failed": [
+      null,
+      "فشل تسجيل الدخول"
+   ],
+   "url sent": [
+      null,
+      "رابط أرسلت"
+   ],
+   "Passwords do not match": [
+      null,
+      "كلمات المرور غير متطابقة"
+   ],
+   "password changed successfully": [
+      null,
+      "تم تغيير الرقم السري بنجاح"
+   ],
+   "reset failed": [
+      null,
+      "فشل إعادة تعيين"
+   ],
+   "The stanza is published": [
+      null,
+      "يتم نشر مقطع"
+   ],
+   "The stanza is updated": [
+      null,
+      "يتم تحديث مقطع"
+   ],
+   "The stanza is rejected": [
+      null,
+      "رفض مقطع"
+   ],
+   "The stanza is approved": [
+      null,
+      "تمت الموافقة على مقطع"
    ]
 }}

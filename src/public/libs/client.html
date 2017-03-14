@@ -11,6 +11,7 @@
 	<!-- (names.indexOf(key)) -->
 	</script>
     <script>
+	var nav_header_template = new EJS({ url: '../views/templates/header.ejs' });
 	var y="keypad";
 	var names = {
 			   "num": {
@@ -42,9 +43,9 @@
 		var gettext1 = function(key){
 			return names.indexOf(key);
 		}
-		function gettext(key) {
-			return names[key][1];
-		}
+		<!-- function gettext(key) { -->
+			<!-- <!-- return names[key][1]; --> -->
+		<!-- } -->
       onload = function(){
         var users = document.getElementById('users').innerHTML;
         var names1 = ['loki', 'tobi', 'jane'];
