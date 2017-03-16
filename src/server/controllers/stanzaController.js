@@ -4,8 +4,9 @@ import AppUtils from './../utils/appUtils';
 const getStanzas = function(req, res) {
     var status = req.params.status;
     var currentPage = req.params.currentPage;
+    var search_query = req.params.search_query;
 
-    stanzaManager.load(status, currentPage, function(error, results) {
+    stanzaManager.load(status, currentPage, search_query, function(error, results) {
         if (!error)
             res.json(results);
     });

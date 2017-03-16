@@ -2,14 +2,17 @@ import dbController from './../controllers/dbController';
 var DbConnection = dbController.connection;
 
 class stanzaManager {
-    load(status, currentPage, callback) {
+    load(status, currentPage, search_query, callback) {
         var offset = currentPage * 50;
         var stanzasLimit = 50;
+        search_query = (!search_query) ? ("'%%'") : ("'%" + search_query + "%'");
 
+        var query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND stanza_text LIKE ' + search_query + ' AND statuses.type = ? LIMIT ? OFFSET ?';
 
-        DbConnection.query('SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND statuses.type = ? LIMIT ? OFFSET ?', [status, stanzasLimit, offset], function(err, results) {
+        DbConnection.query(query, [status, stanzasLimit, offset], function(err, results) {
+            query = 'SELECT COUNT(*) FROM stanzas, statuses WHERE stanzas.status_id = statuses.id AND statuses.type = ? AND stanza_text LIKE ' + search_query;
             if (!err) {
-                DbConnection.query('SELECT COUNT(*) FROM stanzas, statuses WHERE stanzas.status_id = statuses.id AND statuses.type = ?', status, function(err, row_count) {
+                DbConnection.query(query, status, function(err, row_count) {
                     results.push(row_count);
                     console.log(results.length + ' sending records of type \"' + status + '\"');
                     return callback(null, results);

@@ -28,7 +28,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
 
     $scope.changeTab = function(tab) {
         $scope.tab = tab;
-        $scope.getStanzas($scope.tab);
+        $scope.getStanzas($scope.tab, "");
     };
 
     $scope.update_stanza = function(update_behavior, stanza_id, index, stanza_text) {
@@ -87,12 +87,12 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
             );
     };
 
+
     $scope.search_in_stanzas = function() {
-        stanzaService.search_in_stanzas($scope.search_query).then(function() {
-
-        }, null);
+        $scope.old_tab = $scope.tab;
+        $scope.$parent.tab = "search";
+        $scope.getStanzas($scope.old_tab, $scope.search_query);
     };
-
-    $scope.getStanzas($scope.tab);
+    $scope.getStanzas($scope.tab, "");
     $scope.route_change_render_ejs($scope);
 });

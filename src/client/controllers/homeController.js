@@ -40,7 +40,7 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
     };
 
     if ($scope.$parent.no_of_submissions === 0) {
-        $scope.getStanzas($scope.tab);
+        $scope.getStanzas($scope.tab, "");
     }
 
     $scope.route_change_render_ejs($scope);

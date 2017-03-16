@@ -28,11 +28,14 @@ app.factory('authService', function($http, $location, $q) {
         },
         checkJudgeType: function() {
             deferred = $q.defer();
-            deferred.resolve(judge);
+            this.checkLogIn().then(function(judge) {
+                deferred.resolve(judge);
+            });
             return deferred.promise;
         },
         setLogInStatus: function(status) {
             judge.logInStatus = status;
+            console.log('judge.logInStatus = status', status);
         }
     };
 });

@@ -13,10 +13,10 @@ app.factory('stanzaService', function($http, $q) {
     };
 
     return {
-        getStanzas: function(stanza_status, currentPage) {
+        getStanzas: function(stanza_status, currentPage, search_query) {
             deferred = $q.defer();
 
-            $http.get('stanza/get/' + stanza_status + '/' + currentPage).then(successhandler, errorhandler);
+            $http.get('stanza/get/' + stanza_status + '/' + currentPage + '/' + search_query).then(successhandler, errorhandler);
 
             return deferred.promise;
         },

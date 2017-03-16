@@ -55,7 +55,7 @@
                             <div class="inner-container">
                                 <h2><strong><%= gettext('Website title') %></strong></h2>
                                 <p>{{no_of_submissions.toLocaleString(lang)}} &nbsp;&nbsp;
-                                    <%= gettext('Verse Submitted') %>
+                                    <span><%= gettext('Verse Submitted') %></span>
                                 </p>
 
                             </div>
@@ -103,24 +103,6 @@
                             </div>
 
                             <div class="clearfix " ng-show="tab == 'search'">
-                                <div class="col-xs-12 p_stanza" ng-repeat="stanza in search_stanzas">
-                                    <div class="col-xs-2 hover-display ">
-                                        <h5 class="text-centre "><strong>name</strong></h5>
-                                    </div>
-                                    <div class="col-xs-8 ">
-                                        <div class="stanza-starts ">
-                                            <div>
-                                                <p class="pull-right">stanza1</p>
-                                            </div>
-                                            <div>
-                                                <p class="pull-left">stanza2</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-2 hover-display ">
-                                        <h5 class="text-centre "><strong>pagination_level</strong></h5>
-                                    </div>
-                                </div>
                                 <div class="col-xs-12 p_stanza" ng-repeat="stanza in search_stanzas">
                                     <div class="col-xs-2 hover-display ">
                                         <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
@@ -203,7 +185,7 @@
                                                     <i class="fa fa-check green "></i>
                                                     <span><%= gettext('Accepted') %></span>
                                                 </a>
-                                                <a href=" " ng-click="show_edit_area=t rue;set_edit_stanza_vars($index) ">
+                                                <a href=" " ng-click="show_edit_area=true;set_edit_stanza_vars($index) ">
                                                     <i class="fa fa-pencil "></i>
                                                     <span><%= gettext('Edit') %></span>
                                                 </a>
@@ -219,7 +201,7 @@
 
                             <div class="clearfix " ng-show="tab=='pending approval' ">
                                 <div class="clearfix p_stanza " ng-repeat="stanza in pending_stanzas ">
-                                    <div class="col-xs-12 edit-bg " ng-show="show_edit_area ">
+                                    <div class="col-xs-12 edit-bg " ng-show="show_edit_area">
                                         <div class="col-xs-3 hover-display edit-bg " style="margin-top: 9%; ">
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                         </div>
@@ -260,12 +242,12 @@
                                         </div>
 
                                         <div class="col-xs-3 hover-display ">
-                                            <div class="edit-icons" ng-show="isChiefJudge">
+                                            <div class="edit-icons" ng-show="!isChiefJudge">
                                                 <a href=" " ng-click="update_stanza( 'approved', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
                                                     <span><%= gettext('Accepted') %></span>
                                                 </a>
-                                                <a href=" " ng-click="show_edit_area = true;set_edit_stanza_vars($index)">
+                                                <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index)">
                                                     <i class="fa fa-pencil "></i>
                                                     <span><%= gettext('Edit') %></span>
                                                 </a>

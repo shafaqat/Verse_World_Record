@@ -52,7 +52,8 @@ app.post('/forgot-password', userController.startPasswordRecovery);
 app.get('/reset-password/:email', userController.endPasswordRecovery);
 app.post('/reset', userController.resetPassword);
 app.get('/getall/:id', userController.getall);
-app.get('/stanza/get/:status/:currentPage', stanzaController.getStanzas);
+app.get('/stanza/get/:status/:currentPage/:search_query', stanzaController.getStanzas);
+app.get('/stanza/get/:status/:currentPage/', stanzaController.getStanzas);
 app.post('/stanza/create', stanzaController.createStanza);
 app.post('/stanza/update', stanzaController.updateStanza);
 

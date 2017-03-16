@@ -77,6 +77,11 @@ li>a.nav-separator {
     border: none;
 }
 
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: white;
+}
+
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-nav>li>a:hover,
