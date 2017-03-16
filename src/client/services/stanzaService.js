@@ -22,9 +22,7 @@ app.factory('stanzaService', function($http, $q) {
         },
         submitStanza: function(stanza) {
             deferred = $q.defer();
-
             $http.post('stanza/create/', stanza).then(successhandler, errorhandler);
-
             return deferred.promise;
         },
         updateStanza: function(update_behavior, stanza_id, stanza_text) {

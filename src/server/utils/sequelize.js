@@ -10,26 +10,26 @@ Sequelize.cls = namespace;
 //  It also signals that the variable will be used only in the block it’s defined in, which is not always the entire containing function.
 //  `var` is now the weakest signal available when you define a variable in JavaScript.
 //  The variable may or may not be reassigned, and the variable may or may not be used for an entire function, or just for the purpose of a block or loop.
-var sequelize = new Sequelize('verseDB', 'root', '', {
-  dialect: 'mysql',
-	host: 'localhost',
+var sequelize = new Sequelize('verseDB', 'root', 'root', {
+    dialect: 'mysql',
+    host: 'localhost',
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    }
 });
 
 sequelize
-  .sync({
-    force: false
-  })
-  .then(function(err) {
-    console.log('connected to database:'); 
-  }, function(err) {
-    console.log('Unable to connect to the database:', err);
-  });
+    .sync({
+        force: false
+    })
+    .then(function(err) {
+        console.log('connected to database:');
+    }, function(err) {
+        console.log('Unable to connect to the database:', err);
+    });
 
 
 //  export default is used in the case where a module exports a single value

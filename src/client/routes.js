@@ -2,13 +2,13 @@ var app = angular.module('app');
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
+        .when('/', {
+            redirectTo: '/home',
+            access: { requiredLogin: false }
+        })
         .when('/home', {
             templateUrl: 'views/templates/home.html',
             controller: 'homeController',
-            access: { requiredLogin: false }
-        })
-        .when('/', {
-            redirectTo: '/home',
             access: { requiredLogin: false }
         })
         .when('/panel', {
@@ -28,6 +28,11 @@ app.config(function($routeProvider, $locationProvider) {
         })
         .when('/forget-password', {
             templateUrl: 'views/templates/forget-password.html',
+            controller: 'loginController',
+            access: { requiredLogin: false }
+        })
+        .when('/reset-password', {
+            templateUrl: 'views/templates/reset-password.html',
             controller: 'loginController',
             access: { requiredLogin: false }
         })

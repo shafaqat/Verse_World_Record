@@ -3,6 +3,46 @@ body {
     color: #ffffff;
 }
 
+h1,
+h2,
+h3 {
+    color: white;
+}
+
+
+/*scrolling header*/
+
+.scroll-div li>a,
+.scroll-div .navbar-brand {
+    color: white;
+}
+
+.scroll-div li>a:active,
+.scroll-div li>a:focus,
+.scroll-div li>a:hover,
+.scroll-div li.active {
+    color: white;
+    background-color: #BA861F
+}
+
+.scroll-div {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 100;
+    top: 0;
+    background-color: rgba(60, 37, 3, 0.8) !important;
+}
+
+.scroll-div .division,
+.scroll-div .division-tabs {
+    top: 8px;
+}
+
+.scroll-div .division-dots {
+    top: 32px;
+}
+
 .main-background {
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
@@ -69,6 +109,9 @@ li>a.nav-separator {
     color: #ffffff;
 }
 
+
+/*language dropdown*/
+
 .dd .ddTitle .ddTitleText {
     padding: 7px 20px 5px 9px;
 }
@@ -98,6 +141,7 @@ li>a.nav-separator {
     border-bottom: 1px solid white;
 }
 
+.dd,
 .dd .ddChild li .ddlabel,
 .dd .ddChild,
 .dd .ddChild li,
@@ -155,7 +199,8 @@ li.active a {
     opacity: 0;
 }
 
-.home-container:hover {
+.home-container:hover,
+.search-btn {
     background-color: #D1C988;
     cursor: pointer;
 }

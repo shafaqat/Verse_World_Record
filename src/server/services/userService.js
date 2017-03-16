@@ -3,6 +3,9 @@ import UserManager from '../managers/userManager';
 import AppUtils from '../utils/appUtils';
 import crypto from 'crypto';
 import path from 'path';
+import config from '../../config';
+import transporter from '../utils/mailUtils';
+
 
 var session;
 
@@ -79,16 +82,42 @@ const destroySession = function(req, res) {
     });
 };
 
+
+const sendMail = function(receiver) {
+
+    var encrypted = crypto.createHash('md5').update(receiver).digest("hex");
+    var url = 'http:/localhost:8080/reset-password';
+    //to resolve the self signed certificate error
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"Verse" <' + config.mailingEmailAddress + '>', // sender address
+        to: receiver, // list of receivers
+        subject: 'Verse - Password Recovery', // Subject line
+        html: '<h1>Hello Judge !</h1><p>You can use this token ' + encrypted + ' by going to the page ' + url + ' to reset your Password.' // html body
+    };
+
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log("Error sending mail, message: ", error);
+        }
+        console.log('recovery message %s sent: %s', info.messageId, info.response);
+    });
+};
+
 const startPasswordRecovery = function(req, res) {
-    console.log('starting recovery process for ' + req.params.encrypted_id);
+    var user = req.body;
+    console.log('starting recovery process for ' + user.userEmail);
 
     UserManager.find(req, res, function(err, isUserAuthenticated) {
-        var user = req.body;
+        console.log('user: ', user);
         if (isUserAuthenticated) {
-            var encrypted = crypto.createHash('md5').update(user.userEmail).digest("hex");
-            var url = 'http:/localhost:4000/reset-password/' + encrypted;
-            AppUtils.sendResponse(res, err, 'url', url, 'use url to signup');
-            console.log('url:', url);
+            sendMail(user.userEmail);
+
+            AppUtils.sendResponse(res, err, 'url', 'sent', 'use url to signup');
         } else {
             AppUtils.sendResponse(res, err, 'authenticated', false, 'cant signup');
         }
@@ -96,14 +125,14 @@ const startPasswordRecovery = function(req, res) {
 };
 
 const endPasswordRecovery = function(req, res) {
+    req.body.userEmail = req.params.email;
+    // var encrypted_id = req.params.email;
 
-    var encrypted_id = req.params.encrypted_id;
-
-    UserManager.findEncrypted(encrypted_id, res, function(err, isUserAuthenticated) {
+    UserManager.find(req, res, function(err, isUserAuthenticated) {
         if (isUserAuthenticated) {
             res.render('reset-password');
         } else {
-            res.send('cant reset');
+            res.send('you are not authorized to reset password');
         }
     });
 

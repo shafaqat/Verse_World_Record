@@ -19,6 +19,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('#edit_stanza_text_area').arabisk();
 
+
         if ($scope.tab.includes('pending'))
             $scope.edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
         else
@@ -84,6 +85,12 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
                 },
                 errorhandler
             );
+    };
+
+    $scope.search_in_stanzas = function() {
+        stanzaService.search_in_stanzas($scope.search_query).then(function() {
+
+        }, null);
     };
 
     $scope.getStanzas($scope.tab);

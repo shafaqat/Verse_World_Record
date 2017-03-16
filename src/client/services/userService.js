@@ -44,7 +44,7 @@ app.factory('UserService', function($http, authService, $location, $q) {
                 logout = true;
                 deferred.resolve(false);
                 authService.setLogInStatus(!logout);
-                $location.path('/login');
+                $location.path('/');
             }, errorhandler);
 
             return deferred.promise;
@@ -72,7 +72,6 @@ app.factory('UserService', function($http, authService, $location, $q) {
             $http.post('forgot-password', user).then(function(response) {
                 if (response.data.status == 'ok') {
                     deferred.resolve('url sent');
-                    console.log('url:', response.data.url);
                 }
             }, errorhandler);
             return deferred.promise;
@@ -81,8 +80,7 @@ app.factory('UserService', function($http, authService, $location, $q) {
         resetPassword: function(user) {
             deferred = $q.defer();
             $http.post('/reset', user).then(function(response) {
-                var data = response.data;
-                deferred.resolve(data);
+                deferred.resolve(response.data);
             }, errorhandler);
 
             return deferred.promise;

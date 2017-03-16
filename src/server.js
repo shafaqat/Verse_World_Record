@@ -49,7 +49,7 @@ app.post('/login/validate', userController.login);
 app.post('/logout', userController.destroySession);
 app.post('/signup', userController.createUser);
 app.post('/forgot-password', userController.startPasswordRecovery);
-app.get('/reset-password/:encrypted_id', userController.endPasswordRecovery);
+app.get('/reset-password/:email', userController.endPasswordRecovery);
 app.post('/reset', userController.resetPassword);
 app.get('/getall/:id', userController.getall);
 app.get('/stanza/get/:status/:currentPage', stanzaController.getStanzas);
@@ -62,6 +62,6 @@ app.get('/locale/:lang', baseController.changedLocale);
 app.get('/logInStatus', baseController.sendStatus);
 app.get('*', baseController.sendIndex);
 
-app.listen(8080, 'localhost', function() {
+app.listen(8080, function() {
     console.log('server started at port 8080 ...');
 });

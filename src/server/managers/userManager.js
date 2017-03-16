@@ -151,9 +151,9 @@
 // export default instance;
 
 /********************************************************** */
-import Sequelize from 'sequelize';
 
 import User from './../models/user';
+// import Sequelize from 'sequelize';
 // import sequelize from './../utils/sequelize';
 
 import BaseManager from './baseManager';
@@ -168,21 +168,7 @@ class userManager extends BaseManager {
     }
 
     update(vals, callback) {
-        DbConnection.query('UPDATE users SET password= md5(?) WHERE md5(email)=?', [vals.userPassword, vals.token], callback);
-    }
-
-    findEncrypted(encrypted_id, res, callback) {
-
-        DbConnection.query('SELECT * FROM users WHERE md5(email)=? LIMIT 1', encrypted_id, function(err, results) {
-            if (err) {
-                console.log('error.message:', err.message);
-                return callback(err, null);
-            }
-            if (results.length > 0)
-                return callback(err, true, null, res);
-            else if (results.length < 1)
-                return callback(err, false, null, res);
-        });
+        DbConnection.query('UPDATE users SET password = md5(?) WHERE md5(email)=?', [vals.userPassword, vals.token], callback);
     }
 
     find(req, res, callback) {

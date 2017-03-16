@@ -42,8 +42,8 @@
                                     <form class="navbar-form navbar-right">
                                         <div class="form-group">
                                             <i class="fa fa-search"></i>
-                                            <input type="text" class="form-control" placeholder="<%= gettext('Search') %>">
-                                            <i class="fa fa-play next-btn"></i>
+                                            <input id="search-input" type="text" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>">
+                                            <i class="fa fa-play next-btn search-btn" ng-click="search_in_stanzas()"></i>
                                         </div>
                                     </form>
                                 </div>
@@ -69,9 +69,8 @@
                                                 <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
                                                     <i class="fa fa-angle-left"></i>
                                                 </li>
-                                                <% for(var i=0; i < 10; i++) { %>
-                                                    <li class="nav-dots" ng-class="{active:current_page.level == pagination_level+<%=i%>}" ng-click="get_stanzas_from_navigation($event,  pagination_level+<%=i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{((pagination_level+<%=i%>)*50).toLocaleString(lang)}}&nbsp;-&nbsp;{{((pagination_level+<%=i%>)*50+50).toLocaleString(lang)}}">
-                                                    </li>
+                                                <% for(var i=0; i < no_of_submissions; i+=50) { %>
+                                                    <li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li>
                                                     <% } %>
 
                                                         <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')">
@@ -84,6 +83,45 @@
                             </div>
                             <div class="clearfix " ng-show="tab == 'published'">
                                 <div class="col-xs-12 p_stanza" ng-repeat="stanza in published_stanzas">
+                                    <div class="col-xs-2 hover-display ">
+                                        <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
+                                    </div>
+                                    <div class="col-xs-8 ">
+                                        <div class="stanza-starts ">
+                                            <div>
+                                                <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                            </div>
+                                            <div>
+                                                <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 hover-display ">
+                                        <h5 class="text-centre "><strong>{{(pagination_level+$index+1).toLocaleString(lang)}}</strong></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix " ng-show="tab == 'search'">
+                                <div class="col-xs-12 p_stanza" ng-repeat="stanza in search_stanzas">
+                                    <div class="col-xs-2 hover-display ">
+                                        <h5 class="text-centre "><strong>name</strong></h5>
+                                    </div>
+                                    <div class="col-xs-8 ">
+                                        <div class="stanza-starts ">
+                                            <div>
+                                                <p class="pull-right">stanza1</p>
+                                            </div>
+                                            <div>
+                                                <p class="pull-left">stanza2</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 hover-display ">
+                                        <h5 class="text-centre "><strong>pagination_level</strong></h5>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 p_stanza" ng-repeat="stanza in search_stanzas">
                                     <div class="col-xs-2 hover-display ">
                                         <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                     </div>
