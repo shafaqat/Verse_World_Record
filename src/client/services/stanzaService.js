@@ -5,6 +5,7 @@ app.factory('stanzaService', function($http, $q) {
 
     function successhandler(response) {
         deferred.resolve(response.data);
+        console.log('stanza', response.data);
 
     };
 
@@ -22,6 +23,7 @@ app.factory('stanzaService', function($http, $q) {
         },
         submitStanza: function(stanza) {
             deferred = $q.defer();
+
             $http.post('stanza/create/', stanza).then(successhandler, errorhandler);
             return deferred.promise;
         },

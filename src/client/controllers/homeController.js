@@ -10,6 +10,7 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
     $scope.twitter_account;
     $scope.mobile_number;
 
+
     var window = angular.element($window);
 
     function errorhandler(error) {
@@ -28,12 +29,13 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
 
         stanzaService.submitStanza(stanza).then(
             function(results) {
-                $scope.$parent.server_message = gettext(results.submitMessage);
-                $scope.$parent.hide_message_banner = false;
+                $scope.$parent.$parent.server_message = gettext(results.submitMessage);
+                $scope.$parent.$parent.hide_message_banner = false;
+                // console.log?
 
                 $timeout(function() {
-                    $scope.$parent.hide_message_banner = true;
-                }, $scope.server_message_hide_delay);
+                    $scope.hide_message_banner = true;
+                }, $scope.$parent.$parent.server_message_hide_delay);
 
             },
             errorhandler

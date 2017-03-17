@@ -3,6 +3,10 @@ body {
     color: #ffffff;
 }
 
+.increase-arabic-font {
+    font-size: 19px;
+}
+
 h1,
 h2,
 h3 {
@@ -43,10 +47,15 @@ h3 {
     top: 32px;
 }
 
+.scroll-div .panel-container {
+    padding-right: 15px;
+}
+
 .main-background {
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: fixed;
 }
 
 .index-container .landing-content {
@@ -116,7 +125,7 @@ li>a.nav-separator {
 .btn-home-sticky {
     background-color: transparent;
     border: 1px solid #ffffff;
-    box-shadow: 0px 0px 3px 0px;
+    box-shadow: 0px 0px 10px 0px;
     width: 50%;
     font-size: 18px;
     padding: 8px;
@@ -168,9 +177,10 @@ li>a.nav-separator {
 .dd .ddChild li,
 .dd .ddChild li.hover,
 .dd .ddChild li.selected {
-    color: white;
     border: none;
-    background: transparent;
+    color: white;
+    background: rgba(60, 37, 3, 0.8);
+    left: 0;
 }
 
 
@@ -199,6 +209,7 @@ li.active a {
     /*max-height: 1400px;*/
     /*min-height: 600px;*/
     /*overflow-y: auto;*/
+    padding: 0px 0px 50px;
 }
 
 .inner-container {
@@ -288,7 +299,48 @@ li.active a {
 }
 
 
-/*******/
+/***for iphone 5 & 5s****/
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .scroll-div {
+        height: 170px;
+    }
+    .scroll-div .navbar-brand {
+        margin: 0 105px;
+    }
+    .on-mobile {
+        text-align: center;
+    }
+    .scroll-div .panel-container {
+        padding-right: 0px;
+    }
+    .iphone-panel-height {
+        height: 280px;
+    }
+}
 
 
 /***/
+
+
+/*iphone 6 & 6s*/
+
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+    .scroll-div .navbar-brand {
+        margin: 0 134px;
+    }
+}
+
+
+/*for ipad*/
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .btn-home-sticky {
+        width: 80%;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+/*end*/

@@ -175,6 +175,9 @@
    "You will not be able to edit or delete the verse once you have sumitted it.": [
       null,
       "فإنك لن تكون قادرا على تعديل أو حذف الآية بمجرد تقديمه."
+   ],"The stanza should contain exactly two verses separated by a new line.": [
+      null,
+      "يجب أن يحتوي على مقطع بالضبط آيتين مفصولة سطر جديد."
    ],
    "enter your verse here": [
       null,
@@ -363,5 +366,9 @@
    "Nothing Found for": [
       null,
       "وجدت شيئا ل "
+   ],
+   "submissions close message": [
+      null,
+      "تم إغلاق التقديمات"
    ]
 }}

@@ -6,11 +6,16 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="time-section">
                             <h2><b> <%= gettext('motivational quote') %></b></h2>
-                            <a href="/submit">
-                                <button type="button" class=" home-submit-btn"><%= gettext('SUBMIT NOW') %></button>
-                            </a>
-                            <p><strong><%= gettext('Time Remaining For Submission') %></strong></p>
-                            <div class="countdown styled"></div>
+                            <div ng-show="!submissions_closed">
+                                <a href="/submit">
+                                    <button type="button" class="btn-sm-main home-submit-btn"><%= gettext('SUBMIT NOW') %></button>
+                                </a>
+                                <p><strong><%= gettext('Time Remaining For Submission') %></strong></p>
+                                <div class="countdown styled"></div>
+                            </div>
+                            <div ng-show="submissions_closed">
+                                <p><strong><%= gettext('submissions close message') %></strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,7 +33,7 @@
                             </div>
                             <div class="panel-container">
                                 <div class="clearfix slider">
-                                    <div class="col-xs-12 text-center">
+                                    <div class="col-sm-12 text-center">
                                         <br>
                                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                             <div class="carousel">
@@ -51,20 +56,20 @@
                                 </div>
                             </div>
                             <div class="clearfix edit-bg home-container" ng-repeat="stanza in published_stanzas;">
-                                <div class="col-xs-2 hover-display ">
+                                <div class="col-sm-2 hover-display ">
                                     <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                 </div>
-                                <div class="col-xs-8">
+                                <div class="col-sm-8">
                                     <div class="stanza-starts clearfix ">
-                                        <div class="col-xs-6">
+                                        <div class="col-sm-6">
                                             <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
                                         </div>
-                                        <div class="col-xs-6">
+                                        <div class="col-sm-6">
                                             <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-2 hover-display ">
+                                <div class="col-sm-2 hover-display ">
                                     <h5 class="text-centre "><strong>{{(pagination_level+$index+1).toLocaleString(lang)}}</strong></h5>
                                 </div>
                             </div>

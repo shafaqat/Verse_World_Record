@@ -128,7 +128,6 @@ button.btn-primary.btn-sm:focus,
 }
 
 .btn-search:hover {
-    background-color: #AE8851;
     cursor: pointer;
 }
 
@@ -138,6 +137,22 @@ button.btn-primary.btn-sm:focus,
 
 .search-form {
     padding-top: 1%;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #FFF;
+}
+
+.form-control::-moz-placeholder {
+    color: #FFF;
+}
+
+.form-control::-o-input-placeholder {
+    color: #FFF;
+}
+
+.form-control::-ms-input-placeholder {
+    color: #FFF;
 }
 
 
