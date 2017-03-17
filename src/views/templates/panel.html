@@ -68,7 +68,7 @@
                                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                         <!-- Indicators -->
                                         <div class="carousel">
-                                            <ol class="carousel-indicators">
+                                            <ol class="panel-carousel-indicators carousel-indicators">
                                                 <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
                                                     <i class="fa fa-angle-left"></i>
                                                 </li>
@@ -106,6 +106,24 @@
                             </div>
 
                             <div class="clearfix " ng-show="tab == 'search'">
+                                <div class="col-sm-12 p_stanza">
+                                    <div class="col-sm-2 hover-display ">
+                                        <h5 class="text-centre "><strong>stanza.submitter_name</strong></h5>
+                                    </div>
+                                    <div class="col-sm-8 ">
+                                        <div class="stanza-starts clearfix ">
+                                            <div class="col-sm-6">
+                                                <p class="pull-right">stanza.stanza_text.split('\n')[0]</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="pull-left">stanza.stanza_text.split('\n')[1]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 hover-display ">
+                                        <h5 class="text-centre "><strong>(pagination_level+$index+1).toLocaleString(lang)</strong></h5>
+                                    </div>
+                                </div>
                                 <div class="col-sm-12 p_stanza" ng-repeat="stanza in search_stanzas">
                                     <div class="col-sm-2 hover-display ">
                                         <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>

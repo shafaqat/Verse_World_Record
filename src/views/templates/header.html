@@ -46,15 +46,15 @@
         </nav>
     </header>
     <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('panel')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
-        <div class="col-sm-2 col-xs-2 division">
+        <div class="logo-wrapper division">
             <a class=" navbar-brand" href="/">
                 <%= gettext("Website title") %>
             </a>
         </div>
-        <div class="col-sm-7 col-xs-12">
-            <div class="clearfix">
-                <div class="col-md-7 col-sm-7 col-xs-12 division-tabs" ng-hide='!location.includes("panel")'>
-                    <ul class="nav navbar-nav">
+        <div class="right-section">
+            <div class="division-tabs">
+                <div class="navs-list-wrapper">
+                    <ul class="nav navbar-nav nav-list" ng-hide='!location.includes("panel")'>
                         <li ng-class="{active: tab == 'pending approval'}" ng-click="changeTab('pending approval')">
                             <a href="#">
                                 <%= gettext("Draft") %> (09)<span class="sr-only">(<%= gettext("current") %></span></a>
@@ -75,28 +75,29 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-                <div class="col-md-offset-4 col-md-5 col-sm-offset-3 col-sm-8 division-dots" ng-class="{'col-xs-12': location.includes('panel'), 'col-md-offset-0': location.includes('panel')}">
-                    <div class="panel-container">
-                        <div class=" slider">
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                <div class="carousel">
-                                    <ol class="carousel-indicators">
-                                        <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')"><i class="fa fa-angle-left"></i></li>
-                                        <% for(var i=0; i < no_of_submissions; i+=50) { %>
-                                            <li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li>
-                                            <% } %>
-                                                <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')"><i class="fa fa-angle-right"></i></li>
-                                    </ol>
-                                </div>
-                            </div>
 
+                    <div class="division-dots">
+                        <div class="panel-container header-indicator-container">
+                            <div class=" slider">
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel">
+                                        <ol class="carousel-indicators header-indicator">
+                                            <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')"><i class="fa fa-angle-left"></i></li>
+                                            <% for(var i=0; i < no_of_submissions; i+=50) { %>
+                                                <li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li>
+                                                <% } %>
+                                                    <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')"><i class="fa fa-angle-right"></i></li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="text-right on-mobile" ng-hide='!location.includes("home")'><a href="/submit"><button type="button" class="btn-sm-main btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div>
         </div>
-        <div class="col-sm-3 col-xs-12 text-right on-mobile" ng-hide='!location.includes("home")'><a href="/submit"><button type="button" class="btn-sm-main btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div>
     </div>
 </script>
 

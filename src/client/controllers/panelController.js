@@ -90,6 +90,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
 
     $scope.search_in_stanzas = function() {
         $scope.old_tab = $scope.tab;
+        $scope.$parent.tab = "search";
         $scope.tab = "search";
         $scope.search_close_btn = true;
         $scope.getStanzas($scope.old_tab, $scope.search_query);

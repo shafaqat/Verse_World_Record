@@ -37,7 +37,7 @@
                                         <br>
                                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                             <div class="carousel">
-                                                <ol class="carousel-indicators">
+                                                <ol class="panel-carousel-indicators carousel-indicators">
                                                     <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
                                                         <i class="fa fa-angle-left"></i>
                                                     </li>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-2 hover-display ">
-                                    <h5 class="text-centre "><strong>{{(pagination_level+$index+1).toLocaleString(lang)}}</strong></h5>
+                                    <h5 class="text-centre "><strong>{{(published_stanzas_page.level+$index+1).toLocaleString(lang)}}</strong></h5>
                                 </div>
                             </div>
                         </div>

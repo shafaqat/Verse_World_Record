@@ -43,6 +43,25 @@ h3 {
     top: 8px;
 }
 
+.logo-wrapper {
+    float: left;
+}
+
+.right-section {
+    margin-left: 100px;
+    overflow: hidden;
+}
+
+.navs-list-wrapper ul.nav.navbar.nav {
+    float: left;
+}
+
+.navs-list-wrapper .division-dots {
+    float: left;
+    width: 300px;
+    padding: 9px 0;
+}
+
 .scroll-div .division-dots {
     top: 32px;
 }
@@ -55,7 +74,7 @@ h3 {
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: fixed;
+    background-position: center;
 }
 
 .index-container .landing-content {
@@ -169,6 +188,10 @@ li>a.nav-separator {
 
 .dd .arrow {
     background: none;
+}
+
+.dd .ddChild li {
+    padding: 5px 7px;
 }
 
 .dd,
@@ -298,12 +321,29 @@ li.active a {
     transition: all 0.5s ease-in-out;
 }
 
+.right-section {
+    padding-top: 9px;
+}
+
+.scroll-div .division-dots {
+    PADDING-TOP: 65px;
+    padding-left: 148px;
+}
+
+.navs-list-wrapper .division-dots {
+    width: 426px;
+}
+
+.panel-carousel-indicators {
+    bottom: -4px;
+}
+
 
 /***for iphone 5 & 5s****/
 
 @media only screen and (min-width: 320px) and (max-width: 568px) {
     .scroll-div {
-        height: 170px;
+        height: 180px;
     }
     .scroll-div .navbar-brand {
         margin: 0 105px;
@@ -317,6 +357,26 @@ li.active a {
     .iphone-panel-height {
         height: 280px;
     }
+    .right-section {
+        margin-left: 0px;
+        overflow: none;
+        margin-top: 50px;
+    }
+    .division-tabs li.active,
+    .division-tabs li {
+        padding-left: 10px;
+    }
+    .division-dots li {
+        padding-left: 0px;
+    }
+    .scroll-div .division-dots {
+        PADDING-TOP: 50px;
+        padding-left: 0px;
+        margin-left: -50px;
+    }
+    .right-section .panel-container .carousel-indicators {
+        text-align: center;
+    }
 }
 
 
@@ -329,6 +389,16 @@ li.active a {
     .scroll-div .navbar-brand {
         margin: 0 134px;
     }
+    .navs-list-wrapper .division-dots {
+        width: 470px;
+    }
+    .right-section .panel-container .carousel-indicators {
+        text-align: center;
+    }
+}
+
+.right-section .panel-container .slider {
+    padding: 0;
 }
 
 
@@ -336,9 +406,53 @@ li.active a {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .btn-home-sticky {
-        width: 80%;
+        width: 30%;
         font-size: 14px;
-        padding: 10px;
+    }
+    .scroll-div {
+        height: 50px;
+    }
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    .header-indicator {
+        position: static;
+    }
+    .scroll-div .header-indicator-container {
+        padding-right: 0px;
+    }
+    .header-indicator-container .slider {
+        padding: 0px;
+        float: right;
+    }
+    .right-section .panel-container .carousel-indicators {
+        position: static;
+        margin: 0 15px;
+        width: auto;
+        text-align: left;
+    }
+    .scroll-div .division-dots {
+        top: 32px;
+        padding-top: 7px;
+        padding-left: 80px;
+    }
+    .right-section {
+        padding-top: 0px;
+    }
+    .navs-list-wrapper .division-dots {
+        width: 362px;
+    }
+    .on-mobile {
+        /*width: 0%;*/
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .btn-home-sticky {
+        width: 30%;
+    }
+    .navs-list-wrapper .division-dots {
+        width: 54%;
     }
 }
 

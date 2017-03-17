@@ -60,7 +60,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             };
 
             scope.timerFunc = function() {
-                var endDate = "March 17, 2017 18:29:40";
+                var endDate = "March 17, 2017 22:00:00";
                 $('.countdown.styled')
                     .countdown({
                         date: endDate,
