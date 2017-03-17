@@ -25,7 +25,6 @@ baseController.locale = function(req, res) {
     fs.readFile(path.resolve('media/locale/' + locale + '/messages.json'), 'utf8', function(err, contents) {
         if (!err) {
             res.json(JSON.parse(contents));
-            console.log('contents: ', contents);
         }
     });
 };

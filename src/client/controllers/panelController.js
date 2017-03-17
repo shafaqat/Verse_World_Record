@@ -56,7 +56,6 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
                             $scope.current_stanzas[index].stanza_text = stanza_text;
 
                             $scope.p_stanza.scope().show_edit_area = false;
-                            console.log('if', $scope.p_stanza.scope());
 
                         } else if (update_behavior == 'published') {
                             $scope.stanzas_to_add = $scope.published_stanzas;
@@ -90,7 +89,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
 
     $scope.search_in_stanzas = function() {
         $scope.old_tab = $scope.tab;
-        $scope.$parent.tab = "search";
+        $scope.tab = "search";
         $scope.getStanzas($scope.old_tab, $scope.search_query);
     };
     $scope.getStanzas($scope.tab, "");

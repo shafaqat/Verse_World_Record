@@ -14,7 +14,6 @@ app.factory('localizationService', function($http, $q) {
     return {
         getchangedLocale: function(lang) {
             deferred = $q.defer();
-            console.log('lang:', lang);
             $http.get('/locale/' + lang).then(successhandler, errorhandler);
 
             return deferred.promise;

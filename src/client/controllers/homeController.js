@@ -2,6 +2,7 @@ var app = angular.module('app');
 
 app.controller('homeController', function($scope, $window, $document, $timeout, stanzaService) {
 
+    $scope.tab = "published";
     $scope.currentPage = 0;
     $scope.stanza_text;
     $scope.submitter_name;
@@ -39,9 +40,9 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
         );
     };
 
-    if ($scope.$parent.no_of_submissions === 0) {
-        $scope.getStanzas($scope.tab, "");
-    }
+
+
+    $scope.getStanzas($scope.tab, "");
 
     $scope.route_change_render_ejs($scope);
     $scope.timerFunc();

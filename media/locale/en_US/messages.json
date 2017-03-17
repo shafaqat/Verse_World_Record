@@ -19,7 +19,7 @@
    ],
    "CONFIRM PASSWORD head": [
       null,
-      "CONFIRM PASSWORD"
+      "Confirm Password"
    ],
    "Enter Validation Code lbl": [
       null,
@@ -51,7 +51,7 @@
    ],
    "FORGOT YOUR PASSWORD? head": [
       null,
-      "FORGOT YOUR PASSWORD?"
+      "Forgot your password?"
    ],
    "E-mail lbl": [
       null,
@@ -63,7 +63,7 @@
    ],
    "SEND VALIDATION CODE ": [
       null,
-      "SEND VALIDATION CODE"
+      "SEND VALIDATION CODE >"
    ],
    "Toggle navigation": [
       null,
@@ -71,19 +71,19 @@
    ],
    "HOME": [
       null,
-      "HOME"
+      "Home"
    ],
    "PANEL": [
       null,
-      "PANEL"
+      "Panel"
    ],
    "LOGIN": [
       null,
-      "LOGIN"
+      "Login"
    ],
    "LOGOUT": [
       null,
-      "LOGOUT"
+      "Logout"
    ],
    "motivational quote": [
       null,
@@ -107,7 +107,7 @@
    ],
    "USERNAME": [
       null,
-      "USERNAME"
+      "Username"
    ],
    "Enter email address": [
       null,
@@ -115,15 +115,15 @@
    ],
    "PASSWORD": [
       null,
-      "PASSWORD"
+      "Password"
    ],
    "enter password": [
       null,
-      "enter password"
+      "Enter Password"
    ],
    "Forgot Password": [
       null,
-      "Forgot Password"
+      "Forgot Password ?"
    ],
    "Draft": [
       null,
@@ -183,7 +183,7 @@
    ],
    "FULL NAME": [
       null,
-      "FULL NAME"
+      "Full Name"
    ],
    "Enter your name": [
       null,
@@ -191,7 +191,7 @@
    ],
    "NATIONAL ID": [
       null,
-      "NATIONAL ID"
+      "National ID"
    ],
    "enter 12 to 16 numbered National ID": [
       null,
@@ -199,7 +199,7 @@
    ],
    "TWITTER ACCOUNT": [
       null,
-      "TWITTER ACCOUNT"
+      "Twitter Account"
    ],
    "Enter account username": [
       null,
@@ -207,7 +207,7 @@
    ],
    "MOBILE NUMBER": [
       null,
-      "MOBILE NUMBER"
+      "Mobile Number"
    ],
    "Enter mobile number": [
       null,
@@ -340,5 +340,17 @@
    "The stanza is approved": [
       null,
       "The stanza is approved"
+   ],
+   "save txt": [
+      null,
+      "save"
+   ],
+   "cancel txt": [
+      null,
+      "cancel"
+   ],
+   "Nothing Found for": [
+      null,
+      "Nothing Found for "
    ]
 }}

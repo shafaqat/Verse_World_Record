@@ -35,7 +35,6 @@ app.factory('authService', function($http, $location, $q) {
         },
         setLogInStatus: function(status) {
             judge.logInStatus = status;
-            console.log('judge.logInStatus = status', status);
         }
     };
 });

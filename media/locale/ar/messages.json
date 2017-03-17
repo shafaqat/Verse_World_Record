@@ -262,7 +262,7 @@
    ],
    "Forgot Password": [
       null,
-      "هل نسيت كلمة المرور"
+      "?هل نسيت كلمة المرور"
    ],
    "This needs to be a valid email": [
       null,
@@ -351,5 +351,17 @@
    "The stanza is approved": [
       null,
       "تمت الموافقة على مقطع"
+   ],
+   "save txt": [
+      null,
+      "حفظ"
+   ],
+   "cancel txt": [
+      null,
+      "إلغاء"
+   ],
+   "Nothing Found for": [
+      null,
+      "وجدت شيئا ل "
    ]
 }}

@@ -51,7 +51,6 @@ app.run(function($rootScope, authService, $location) {
     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
         if (nextRoute.access.requiredLogin || nextRoute.originalPath == '/login') {
             authService.checkJudgeType().then(function(judge) {
-                console.log('judge:', judge);
                 if (!judge.logInStatus)
                     $location.path('/login');
                 else

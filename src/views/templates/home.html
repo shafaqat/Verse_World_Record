@@ -7,7 +7,7 @@
                         <div class="time-section">
                             <h2><b> <%= gettext('motivational quote') %></b></h2>
                             <a href="/submit">
-                                <button type="button" class="btn-primary btn-sm-main"><%= gettext('SUBMIT NOW') %></button>
+                                <button type="button" class=" home-submit-btn"><%= gettext('SUBMIT NOW') %></button>
                             </a>
                             <p><strong><%= gettext('Time Remaining For Submission') %></strong></p>
                             <div class="countdown styled"></div>
@@ -55,11 +55,11 @@
                                     <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                 </div>
                                 <div class="col-xs-8">
-                                    <div class="stanza-starts ">
-                                        <div>
+                                    <div class="stanza-starts clearfix ">
+                                        <div class="col-xs-6">
                                             <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
                                         </div>
-                                        <div>
+                                        <div class="col-xs-6">
                                             <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
                                         </div>
                                     </div>

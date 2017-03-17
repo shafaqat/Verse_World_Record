@@ -10,7 +10,7 @@ function gettext(key) {
 };
 
 
-app.controller('appController', function($scope, $document, $route, $compile, $window, $timeout, authService, UserService, stanzaService, localizationService) {
+app.controller('appController', function($scope, $document, $route, $compile, $window, $timeout, authService, UserService, stanzaService, localizationService, fileReaderService) {
     $scope.location = '';
     $scope.server_message = '';
     $scope.tab = 'published';
@@ -48,7 +48,6 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
             function(userInfo) {
                 $scope.isJudgeLogin = userInfo.logInStatus;
                 $scope.isChiefJudge = (userInfo.judgeType == 'head') ? true : false;
-                console.log(' $scope.isChiefJudge:', $scope.isChiefJudge);
             }
         );
 
@@ -59,23 +58,25 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
             $scope.isJudgeLogin = false;
         });
     };
-    var x;
-
-
 
 
     var ng_view_template;
     var ng_view_child_scope;
-    var nav_header_template = '<header class="navigation"><nav class="navbar navbar-default" ng-class="{header_on_scroll: boolChangeHeaderClass}"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#verseTopNav" aria-expanded="false"><span class="sr-only"><%= gettext("Toggle navigation") %></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class=" navbar-brand" href="/"><%= gettext("Website title") %></a></div><div class="collapse navbar-collapse"><ul id="verseTopNav" class="nav navbar-nav navbar-right main-menu navbar-collapse collapse breadcrumbs"><li ng-if="!location.includes(\'home\')" ng-class="{active: location.includes(\'home\')}"><a href="/"><%= gettext("HOME") %></a></li><li ng-if="location.includes(\'home\') && isJudgeLogin" ng-class="{active: location.includes(\'panel\')}"><a href="/panel"><%= gettext("PANEL") %></a></li><li ng-if=""><a href="#" class="nav-separator">|</a></li><li ng-if="!isJudgeLogin && !location.includes(\'login\')" ng-class="{active: location.includes(\'login\')}"><a href="/login"><%= gettext("LOGIN") %></a></li><li ng-click="logout()" ng-show="isJudgeLogin"><a href="#"><%= gettext("LOGOUT") %></a></li><li><a href="#" class="nav-separator">|</a></li><li><select name="countries" id="countries" style="margin-top:8%;width:110%; border:none;" onchange="changeLocale(value)"><option value="ar" data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates"  ><%= gettext("U.A.E") %></option><option value="en" data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag us" data-title="United States"><%= gettext("US") %></option></select></li></ul></div></div></nav></header><div class="clearfix scroll-div" ng-if="location.includes(\'home\') || location.includes(\'panel\')" ng-show="boolShowStaticHeader"><div class="col-xs-1 division"><a class=" navbar-brand" href="/"><%= gettext("Website title") %></a></div><div class="col-xs-4 division-tabs"><div ng-hide=\'!location.includes("panel")\'><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li ng-class="{active: tab == \'pending approval\'}" ng-click="changeTab(\'pending approval\')"><a href="#"><%= gettext("Draft") %> (09)<span class="sr-only">(<%= gettext("current") %></span></a></li><li ng-class="{active: tab == \'approved\'}" ng-click="changeTab(\'approved\')"><a href="#"><%= gettext("Pending") %></a></li><li ng-class="{active: tab == \'rejected\'}" ng-click="changeTab(\'rejected\')"><a href="#"><%= gettext("Rejected") %></a></li><li ng-class="{active: tab == \'published\'}" ng-click="changeTab(\'published\')"><a href="#"><%= gettext("Published") %></a></li></ul></div></div></div><div class="col-xs-4 division-dots"><div class="panel-container"><div class="clearfix slider"><div class="col-xs-12 text-center"><div id="myCarousel" class="carousel slide" data-ride="carousel"><div class="carousel"><ol class="carousel-indicators"><li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, \'pre\')"><i class="fa fa-angle-left"></i></li><% for(var i=0; i < no_of_submissions; i+=50) { %><li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li><% } %><li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, \'next\')"><i class="fa fa-angle-right"></i></li></ol></div></div></div></div></div></div><div class="col-xs-3 text-center" ng-hide=\'!location.includes("home")\'><a href="/submit"><button type="button" class="btn-primary btn-sm-main"><%= gettext("SUBMIT NOW") %></button></a></div></div>';
+
+    var header_file_path = "../views/tempates/header.html";
+
+
 
     localizationService.getchangedLocale($scope.lang).then(
         function(result) {
             $scope.locale = result.messages;
             locale = $scope.locale;
-            x = locale;
 
         }
     );
+
+    var nav_header_template = '<header class="navigation"><nav class="navbar navbar-default" ng-class="{header_on_scroll: boolChangeHeaderClass}"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#verseTopNav" aria-expanded="false"><span class="sr-only"><%= gettext("Toggle navigation") %></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class=" navbar-brand" href="/"><%= gettext("Website title") %></a></div><div class="collapse navbar-collapse"><ul id="verseTopNav" class="nav navbar-nav navbar-right main-menu navbar-collapse collapse breadcrumbs"><li ng-if="!location.includes(\'home\')" ng-class="{active: location.includes(\'home\')}"><a href="/"><%= gettext("HOME") %></a></li><li ng-if="location.includes(\'home\') && isJudgeLogin" ng-class="{active: location.includes(\'panel\')}"><a href="/panel"><%= gettext("PANEL") %></a></li><li ng-if=""><a href="#" class="nav-separator">|</a></li><li ng-if="!isJudgeLogin && !location.includes(\'login\')" ng-class="{active: location.includes(\'login\')}"><a href="/login"><%= gettext("LOGIN") %></a></li><li ng-click="logout()" ng-show="isJudgeLogin"><a href="#"><%= gettext("LOGOUT") %></a></li><li><a href="#" class="nav-separator">|</a></li><li><select name="countries" id="countries" style="margin-top:8%;width:110%; border:none;" onchange="changeLocale(value)"><option value="ar" data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag sa" ><%= gettext("U.A.E") %></option><option value="en" data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag us"><%= gettext("US") %></option></select></li></ul></div></div></nav></header><div class="clearfix scroll-div" ng-if="location.includes(\'home\') || location.includes(\'panel\')" ng-show="boolShowStaticHeader"><div class="col-xs-1 division"><a class=" navbar-brand" href="/"><%= gettext("Website title") %></a></div><div class="col-xs-4 division-tabs"><div ng-hide=\'!location.includes("panel")\'><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li ng-class="{active: tab == \'pending approval\'}" ng-click="changeTab(\'pending approval\')"><a href="#"><%= gettext("Draft") %> (09)<span class="sr-only">(<%= gettext("current") %></span></a></li><li ng-class="{active: tab == \'approved\'}" ng-click="changeTab(\'approved\')"><a href="#"><%= gettext("Pending") %></a></li><li ng-class="{active: tab == \'rejected\'}" ng-click="changeTab(\'rejected\')"><a href="#"><%= gettext("Rejected") %></a></li><li ng-class="{active: tab == \'published\'}" ng-click="changeTab(\'published\')"><a href="#"><%= gettext("Published") %></a></li></ul></div></div></div><div class="col-xs-4 division-dots"><div class="panel-container"><div class="clearfix slider"><div class="col-xs-12 text-center"><div id="myCarousel" class="carousel slide" data-ride="carousel"><div class="carousel"><ol class="carousel-indicators"><li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, \'pre\')"><i class="fa fa-angle-left"></i></li><% for(var i=0; i < no_of_submissions; i+=50) { %><li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li><% } %><li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, \'next\')"><i class="fa fa-angle-right"></i></li></ol></div></div></div></div></div></div><div class="col-xs-3 text-center" ng-hide=\'!location.includes("home")\'><a href="/submit"><button type="button" class="btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div></div>';
+
     $scope.route_change_render_ejs = function(child_scope) {
         $timeout(function() {
             ng_view_child_scope = child_scope;
@@ -92,6 +93,7 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
             $('[data-toggle="tooltip"]').tooltip();
             angular.element("#search-input").arabisk();
             $("#countries").msDropdown();
+            $scope.timerFunc();
         }, 150);
 
 
@@ -117,8 +119,8 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
                 if (ng_view.find("#stanza_text_area").val()) {
                     angular.element("#stanza_text_area").arabisk();
                     angular.element("#search-input").arabisk();
-                    $scope.timerFunc();
                 }
+                $scope.timerFunc();
             });
     };
 
@@ -179,14 +181,12 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     };
 
     $scope.get_stanzas_from_navigation = function(event, page) {
-        if (page == 'pre' && $scope.current_page.level > 0) {
-            $scope.current_page.level -= 1;
-        } else if (page == 'next' && ($scope.no_of_submissions > 50) && ($scope.no_of_submissions > ($scope.current_page.level * 50 + 50))) {
-            $scope.current_page.level += 1;
+        if (page == 'pre') {
+            $scope.current_page.level = ($scope.current_page.level > 0) ? ($scope.current_page.level - 1) : $scope.current_page.level;
+        } else if (page == 'next') {
+            $scope.current_page.level = (($scope.no_of_submissions > 50) && ($scope.no_of_submissions > ($scope.current_page.level * 50 + 50))) ? ($scope.current_page.level + 1) : $scope.current_page.level;
         } else
             $scope.current_page.level = page / 50;
-
-        console.log($scope.current_page.level);
 
         if (($scope.no_of_submissions > 50) && (($scope.current_page.level * 50) < $scope.no_of_submissions)) {
             $scope.getStanzas($scope.tab, "");
@@ -196,6 +196,7 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
         $scope.location = nextRoute.originalPath;
         $scope.setJudgeInfo();
+
     });
 
     angular.element($window).bind("scroll", function() {

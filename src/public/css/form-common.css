@@ -85,8 +85,10 @@ p.note-submit {
     border-radius: 0;
 }
 
-.color {
+.color,
+.color:hover {
     color: #ffffff;
+    text-decoration: underline;
 }
 
 .custom-control {
@@ -117,6 +119,25 @@ button.btn-primary.btn-sm:focus,
 
 .nav-dots {
     margin: 0 1.5% 0 1.5%;
+}
+
+.btn-search {
+    padding: 2px;
+    /*padding-top: 0px 6px 1px 6px;*/
+    margin: 0px;
+}
+
+.btn-search:hover {
+    background-color: #AE8851;
+    cursor: pointer;
+}
+
+#search-input {
+    margin: 0;
+}
+
+.search-form {
+    padding-top: 1%;
 }
 
 
