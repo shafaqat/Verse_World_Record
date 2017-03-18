@@ -3,8 +3,8 @@ var DbConnection = dbController.connection;
 
 class stanzaManager {
     load(status, currentPage, search_query, callback) {
-        var offset = currentPage * 50;
-        var stanzasLimit = 50;
+        var offset = currentPage * 100;
+        var stanzasLimit = 100;
         search_query = (!search_query) ? ("'%%'") : ("'%" + search_query + "%'");
 
         var query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND stanza_text LIKE ' + search_query + ' AND statuses.type = ? LIMIT ? OFFSET ?';

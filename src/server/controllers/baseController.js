@@ -38,7 +38,6 @@ baseController.changedLocale = function(req, res) {
         if (!err) {
             res.json(JSON.parse(contents));
         }
-        console.log('error: ', err);
     });
 };
 module.exports = baseController;

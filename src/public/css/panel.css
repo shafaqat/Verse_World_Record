@@ -81,18 +81,6 @@ body {
     font-size: 20px;
 }
 
-.panel-container .carousel-indicators {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    z-index: 15;
-    width: 60%;
-    margin-left: -30%;
-    padding-left: 0;
-    list-style: none;
-    text-align: center;
-}
-
 .panel-container .carousel-indicators li {
     border: 1px solid #BA861F;
 }

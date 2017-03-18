@@ -113,7 +113,6 @@ const startPasswordRecovery = function(req, res) {
     console.log('starting recovery process for ' + user.userEmail);
 
     UserManager.find(req, res, function(err, isUserAuthenticated) {
-        console.log('user: ', user);
         if (isUserAuthenticated) {
             sendMail(user.userEmail);
 

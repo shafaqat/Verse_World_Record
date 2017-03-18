@@ -13,6 +13,10 @@
       "language": "",
       "plural-forms": "nplurals=2; plural=(n != 1);"
    },
+   "lang_dir": [
+      null,
+      "ltr"
+   ],
    "Website title": [
       null,
       "Verse"
@@ -176,6 +180,9 @@
    "You will not be able to edit or delete the verse once you have sumitted it.": [
       null,
       "You will not be able to edit or delete the verse once you have sumitted it."
+   ],"The stanza should contain exactly two verses separated by a new line.": [
+      null,
+      "The stanza should contain exactly two verses separated by a new line."
    ],
    "enter your verse here": [
       null,
@@ -247,7 +254,7 @@
    ],
    "This needs to be a valid Stanza.": [
       null,
-      "This needs to be a valid Stanza."
+      "This needs to be a valid Stanza containing two verses with separated by a new line."
    ],
    "This needs to be a valid email.": [
       null,
@@ -352,5 +359,9 @@
    "Nothing Found for": [
       null,
       "Nothing Found for "
+   ],
+   "submissions close message": [
+      null,
+      "The Submissions has been closed"
    ]
 }}

@@ -9,7 +9,6 @@ var DbConnection = dbController.connection;
 
 class userManager extends BaseManager {
     createUser(vals, callback) {
-        console.log(vals);
         DbConnection.query('Insert INTO users (email, password) values(?,md5(?))', [vals.userEmail, vals.userPassword], callback);
     }
 
@@ -40,7 +39,6 @@ class userManager extends BaseManager {
                 console.log('error.message:', err.message);
                 return callback(err, null);
             }
-            console.log('results:', results);
             if (results.length > 0) {
                 req.body.id = results[0].id;
                 req.body.type = results[0].type;

@@ -6,11 +6,11 @@ app.factory('stanzaService', function($http, $q) {
     function successhandler(response) {
         deferred.resolve(response.data);
 
-    };
+    }
 
     function errorhandler(error) {
         console.log('Error: ', error);
-    };
+    }
 
     return {
         getStanzas: function(stanza_status, currentPage, search_query) {
@@ -22,6 +22,7 @@ app.factory('stanzaService', function($http, $q) {
         },
         submitStanza: function(stanza) {
             deferred = $q.defer();
+
             $http.post('stanza/create/', stanza).then(successhandler, errorhandler);
             return deferred.promise;
         },
