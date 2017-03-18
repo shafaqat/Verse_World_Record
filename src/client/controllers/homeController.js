@@ -31,7 +31,6 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
             function(results) {
                 $scope.$parent.$parent.server_message = gettext(results.submitMessage);
                 $scope.$parent.$parent.hide_message_banner = false;
-                // console.log?
 
                 $timeout(function() {
                     $scope.hide_message_banner = true;

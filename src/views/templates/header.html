@@ -1,4 +1,11 @@
 <script id="navigation_header" type="text/template">
+    <div class="message_banner sample-show-hide" ng-hide="hide_message_banner">
+        <div class="text-right">
+            <a href="" ng-click="server_message='';hide_message_banner=true" aria-label="Toggle ngHide"><i class="fa fa-close form-btn"></i></a>
+        </div>
+        <div class="message_banner_text">{{server_message}}</div>
+    </div>
+
     <header class="navigation">
         <nav class="navbar navbar-default" ng-class="{header_on_scroll: boolChangeHeaderClass}">
             <div class="container-fluid">
@@ -83,8 +90,8 @@
                                     <div class="carousel">
                                         <ol class="carousel-indicators header-indicator">
                                             <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')"><i class="fa fa-angle-left"></i></li>
-                                            <% for(var i=0; i < no_of_submissions; i+=50) { %>
-                                                <li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li>
+                                            <% for(var i=0; i< no_of_submissions; i+=100) { %>
+                                                <li class="nav-dots" ng-class="{active:(current_page.level*100) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+100).toLocaleString(lang)}}"></li>
                                                 <% } %>
                                                     <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')"><i class="fa fa-angle-right"></i></li>
                                         </ol>

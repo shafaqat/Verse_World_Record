@@ -10,29 +10,30 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             var ng_view_template;
             var ng_view_child_scope;
             var nav_header_template;
-            console.log('close', scope.submissions_closed);
 
             scope.route_change_render_ejs = function(child_scope) {
-                $timeout(function() {
-                    ng_view_child_scope = child_scope;
+                angular.element(document).ready(function() {
+                    $timeout(function() {
+                        ng_view_child_scope = child_scope;
 
-                    var ng_view = angular.element('#ngView');
-                    nav_header_template = angular.element('#navigation_header').html();
+                        var ng_view = angular.element('#ngView');
+                        nav_header_template = angular.element('#navigation_header').html();
 
-                    ng_view_template = ng_view.html();
-                    var html = ejs.render(nav_header_template + ng_view_template, { no_of_submissions: scope.no_of_submissions });
+                        ng_view_template = ng_view.html();
+                        var html = ejs.render(nav_header_template + ng_view_template, { no_of_submissions: scope.no_of_submissions });
 
-                    ng_view.parent().html($compile(html)(child_scope));
+                        ng_view.parent().html($compile(html)(child_scope));
 
-                    angular.element('#ng_view_container').find('#countries').val(scope.lang);
-                    $('[data-toggle="tooltip"]').tooltip();
+                        angular.element('#ng_view_container').find('#countries').val(scope.lang);
+                        $('[data-toggle="tooltip"]').tooltip();
 
-                    angular.element("#search-input").arabisk();
-                    angular.element("textarea").arabisk();
+                        angular.element("#search-input").arabisk();
+                        angular.element("textarea").arabisk();
 
-                    $("#countries").msDropdown();
-                    scope.timerFunc();
-                }, 150);
+                        $("#countries").msDropdown();
+                        scope.timerFunc();
+                    }, 150);
+                });
             };
 
             scope.changeLocale = function(lang) {
@@ -53,7 +54,6 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
 
                         $('[data-toggle="tooltip"]').tooltip();
                         angular.element("textarea").arabisk();
-                        console.log(angular.element("#stanza_text_area"));
                         angular.element("#search-input").arabisk();
                         scope.timerFunc();
                     });
@@ -77,7 +77,6 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                         onEnd: function() {
                             scope.submissions_closed = true;
                             scope.$apply();
-                            console.log('close');
                         }
                     });
             };

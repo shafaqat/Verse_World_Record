@@ -6,14 +6,14 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="time-section">
                             <h2><b> <%= gettext('motivational quote') %></b></h2>
-                            <div ng-show="!submissions_closed">
+                            <div ng-if="!submissions_closed">
                                 <a href="/submit">
                                     <button type="button" class="btn-sm-main home-submit-btn"><%= gettext('SUBMIT NOW') %></button>
                                 </a>
                                 <p><strong><%= gettext('Time Remaining For Submission') %></strong></p>
                                 <div class="countdown styled"></div>
                             </div>
-                            <div ng-show="submissions_closed">
+                            <div ng-if="submissions_closed">
                                 <p><strong><%= gettext('submissions close message') %></strong></p>
                             </div>
                         </div>
@@ -41,8 +41,10 @@
                                                     <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
                                                         <i class="fa fa-angle-left"></i>
                                                     </li>
-                                                    <% for(var i=0; i < no_of_submissions; i+=50) { %>
-                                                        <li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li>
+                                                    <% for(var i=0;  i < no_of_submissions; i+=100) { %>
+                                                        <li class="nav-dots" ng-class="{active:(current_page.level*100) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+100).toLocaleString(lang)}}">
+                                                        </li>
+
                                                         <% } %>
 
                                                             <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')">
@@ -70,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-2 hover-display ">
-                                    <h5 class="text-centre "><strong>{{(published_stanzas_page.level+$index+1).toLocaleString(lang)}}</strong></h5>
+                                    <h5 class="text-centre "><strong>{{(published_stanzas_page.level*100+$index+1).toLocaleString(lang)}}</strong></h5>
                                 </div>
                             </div>
                         </div>

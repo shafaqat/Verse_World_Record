@@ -18,17 +18,16 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
         $scope.edit_stanza_index = index;
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('textarea').arabisk();
-        console.log("$scope.p_stanza.find('#edit_stanza_text_area')", $scope.p_stanza.find('textarea').html());
 
         if ($scope.tab.includes('pending'))
             $scope.edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
         else
             $scope.edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
+
     };
 
     $scope.changeTab = function(tab) {
         $scope.tab = tab;
-        console.log('  $scope.tab ', $scope.tab);
         $scope.getStanzas($scope.tab, "");
     };
 
@@ -89,17 +88,14 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
 
 
     $scope.search_in_stanzas = function() {
-        $scope.old_tab = $scope.tab;
-        $scope.$parent.tab = "search";
-        $scope.tab = "search";
         $scope.search_close_btn = true;
-        $scope.getStanzas($scope.old_tab, $scope.search_query);
+        $scope.getStanzas($scope.tab, $scope.search_query);
     };
 
     $scope.reset_search_in_stanzas = function() {
-        $scope.old_tab = ($scope.old_tab == undefined) ? $scope.tab : $scope.old_tab;
+        $scope.search_query = "";
         $scope.search_close_btn = false;
-        $scope.changeTab($scope.old_tab);
+        $scope.getStanzas($scope.tab, "");
     };
     $scope.getStanzas($scope.tab, "");
     $scope.route_change_render_ejs($scope);

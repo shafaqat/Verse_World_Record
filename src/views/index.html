@@ -26,14 +26,6 @@
 
 
 <body class=" main-background img-responsive" ng-controller="appController" dir="<%= lang_dir %>" ng-class="{'increase-arabic-font': lang=='ar'}">
-    <div class="message_banner sample-show-hide" ng-hide="hide_message_banner">
-        <div class="text-right">
-            <a href="" ng-click="server_message='';hide_message_banner=true" aria-label="Toggle ngHide"><i class="fa fa-close form-btn"></i></a>
-        </div>
-        <div class="message_banner_text">{{server_message}}</div>
-    </div>
-
-
 
     <container-directive>
         <div id="ng_view_container" ng-view dir="<%= lang_dir %>" id="ng-container">
@@ -44,7 +36,6 @@
 
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="public/libs/jquery-2.1.4.min.js"></script>-->
     <script type="text/javascript" src="public/libs/jquery.countdown.js"></script>
     <script type="text/javascript" src="public/libs/jquery.arabisk.js"></script>
     <script type="text/javascript" src="public/libs/msdropdown/jquery.dd.min.js"></script>

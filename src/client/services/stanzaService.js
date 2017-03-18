@@ -5,13 +5,12 @@ app.factory('stanzaService', function($http, $q) {
 
     function successhandler(response) {
         deferred.resolve(response.data);
-        console.log('stanza', response.data);
 
-    };
+    }
 
     function errorhandler(error) {
         console.log('Error: ', error);
-    };
+    }
 
     return {
         getStanzas: function(stanza_status, currentPage, search_query) {

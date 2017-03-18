@@ -72,8 +72,8 @@
                                                 <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
                                                     <i class="fa fa-angle-left"></i>
                                                 </li>
-                                                <% for(var i=0; i < no_of_submissions; i+=50) { %>
-                                                    <li class="nav-dots" ng-class="{active:(current_page.level*50) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+50).toLocaleString(lang)}}"></li>
+                                                <% for(var i=0;  i < no_of_submissions; i+=100) { %>
+                                                    <li class="nav-dots" ng-class="{active:(current_page.level*100) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+100).toLocaleString(lang)}}"></li>
                                                     <% } %>
 
                                                         <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')">
@@ -105,50 +105,6 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-show="tab == 'search'">
-                                <div class="col-sm-12 p_stanza">
-                                    <div class="col-sm-2 hover-display ">
-                                        <h5 class="text-centre "><strong>stanza.submitter_name</strong></h5>
-                                    </div>
-                                    <div class="col-sm-8 ">
-                                        <div class="stanza-starts clearfix ">
-                                            <div class="col-sm-6">
-                                                <p class="pull-right">stanza.stanza_text.split('\n')[0]</p>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <p class="pull-left">stanza.stanza_text.split('\n')[1]</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2 hover-display ">
-                                        <h5 class="text-centre "><strong>(pagination_level+$index+1).toLocaleString(lang)</strong></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 p_stanza" ng-repeat="stanza in search_stanzas">
-                                    <div class="col-sm-2 hover-display ">
-                                        <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
-                                    </div>
-                                    <div class="col-sm-8 ">
-                                        <div class="stanza-starts clearfix ">
-                                            <div class="col-sm-6">
-                                                <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2 hover-display ">
-                                        <h5 class="text-centre "><strong>{{(pagination_level+$index+1).toLocaleString(lang)}}</strong></h5>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 search-response" ng-if="no_of_submissions==0">
-                                    <div class="col-sm-offset-2 col-sm-8 ">
-                                        <%= gettext('Nothing Found for') %>"{{search_query}}"
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="clearfix " ng-show="tab == 'rejected'">
                                 <div class="col-sm-12 ">
                                     <div class="clearfix p_stanza" ng-repeat="stanza in rejected_stanzas">
@@ -171,10 +127,10 @@
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="stanza-starts">
-                                                <form class="form" ng-submit="update_stanza('pending approval',null, edit_stanza_index, edit_stanza_text)">
+                                            <div class="stanza-starts" ng-class="{ 'has-error': stanzaForm.edit_stanza_text_area.$touched && stanzaForm.edit_stanza_text_area.$invalid }">
 
-                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="stanza_text_area" class="form-control custom-control" rows="7" cols="<80></80>" style="resize:none" required ng-model="edit_stanza_text">{{edit_stanza_text}</textarea>
+                                                <form class="form" name="stanzaForm" ng-submit="update_stanza('pending approval',null, edit_stanza_index, edit_stanza_text)">
+                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right">
                                                             <div class="btn-group" role="group" aria-label="...">
@@ -182,8 +138,17 @@
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
+                                                        <div dir="<%= gettext('lang_dir') %>" class="help-block text-left" ng-messages="stanzaForm.edit_stanza_text_area.$error" ng-if="stanzaForm.edit_stanza_text_area.$touched">
+                                                            <p ng-message="required">
+                                                                <%= gettext('To submit, stanza is required.') %>
+                                                            </p>
+                                                            <p ng-message="pattern">
+                                                                <%= gettext('This needs to be a valid Stanza.') %>
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </form>
+
                                             </div>
                                         </div>
                                     </div>
@@ -229,21 +194,28 @@
                                             <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
                                         </div>
                                         <div class="col-sm-6 ">
-                                            <div class="stanza-starts ">
-                                                <form class="form " ng-submit="update_stanza( 'pending approval',null, edit_stanza_index, edit_stanza_text) ">
+                                            <div class="stanza-starts" ng-class="{ 'has-error': stanzaForm.edit_stanza_text_area.$touched && stanzaForm.edit_stanza_text_area.$invalid }">
 
-                                                    <textarea dir='rtl' id="edit_stanza_text_area " name="stanza_text_area " class="form-control custom-control " rows="7 " cols="<80>
-                                                    </80>" style="resize:none" required ng-model="edit_stanza_text">{{edit_stanza_text}</textarea>
+                                                <form class="form" name="stanzaForm" ng-submit="update_stanza('pending approval',null, edit_stanza_index, edit_stanza_text)">
+                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
-
-                                                        <div class="col-sm-offset-3 col-sm-9 text-right">
+                                                        <div class="col-sm-offset-3  col-sm-9 text-right">
                                                             <div class="btn-group" role="group" aria-label="...">
                                                                 <button type="submit" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
+                                                        <div dir="<%= gettext('lang_dir') %>" class="help-block text-left" ng-messages="stanzaForm.edit_stanza_text_area.$error" ng-if="stanzaForm.edit_stanza_text_area.$touched">
+                                                            <p ng-message="required">
+                                                                <%= gettext('To submit, stanza is required.') %>
+                                                            </p>
+                                                            <p ng-message="pattern">
+                                                                <%= gettext('This needs to be a valid Stanza.') %>
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </form>
+
                                             </div>
                                         </div>
                                     </div>

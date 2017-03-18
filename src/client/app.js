@@ -4,7 +4,7 @@ var scope;
 var changeLocale;
 
 function gettext(key) {
-    if (!locale[key])
+    if (locale == undefined || !locale[key])
         return "";
     return locale[key][1];
 };
@@ -21,7 +21,6 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.isChiefJudge = false;
     $scope.isJudgeLogin = false;
     $scope.submissions_closed = false;
-    console.log('app', $scope);
 
     $scope.published_stanzas = [];
     $scope.published_stanzas_page = { level: 0 };
@@ -31,8 +30,6 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.approved_stanzas_page = { level: 0 };
     $scope.rejected_stanzas = [];
     $scope.rejected_stanzas_page = { level: 0 };
-    $scope.search_stanzas = [];
-    $scope.search_stanzas_page = { level: 0 };
 
     $scope.no_of_submissions = 0;
     $scope.pagination_level = 0;
@@ -74,10 +71,7 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.getStanzas = function(stanza_status, search_query) {
         $scope.tab = stanza_status;
 
-        if ($scope.tab == 'search') {
-            $scope.current_page = $scope.search_stanzas_page;
-            $scope.current_stanzas = $scope.search_stanzas;
-        } else if (stanza_status == 'published') {
+        if (stanza_status == 'published') {
             $scope.current_page = $scope.published_stanzas_page;
             $scope.current_stanzas = $scope.published_stanzas;
         } else if (stanza_status == 'pending approval') {
@@ -97,6 +91,8 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
                     $scope.no_of_submissions = result[result.length - 1][0]['COUNT(*)'];
                     result.splice(result.length - 1, 1);
 
+                    // $scope.no_of_submissions = 5000;
+
                     $scope.current_stanzas.length = 0;
                     result.forEach(function(item) {
                         $scope.current_stanzas.push(item);
@@ -108,14 +104,17 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     };
 
     $scope.get_stanzas_from_navigation = function(event, page) {
+        console.log('getting records from ' + $scope.current_page.level * 100 + " to " + ($scope.current_page.level * 100 + 100));
+
         if (page == 'pre') {
             $scope.current_page.level = ($scope.current_page.level > 0) ? ($scope.current_page.level - 1) : $scope.current_page.level;
         } else if (page == 'next') {
-            $scope.current_page.level = (($scope.no_of_submissions > 50) && ($scope.no_of_submissions > ($scope.current_page.level * 50 + 50))) ? ($scope.current_page.level + 1) : $scope.current_page.level;
+            $scope.current_page.level =
+                (($scope.no_of_submissions > 100) && ($scope.no_of_submissions > ($scope.current_page.level * 100 + 100))) ? ($scope.current_page.level + 1) : $scope.current_page.level;
         } else
-            $scope.current_page.level = page / 50;
+            $scope.current_page.level = page / 100;
 
-        if (($scope.no_of_submissions > 50) && (($scope.current_page.level * 50) < $scope.no_of_submissions)) {
+        if (($scope.no_of_submissions > 100) && (($scope.current_page.level * 100) < $scope.no_of_submissions)) {
             $scope.getStanzas($scope.tab, "");
         }
     };
@@ -127,11 +126,12 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     });
 
     angular.element($window).bind("scroll", function() {
-        if (this.pageYOffset >= 200) {
+        if (this.pageYOffset >= 50 && !$scope.boolShowStaticHeader) {
             $scope.boolShowStaticHeader = true;
-        } else {
+            scope.$apply();
+        } else if (this.pageYOffset < 5 && $scope.boolShowStaticHeader) {
             $scope.boolShowStaticHeader = false;
+            scope.$apply();
         }
-        scope.$apply();
     });
 });
