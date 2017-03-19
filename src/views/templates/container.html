@@ -52,6 +52,7 @@
             </div>
         </nav>
     </header>
+    
     <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('panel')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
         <div class="logo-wrapper division">
             <a class=" navbar-brand" href="/">
@@ -83,7 +84,7 @@
                         </li>
                     </ul>
 
-                    <div class="division-dots">
+                    <div class="division-dots" ng-class="{'panel-division-dots': location.includes('panel')}">
                         <div class="panel-container header-indicator-container">
                             <div class=" slider">
                                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -105,6 +106,10 @@
             </div>
             <div class="text-right on-mobile" ng-hide='!location.includes("home")'><a href="/submit"><button type="button" class="btn-sm-main btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div>
         </div>
+    </div>
+
+    <div ng-if="show_loading_spinner">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
     </div>
 </script>
 

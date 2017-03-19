@@ -44,8 +44,8 @@
                                             <span class="btn-search" ng-show="search_close_btn" ng-click="reset_search_in_stanzas()">
                                                 <i class="fa fa-close"></i>
                                             </span>
-                                            <input id="search-input" type="search" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>" />
-                                            <span class="btn-search" ng-click="search_in_stanzas()">
+                                            <input id="search-input" type="search" ng-model="search_query" ng-change="hide_search_error_message = true" class="form-control" placeholder="<%= gettext('Search') %>" />
+                                            <span class="btn-search" ng-click="search_in_stanzas();hide_search_error_message=false">
                                                 <i class="fa fa-search"></i>
                                             </span>
                                         </div>
@@ -63,23 +63,18 @@
 
                             </div>
                             <div class="clearfix slider">
-                                <div class="col-sm-12 text-center">
-                                    <br>
-                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                        <!-- Indicators -->
-                                        <div class="carousel">
-                                            <ol class="panel-carousel-indicators carousel-indicators">
-                                                <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
-                                                    <i class="fa fa-angle-left"></i>
-                                                </li>
-                                                <% for(var i=0;  i < no_of_submissions; i+=100) { %>
-                                                    <li class="nav-dots" ng-class="{active:(current_page.level*100) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{(<%= i%>).toLocaleString(lang)}} - {{(<%= i%>+100).toLocaleString(lang)}}"></li>
-                                                    <% } %>
+                                <div class="col-sm-12 text-center" ng-if="no_of_submissions != 0">
+                                    <pagination-directive />
+                                </div>
+                            </div>
 
-                                                        <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')">
-                                                            <i class="fa fa-angle-right"></i>
-                                                        </li>
-                                            </ol>
+                            <div class="clearfix " ng-if="no_of_submissions == 0 && !hide_search_error_message">
+                                <div class="col-sm-12 ">
+                                    <div class="clearfix p_stanza">
+                                        <div class="stanza-starts clearfix ">
+                                            <div class="col-sm-12 text-center" dir= "<%= gettext('lang_dir') %>" >
+                                                <p><%= gettext('Nothing Found for')%> "{{search_query}}"</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

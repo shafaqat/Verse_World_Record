@@ -82,6 +82,7 @@ h3 {
 }
 
 .index-container {
+    min-height: 350px;
     margin-top: 4%;
 }
 
@@ -257,7 +258,8 @@ li.active a {
 .home-container:hover,
 .search-btn {
     background-color: #D1C988;
-    cursor: pointer;
+    cursor: text;
+    color: black;
 }
 
 .home-container:hover .hover-display {
@@ -346,7 +348,7 @@ li.active a {
         height: 180px;
     }
     .scroll-div .navbar-brand {
-        margin: 0 105px;
+        margin: 0 120px;
     }
     .on-mobile {
         text-align: center;
@@ -376,6 +378,9 @@ li.active a {
     }
     .right-section .panel-container .carousel-indicators {
         text-align: center;
+    }
+    .fa.fa-circle-o-notch.fa-spin{
+        left: 37%;
     }
 }
 
@@ -442,9 +447,13 @@ li.active a {
     .navs-list-wrapper .division-dots {
         width: 362px;
     }
-    .on-mobile {
-        /*width: 0%;*/
+    .navs-list-wrapper .panel-division-dots {
+        width: 200px;
     }
+    .fa.fa-circle-o-notch.fa-spin{
+        left: 47%;
+    }
+   
 }
 
 @media only screen and (min-width: 1024px) {
@@ -452,8 +461,19 @@ li.active a {
         width: 30%;
     }
     .navs-list-wrapper .division-dots {
-        width: 70%;
+        width: 48%;
     }
+    .fa.fa-circle-o-notch.fa-spin{
+        left: 47%;
+    }
+}
+    /*loading spinner*/
+.fa.fa-circle-o-notch.fa-spin{
+    font-size: 90px;
+    color: rgba(60, 37, 3, 0.6);
+    position: fixed;
+    top: 50%;
+    z-index: 30;
 }
 
 

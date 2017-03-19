@@ -64,6 +64,73 @@
     <script type="text/javascript" src="client/services/stanzaService.js"></script>
 
     <script type="text/javascript" src="client/directives/containerDirective.js"></script>
+    <!DOCTYPE html>
+<html ng-app="app" lang="<%= lang %>" dir="<%= lang_dir %>">
+
+<head>
+    <title>
+        <%= gettext('Website title') %>
+    </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="public/libs/bootstrap-rtl.min.css">-->
+
+    <link rel="stylesheet" type="text/css" href="public/libs/msdropdown/dd.css" />
+    <link rel="stylesheet" type="text/css" href="public/libs/msdropdown/flags.css" />
+
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/panel.css">
+    <link rel="stylesheet" href="public/css/form-common.css">
+
+</head>
+
+
+<body class=" main-background img-responsive" ng-controller="appController" dir="<%= lang_dir %>" ng-class="{'increase-arabic-font': lang=='ar'}">
+
+    <container-directive>
+        <div id="ng_view_container" ng-view dir="<%= lang_dir %>" id="ng-container">
+
+        </div>
+    </container-directive>
+
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-messages.min.js"></script>
+    <!--<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>-->
+
+
+    <script type="text/javascript" src="public/libs/jquery.countdown.js"></script>
+    <script type="text/javascript" src="public/libs/jquery.arabisk.js"></script>
+    <script type="text/javascript" src="public/libs/msdropdown/jquery.dd.min.js"></script>
+
+
+
+    <script type="text/javascript" src="public/libs/ejs.js"></script>
+
+    <script type="text/javascript" src="client/app.js"></script>
+    <script type="text/javascript" src="client/routes.js"></script>
+
+    <script type="text/javascript" src="client/controllers/homeController.js"></script>
+    <script type="text/javascript" src="client/controllers/panelController.js"></script>
+    <script type="text/javascript" src="client/controllers/loginController.js"></script>
+
+    <script type="text/javascript" src="client/services/localizationService.js"></script>
+    <script type="text/javascript" src="client/services/authService.js"></script>
+    <script type="text/javascript" src="client/services/userService.js"></script>
+    <script type="text/javascript" src="client/services/stanzaService.js"></script>
+
+    <script type="text/javascript" src="client/directives/containerDirective.js"></script>
+    <script type="text/javascript" src="client/directives/paginationDirective.js"></script>
 </body>
 
 </html>

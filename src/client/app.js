@@ -58,8 +58,6 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
         });
     };
 
-
-
     localizationService.getchangedLocale($scope.lang).then(
         function(result) {
             $scope.locale = result.messages;
@@ -70,6 +68,7 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
 
     $scope.getStanzas = function(stanza_status, search_query) {
         $scope.tab = stanza_status;
+        $scope.show_loading_spinner = true;
 
         if (stanza_status == 'published') {
             $scope.current_page = $scope.published_stanzas_page;
@@ -97,26 +96,11 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
                     result.forEach(function(item) {
                         $scope.current_stanzas.push(item);
                     });
+                    $scope.show_loading_spinner = false;
                 },
                 function(error) {}
             );
 
-    };
-
-    $scope.get_stanzas_from_navigation = function(event, page) {
-        console.log('getting records from ' + $scope.current_page.level * 100 + " to " + ($scope.current_page.level * 100 + 100));
-
-        if (page == 'pre') {
-            $scope.current_page.level = ($scope.current_page.level > 0) ? ($scope.current_page.level - 1) : $scope.current_page.level;
-        } else if (page == 'next') {
-            $scope.current_page.level =
-                (($scope.no_of_submissions > 100) && ($scope.no_of_submissions > ($scope.current_page.level * 100 + 100))) ? ($scope.current_page.level + 1) : $scope.current_page.level;
-        } else
-            $scope.current_page.level = page / 100;
-
-        if (($scope.no_of_submissions > 100) && (($scope.current_page.level * 100) < $scope.no_of_submissions)) {
-            $scope.getStanzas($scope.tab, "");
-        }
     };
 
     $scope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
@@ -125,13 +109,4 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
 
     });
 
-    angular.element($window).bind("scroll", function() {
-        if (this.pageYOffset >= 50 && !$scope.boolShowStaticHeader) {
-            $scope.boolShowStaticHeader = true;
-            scope.$apply();
-        } else if (this.pageYOffset < 5 && $scope.boolShowStaticHeader) {
-            $scope.boolShowStaticHeader = false;
-            scope.$apply();
-        }
-    });
 });

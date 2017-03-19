@@ -29,12 +29,12 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
 
         stanzaService.submitStanza(stanza).then(
             function(results) {
-                $scope.$parent.$parent.server_message = gettext(results.submitMessage);
-                $scope.$parent.$parent.hide_message_banner = false;
+                $scope.server_message = gettext(results.submitMessage);
+                $scope.hide_message_banner = false;
 
                 $timeout(function() {
                     $scope.hide_message_banner = true;
-                }, $scope.$parent.$parent.server_message_hide_delay);
+                }, $scope.server_message_hide_delay);
 
             },
             errorhandler
