@@ -17,8 +17,8 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                     $timeout(function() {
                         ng_view_child_scope = child_scope;
 
-                        var ng_view = el.find('#ngView');
-                        nav_header_template = el.find('#navigation_header').html();
+                        var ng_view = angular.element('#ngView');
+                        nav_header_template = angular.element('#navigation_header').html();
 
                         ng_view_template = ng_view.html();
                         var html = ejs.render(nav_header_template + ng_view_template, { no_of_submissions: scope.no_of_submissions });
