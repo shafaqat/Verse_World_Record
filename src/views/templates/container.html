@@ -10,7 +10,8 @@
         <nav class="navbar navbar-default" ng-class="{header_on_scroll: boolChangeHeaderClass}">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#verseTopNav" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                    data-target="#verseTopNav" aria-expanded="false">
                         <span class="sr-only">
                             <%= gettext("Toggle navigation") %>
                         </span>
@@ -23,7 +24,7 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="verseTopNav">
-                    <ul class="nav navbar-nav navbar-right main-menu navbar-collapse collapse breadcrumbs">
+                    <ul class="nav navbar-nav navbar-right main-menu breadcrumbs">
                         <li ng-if="!location.includes('home')" ng-class="{active: location.includes('home')}">
                             <a href="/">
                                 <%= gettext("HOME") %>
@@ -87,7 +88,7 @@
                     <div class="division-dots" ng-class="{'panel-division-dots': location.includes('panel')}">
                         <div class="panel-container header-indicator-container">
                             <div class=" slider">
-                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel">
                                         <ol class="carousel-indicators header-indicator">
                                             <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')"><i class="fa fa-angle-left"></i></li>
@@ -97,8 +98,8 @@
                                                     <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'next')"><i class="fa fa-angle-right"></i></li>
                                         </ol>
                                     </div>
-                                </div>
-
+                                </div>-->
+                                <pagination-directive class="carousel-indicators header-indicator"/>
                             </div>
                         </div>
                     </div>

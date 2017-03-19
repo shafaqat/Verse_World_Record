@@ -97,6 +97,6 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
         $scope.search_close_btn = false;
         $scope.getStanzas($scope.tab, "");
     };
-    $scope.getStanzas($scope.tab, "");
+    $scope.getStanzas($scope.tab, "", $scope);
     $scope.route_change_render_ejs($scope);
 });

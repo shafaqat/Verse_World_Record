@@ -1,5 +1,4 @@
 var app = angular.module('app');
-
 app.directive("containerDirective", function($timeout, $compile, $window, localizationService) {
     return {
         restrict: 'E',
@@ -14,15 +13,15 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
 
             scope.route_change_render_ejs = function(child_scope) {
                 angular.element(document).ready(function() {
-                    $timeout(function() {
+                    // $timeout(function() {
                         ng_view_child_scope = child_scope;
 
                         var ng_view = angular.element('#ngView');
                         nav_header_template = angular.element('#navigation_header').html();
-
+            
                         ng_view_template = ng_view.html();
                         var html = ejs.render(nav_header_template + ng_view_template, { no_of_submissions: scope.no_of_submissions });
-                        ng_view.parent().html($compile(html)(child_scope));                        
+                        ng_view.parent().html($compile(html)(child_scope));    
                     
                         angular.element('#ng_view_container').find('#countries').val(scope.lang);
                         $('[data-toggle="tooltip"]').tooltip();
@@ -31,7 +30,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                         angular.element("textarea").arabisk();
                         $("#countries").msDropdown();
                         scope.timerFunc();
-                    }, 150);
+                    // }, 150);
                 });
             };
 

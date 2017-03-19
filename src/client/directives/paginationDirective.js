@@ -6,8 +6,20 @@ app.directive("paginationDirective", function($compile) {
         scope: false,
         templateUrl: "../../views/templates/pagination.html",
         link: function(scope, element){
-            var html = ejs.render(element.find('script').html(), { no_of_submissions: scope.no_of_submissions });
-            element.html($compile(html)(scope));    
+            scope.pagination_template = element.find('#pagination_template').html();
+            scope.pagination_template_container = element.find('#pagination_template_container');
+
+            var render_container_pagination = function(){
+                var html = ejs.render(scope.pagination_template, { no_of_submissions: scope.no_of_submissions });
+                scope.pagination_template_container.html($compile(html)(scope));    
+                
+            };
+            scope.$watch(function() { return scope.no_of_submissions; }, function(newVal, oldVal) {
+                if (newVal && newVal !== oldVal) {
+                    render_container_pagination();
+                }
+            });
+            render_container_pagination();
         },
         controller: function($scope){
             $scope.get_stanzas_from_navigation = function(event, page) {
@@ -21,7 +33,7 @@ app.directive("paginationDirective", function($compile) {
                 } else
                     $scope.current_page.level = page / 100;
 
-                if (($scope.no_of_submissions > 100) && (($scope.current_page.level * 100) < $scope.no_of_submissions)) {
+                if (($scope.current_page.level > 0 && ($scope.no_of_submissions > ($scope.current_page.level * 100 + 100))) &&  ($scope.no_of_submissions > 100) && (($scope.current_page.level * 100) < $scope.no_of_submissions)) {
                     $scope.getStanzas($scope.tab, "");
                 }
             };
