@@ -106,7 +106,6 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
         $scope.location = nextRoute.originalPath;
         $scope.setJudgeInfo();
-
     });
 
 });

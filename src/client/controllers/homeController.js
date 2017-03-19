@@ -44,7 +44,6 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
 
 
     $scope.getStanzas($scope.tab, "");
-
     $scope.route_change_render_ejs($scope);
     $scope.timerFunc();
     angular.element("#stanza_text_area").arabisk();
