@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('homeController', function($scope, $window, $document, $timeout, stanzaService) {
+app.controller('homeController', function($scope, $rootScope, $window, $document, $timeout, $location, stanzaService) {
 
     $scope.tab = "published";
     $scope.currentPage = 0;
@@ -32,10 +32,21 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
                 $scope.server_message = gettext(results.submitMessage);
                 $scope.hide_message_banner = false;
 
+                // console.log(" $scope.hide_message_banner-insubmit", $rootScope.hide_message_banner);
+                // $location.path('/');
+
+                // console.log('cntrl', $rootScope);
+                // console.log(" $scope.hide_message_banner-before", $rootScope.hide_message_banner);
+                // if (!$rootScope.hide_message_banner) {
+                // console.log('$scope-in', $scope);
                 $timeout(function() {
                     $scope.hide_message_banner = true;
+                    // console.log(" $scope.hide_message_banner-intimeout", $rootScope.hide_message_banner);
+                    // console.log('$scope-out', $scope);
+                    // console.log('location.path(/)', $location.path());
                 }, $scope.server_message_hide_delay);
 
+                // }
             },
             errorhandler
         );

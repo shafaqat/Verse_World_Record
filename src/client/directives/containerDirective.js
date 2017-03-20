@@ -1,5 +1,5 @@
 var app = angular.module('app');
-app.directive("containerDirective", function($rootScope, $timeout, $compile, $window, localizationService) {
+app.directive("containerDirective", function($timeout, $compile, $window, localizationService) {
     return {
         restrict: 'E',
         transclude: true,
@@ -12,8 +12,10 @@ app.directive("containerDirective", function($rootScope, $timeout, $compile, $wi
 
             scope.route_change_render_ejs = function(child_scope) {
                 angular.element(document).ready(function() {
+                    console.log("!locale", scope.no_of_submissions);
                     // $timeout(function() {
 
+                    ng_view_child_scope = child_scope;
                     var ng_view = angular.element('#ngView');
                     nav_header_template = angular.element('#navigation_header').html();
 

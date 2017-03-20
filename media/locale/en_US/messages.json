@@ -27,7 +27,7 @@
    ],
    "Enter Validation Code lbl": [
       null,
-      "Enter Validation Code"
+      "Enter confirmation Code"
    ],
    "Enter Name txt": [
       null,
@@ -67,7 +67,7 @@
    ],
    "SEND VALIDATION CODE ": [
       null,
-      "SEND VALIDATION CODE >"
+      "SEND VALIDATION CODE"
    ],
    "Toggle navigation": [
       null,
@@ -105,13 +105,41 @@
       null,
       "All verses"
    ],
-   "Verse Submitted": [
+   "Verses left for acceptance": [
       null,
-      "Verses Submitted"
+      "Verses left for review"
+   ],
+   "Verses left for publishing": [
+      null,
+      "Verses left for publishing"
+   ],
+   "Verses rejected": [
+      null,
+      "Verses rejected"
+   ],
+   "Verses published": [
+      null,
+      "Verses published"
+   ],
+   "published Verses found": [
+      null,
+      "published Verses found"
+   ],
+   "accepted Verses found": [
+      null,
+      "accepted Verses found"
+   ],
+   "rejected Verses found": [
+      null,
+      "rejected Verses found"
+   ],
+   "pending Verses found": [
+      null,
+      "pending Verses found"
    ],
    "USERNAME": [
       null,
-      "Username"
+      "Email Address"
    ],
    "Enter email address": [
       null,
@@ -186,7 +214,7 @@
    ],
    "enter your verse here": [
       null,
-      "enter your verse here"
+      "Enter your verse here"
    ],
    "FULL NAME": [
       null,
@@ -202,7 +230,7 @@
    ],
    "enter 12 to 16 numbered National ID": [
       null,
-      "enter 12 to 16 numbered National ID"
+      "Enter 12 to 16 numbered National ID"
    ],
    "TWITTER ACCOUNT": [
       null,
@@ -222,7 +250,7 @@
    ],
    "enter 12 to 16 numbers": [
       null,
-      "enter 12 to 16 numbers"
+      "Enter 12 to 16 numbers"
    ],
    "U.A.E": [
       null,
@@ -234,23 +262,23 @@
    ],
    "Your token is required.": [
       null,
-      "Your token is required."
+      "Validation Code sent to you is required to reset the password"
    ],
    "Your password is too short.": [
       null,
-      "Your password is too short."
+      "password is too short."
    ],
    "Your password is required.": [
       null,
-      "Your password is required."
+      "password is required."
    ],
    "Your username is too short.": [
       null,
-      "Your username is too short."
+      "username is too short."
    ],
    "Your username is too long.": [
       null,
-      "Your username is too long."
+      "username is too long."
    ],
    "This needs to be a valid Stanza.": [
       null,
@@ -262,7 +290,7 @@
    ],
    "Your username is required.": [
       null,
-      "Your username is required."
+      "email is required."
    ],
    "This needs to be a valid email": [
       null,
@@ -274,51 +302,51 @@
    ],
    "This needs to be a valid NAME.": [
       null,
-      "This needs to be a valid NAME."
+      "This needs to be a valid name."
    ],
    "Your name is too short.": [
       null,
-      "Your name is too short."
+      "name is too short."
    ],
    "Your name is too long.": [
       null,
-      "Your name is too long."
+      "name is too long."
    ],
    "Your name is required.": [
       null,
-      "Your name is required."
+      "name is required."
    ],
    "This needs to be a valid NUMBER.": [
       null,
-      "This needs to be a valid NUMBER."
+      "This needs to be a valid number."
    ],
    "Your number is too short.": [
       null,
-      "Your number is too short."
+      "number is too short."
    ],
    "Your number is too long.": [
       null,
-      "Your number is too long."
+      "number is too long."
    ],
    "Your number is required.": [
       null,
-      "Your number is required."
+      "number is required."
    ],
    "stanza has already created, you cannot create anymore": [
       null,
-      "stanza has already created, you cannot create anymore"
+      "This stanza has already submitted."
    ],
    "stanza submitted for approval, after approval, will be available to the public": [
       null,
-      "stanza submitted for approval, after approval, will be available to the public"
+      "Your stanza has been submitted to us. Our judges will review it and after approval it will be published publicly."
    ],
    "login failed": [
       null,
-      "login failed"
+      "Login failed"
    ],
    "url sent": [
       null,
-      "url sent"
+      "Password Reset Email Sent. Please check your email account for an email with a confirmation code that you can use to reset your password."
    ],
    "Passwords do not match": [
       null,

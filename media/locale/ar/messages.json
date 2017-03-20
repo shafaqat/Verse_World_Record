@@ -104,9 +104,37 @@
       null,
       "كل الآيات"
    ],
-   "Verse Submitted": [
+   "Verses left for acceptance": [
       null,
-      "الآية ارسل"
+      "الآيات ترك للقبول"
+   ],
+   "Verses left for publishing": [
+      null,
+      "الآيات ترك للنشر"
+   ],
+   "Verses rejected": [
+      null,
+      "الآيات رفضت"
+   ],
+   "Verses published": [
+      null,
+      "الآيات نشرت"
+   ],
+   "published Verses found": [
+      null,
+      "وجدت آيات المنشورة"
+   ],
+   "accepted Verses found": [
+      null,
+      "وجدت آيات المقبولة"
+   ],
+   "rejected Verses found": [
+      null,
+      "وجدت آيات رفض"
+   ],
+   "pending Verses found": [
+      null,
+      "في انتظار الآيات وجدت"
    ],
    "USERNAME": [
       null,
@@ -233,15 +261,15 @@
    ],
    "Your token is required.": [
       null,
-      "مطلوب رمزك."
+      "مطلوب رمز أرسلت لكم لإعادة تعيين كلمة المرور"
    ],
    "Your password is too short.": [
       null,
-      "كلمة المرور الخاصة بك قصيرة جدا."
+      "كلمة المرور قصيرة جدا"
    ],
    "Your password is required.": [
       null,
-      "مطلوب كلمة المرور الخاصة بك."
+      "كلمة المرور مطلوبة"
    ],
    "Confirm password": [
       null,
@@ -253,11 +281,11 @@
    ],
    "Your username is too short.": [
       null,
-      "اسم المستخدم الخاص بك قصيرة جدا."
+      "اسم المستخدم قصيرة جدا"
    ],
    "Your username is too long.": [
       null,
-      "اسم المستخدم الخاص بك قصيرة جدا."
+      "اسم المستخدم طويل جدا"
    ],
    "This needs to be a valid email.": [
       null,
@@ -265,7 +293,7 @@
    ],
    "Your username is required.": [
       null,
-      "مطلوب اسم المستخدم الخاص بك."
+      "البريد الالكتروني مطلوب"
    ],
    "Forgot Password": [
       null,
@@ -289,15 +317,15 @@
    ],
    "Your name is too short.": [
       null,
-      "اسمك قصيرة جدا."
+      "الإسم قصير جدا"
    ],
    "Your name is too long.": [
       null,
-      "اسمك طويل جدا."
+      "اسم طويل جدا"
    ],
    "Your name is required.": [
       null,
-      "مطلوب اسمك."
+      "مطلوب اسم"
    ],
    "This needs to be a valid NUMBER.": [
       null,
@@ -305,23 +333,23 @@
    ],
    "Your number is too short.": [
       null,
-      "رقمك قصيرة جدا."
+      "عدد قصيرة جدا"
    ],
    "Your number is too long.": [
       null,
-      "الرقم الخاص بك وقتا طويلا."
+      "عدد طويل جد"
    ],
    "Your number is required.": [
       null,
-      "مطلوب رقم هاتفك."
+      "مطلوب رقم"
    ],
    "stanza has already created, you cannot create anymore": [
       null,
-      "مقطع خلقت بالفعل، لا يمكنك إنشاء بعد الآن"
+      "وقد قدمت بالفعل هذا المقطع."
    ],
    "stanza submitted for approval, after approval, will be available to the public": [
       null,
-      "مقطع المقدمة للموافقة عليها، بعد الموافقة عليها، وسوف تكون متاحة للجمهور"
+      "وقد تم تقديم مقطع إلينا. وقضاتنا النظر فيه وبعد الموافقة سيتم نشره علنا"
    ],
    "login failed": [
       null,
@@ -329,7 +357,7 @@
    ],
    "url sent": [
       null,
-      "رابط أرسلت"
+      "إعادة تعيين كلمة المرور البريد الإلكتروني المرسلة. يرجى التحقق من حساب بريدك الإلكتروني للحصول على البريد الإلكتروني مع رمز التأكيد التي يمكنك استخدامها لإعادة تعيين كلمة المرور الخاصة بك"
    ],
    "Passwords do not match": [
       null,

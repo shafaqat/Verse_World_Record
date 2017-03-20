@@ -7,7 +7,6 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
     $scope.edit_stanza_text = '';
     $scope.p_stanza = null;
 
-
     function errorhandler(error) {
         console.log('Error: ', error);
     }
@@ -80,6 +79,8 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
                             else {
                                 $scope.current_stanzas.splice(index, 1);
                             }
+
+                            $scope.$parent.no_of_submissions--;
                         }
 
                         $scope.edit_stanza_index = null;

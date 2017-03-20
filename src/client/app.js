@@ -14,7 +14,7 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.location = '';
     $scope.server_message = '';
     $scope.tab = 'published';
-    $scope.server_message_hide_delay = 3000;
+    $scope.server_message_hide_delay = 6000;
     $scope.hide_message_banner = true;
     $scope.current_page = null;
     $scope.current_stanzas = null;
@@ -31,6 +31,7 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     $scope.rejected_stanzas = [];
     $scope.rejected_stanzas_page = { level: 0 };
 
+    $scope.drafts_count = 0;
     $scope.no_of_submissions = 0;
     $scope.pagination_level = 0;
 
@@ -39,7 +40,6 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
     authService.checkLogIn().then(function(payload) {
         $scope.isJudgeLogin = payload.logInStatus;
     });
-
 
     scope = $scope;
     $scope.setJudgeInfo = function() {
@@ -90,7 +90,9 @@ app.controller('appController', function($scope, $document, $route, $compile, $w
                     $scope.no_of_submissions = result[result.length - 1][0]['COUNT(*)'];
                     result.splice(result.length - 1, 1);
 
-                    // $scope.no_of_submissions = 5000;
+                    if (stanza_status == 'pending approval') {
+                        $scope.drafts_count = $scope.no_of_submissions;
+                    }
 
                     $scope.current_stanzas.length = 0;
                     result.forEach(function(item) {

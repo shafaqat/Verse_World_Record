@@ -25,8 +25,6 @@ app.directive("paginationDirective", function($compile) {
         },
         controller: function($scope) {
             $scope.get_stanzas_from_navigation = function(event, page) {
-                console.log('getting records from ' + $scope.current_page.level * 100 + " to " + ($scope.current_page.level * 100 + 100));
-
                 if (page == 'pre') {
                     $scope.current_page.level = ($scope.current_page.level > 0) ? ($scope.current_page.level - 1) : $scope.current_page.level;
                 } else if (page == 'next') {

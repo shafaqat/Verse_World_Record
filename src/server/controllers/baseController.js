@@ -24,6 +24,7 @@ baseController.locale = function(req, res) {
     var locale = req.headers["accept-language"].split(',')[0].replace('-', '_');
     fs.readFile(path.resolve('media/locale/' + locale + '/messages.json'), 'utf8', function(err, contents) {
         if (!err) {
+            res.setHeader('Cache-Control', 'public, max-age=3600');
             res.json(JSON.parse(contents));
         }
     });
@@ -36,6 +37,7 @@ baseController.changedLocale = function(req, res) {
 
     fs.readFile(path.resolve('media/locale/' + lang + '/messages.json'), 'utf8', function(err, contents) {
         if (!err) {
+            res.setHeader('Cache-Control', 'public, max-age=3600');
             res.json(JSON.parse(contents));
         }
     });
