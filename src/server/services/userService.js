@@ -34,19 +34,6 @@ const createUser = function(req, res) {
 };
 
 const validateUser = function(req, res) {
-    // var email = AppUtils.getProperty(params, props.email);
-    // var password = AppUtils.getProperty(params, props.password);
-
-    // console.log('in validate User');
-
-    //  UserManager
-    //   .findByEmail(email)
-    //   .then(
-    // 	  function(res){
-    // 		  console.log(res);
-    // 	  }
-    //   );
-
     UserManager.checkCredentials(req, res, startSession);
 
 };
@@ -123,20 +110,6 @@ const startPasswordRecovery = function(req, res) {
     });
 };
 
-const endPasswordRecovery = function(req, res) {
-    req.body.userEmail = req.params.email;
-    // var encrypted_id = req.params.email;
-
-    UserManager.find(req, res, function(err, isUserAuthenticated) {
-        if (isUserAuthenticated) {
-            res.render('reset-password');
-        } else {
-            res.send('you are not authorized to reset password');
-        }
-    });
-
-};
-
 const resetPassword = function(req, res) {
     var user = req.body;
     console.log('recovery process ended for ' + user.token);
@@ -155,6 +128,5 @@ export default {
     validateUser: validateUser,
     destroySession: destroySession,
     startPasswordRecovery: startPasswordRecovery,
-    endPasswordRecovery: endPasswordRecovery,
     resetPassword: resetPassword
 };

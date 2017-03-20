@@ -1,5 +1,5 @@
 var app = angular.module('app');
-app.directive("containerDirective", function($timeout, $compile, $window, localizationService) {
+app.directive("containerDirective", function($rootScope, $timeout, $compile, $window, localizationService) {
     return {
         restrict: 'E',
         transclude: true,
@@ -10,11 +10,9 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             var ng_view_child_scope;
             var nav_header_template;
 
-
             scope.route_change_render_ejs = function(child_scope) {
                 angular.element(document).ready(function() {
                     // $timeout(function() {
-                    ng_view_child_scope = child_scope;
 
                     var ng_view = angular.element('#ngView');
                     nav_header_template = angular.element('#navigation_header').html();
@@ -51,6 +49,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                         scope.show_loading_spinner = false;
                     });
             };
+
 
             var enable_function_of_dropdown_timer_arabic_inputs = function() {
                 angular.element("#search-input").arabisk();
@@ -92,6 +91,5 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             });
             changeLocale = scope.changeLocale;
         }
-
     };
 });

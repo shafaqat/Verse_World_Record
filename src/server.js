@@ -49,7 +49,6 @@ app.post('/login/validate', userController.login);
 app.post('/logout', userController.destroySession);
 app.post('/signup', userController.createUser);
 app.post('/forgot-password', userController.startPasswordRecovery);
-app.get('/reset-password/:email', userController.endPasswordRecovery);
 app.post('/reset', userController.resetPassword);
 app.get('/getall/:id', userController.getall);
 app.get('/stanza/get/:status/:currentPage/:search_query', stanzaController.getStanzas);

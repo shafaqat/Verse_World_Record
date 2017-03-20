@@ -1,17 +1,24 @@
 var app = angular.module('app');
 
-app.controller('panelController', function($scope, $window, $document, $timeout, $location, stanzaService, UserService) {
+app.controller('panelController', function($scope, $document, $timeout, $location, stanzaService, UserService) {
 
     $scope.tab = 'pending approval';
     $scope.edit_stanza_id = '';
     $scope.edit_stanza_text = '';
     $scope.p_stanza = null;
-    var window = angular.element($window);
 
 
     function errorhandler(error) {
         console.log('Error: ', error);
     }
+
+
+    $scope.changeTab = function(tab) {
+        $scope.tab = tab;
+        $scope.search_query = "";
+        $scope.search_close_btn = false;
+        $scope.getStanzas($scope.tab, "");
+    };
 
     $scope.set_edit_stanza_vars = function(index) {
         $scope.$parent.hide_message_banner = true;
@@ -24,11 +31,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
         else
             $scope.edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
 
-    };
 
-    $scope.changeTab = function(tab) {
-        $scope.tab = tab;
-        $scope.getStanzas($scope.tab, "");
     };
 
     $scope.update_stanza = function(update_behavior, stanza_id, index, stanza_text) {
@@ -55,6 +58,7 @@ app.controller('panelController', function($scope, $window, $document, $timeout,
                             update_behavior = 'updated';
                             $scope.current_stanzas[index].stanza_text = stanza_text;
 
+                            console.log('$scope.p_stanza', $scope.p_stanza.html());
                             $scope.p_stanza.scope().show_edit_area = false;
 
                         } else if (update_behavior == 'published') {
