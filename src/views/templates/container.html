@@ -10,8 +10,7 @@
         <nav class="navbar navbar-default" ng-class="{header_on_scroll: boolChangeHeaderClass}">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
-                    data-target="#verseTopNav" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#verseTopNav" aria-expanded="false">
                         <span class="sr-only">
                             <%= gettext("Toggle navigation") %>
                         </span>
@@ -53,7 +52,7 @@
             </div>
         </nav>
     </header>
-    
+
     <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('panel')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
         <div class="logo-wrapper division">
             <a class=" navbar-brand" href="/">
@@ -99,7 +98,7 @@
                                         </ol>
                                     </div>
                                 </div>-->
-                                <pagination-directive class="carousel-indicators header-indicator"/>
+                                <pagination-directive class="carousel-indicators header-indicator" />
                             </div>
                         </div>
                     </div>

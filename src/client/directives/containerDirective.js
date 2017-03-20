@@ -25,6 +25,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
 
                     angular.element('#ng_view_container').find('#countries').val(scope.lang);
                     enable_function_of_dropdown_timer_arabic_inputs();
+
                     // }, 150);
                 });
             };
