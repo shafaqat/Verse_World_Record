@@ -29,24 +29,14 @@ app.controller('homeController', function($scope, $rootScope, $window, $document
 
         stanzaService.submitStanza(stanza).then(
             function(results) {
-                $scope.server_message = gettext(results.submitMessage);
-                $scope.hide_message_banner = false;
+                $rootScope.server_message = gettext(results.submitMessage);
+                $rootScope.hide_message_banner = false;
 
-                // console.log(" $scope.hide_message_banner-insubmit", $rootScope.hide_message_banner);
-                // $location.path('/');
-
-                // console.log('cntrl', $rootScope);
-                // console.log(" $scope.hide_message_banner-before", $rootScope.hide_message_banner);
-                // if (!$rootScope.hide_message_banner) {
-                // console.log('$scope-in', $scope);
+                $location.path('/');
                 $timeout(function() {
-                    $scope.hide_message_banner = true;
-                    // console.log(" $scope.hide_message_banner-intimeout", $rootScope.hide_message_banner);
-                    // console.log('$scope-out', $scope);
-                    // console.log('location.path(/)', $location.path());
+                    $rootScope.hide_message_banner = true;
                 }, $scope.server_message_hide_delay);
 
-                // }
             },
             errorhandler
         );

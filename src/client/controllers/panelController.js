@@ -20,10 +20,12 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
     };
 
     $scope.set_edit_stanza_vars = function(index) {
-        $scope.$parent.hide_message_banner = true;
+        $scope.hide_message_banner = true;
         $scope.edit_stanza_index = index;
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('textarea').arabisk();
+
+        console.log($scope.p_stanza.scope().show_edit_area);
 
         if ($scope.tab.includes('pending'))
             $scope.edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
@@ -34,7 +36,7 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
     };
 
     $scope.update_stanza = function(update_behavior, stanza_id, index, stanza_text) {
-        $scope.$parent.hide_message_banner = true;
+        $scope.hide_message_banner = true;
         if ($scope.tab == 'approved')
             $scope.current_stanzas = $scope.approved_stanzas;
         else
@@ -57,18 +59,18 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
                             update_behavior = 'updated';
                             $scope.current_stanzas[index].stanza_text = stanza_text;
 
-                            console.log('$scope.p_stanza', $scope.p_stanza.html());
                             $scope.p_stanza.scope().show_edit_area = false;
+                            console.log($scope.p_stanza.scope().show_edit_area);
 
                         } else if (update_behavior == 'published') {
                             $scope.stanzas_to_add = $scope.published_stanzas;
                         }
 
-                        $scope.$parent.server_message = gettext('The stanza is ' + update_behavior);
-                        $scope.$parent.hide_message_banner = false;
+                        $scope.server_message = gettext('The stanza is ' + update_behavior);
+                        $scope.hide_message_banner = false;
 
                         $timeout(function() {
-                            $scope.$parent.hide_message_banner = true;
+                            $scope.hide_message_banner = true;
                         }, $scope.server_message_hide_delay);
 
                         if (update_behavior != 'updated') {

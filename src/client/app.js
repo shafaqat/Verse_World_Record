@@ -10,12 +10,12 @@ function gettext(key) {
 };
 
 
-app.controller('appController', function($scope, $document, $route, $compile, $window, $timeout, authService, UserService, stanzaService, localizationService) {
+app.controller('appController', function($scope, $rootScope, $document, $route, $compile, $window, $timeout, authService, UserService, stanzaService, localizationService) {
     $scope.location = '';
-    $scope.server_message = '';
     $scope.tab = 'published';
     $scope.server_message_hide_delay = 6000;
-    $scope.hide_message_banner = true;
+    $rootScope.server_message = '';
+    $rootScope.hide_message_banner = true;
     $scope.current_page = null;
     $scope.current_stanzas = null;
     $scope.isChiefJudge = false;

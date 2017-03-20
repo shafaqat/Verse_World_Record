@@ -52,6 +52,10 @@ h3 {
     overflow: hidden;
 }
 
+.right-section .nav.navbar-right {
+    margin-right: 0px;
+}
+
 .navs-list-wrapper ul.nav.navbar.nav {
     float: left;
 }
@@ -74,6 +78,7 @@ h3 {
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
 }
 
