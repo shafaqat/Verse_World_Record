@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('homeController', function($scope, $window, $document, $timeout, stanzaService) {
+app.controller('homeController', function($scope, $rootScope, $window, $document, $timeout, $location, stanzaService) {
 
     $scope.tab = "published";
     $scope.currentPage = 0;
@@ -29,11 +29,12 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
 
         stanzaService.submitStanza(stanza).then(
             function(results) {
-                $scope.server_message = gettext(results.submitMessage);
-                $scope.hide_message_banner = false;
+                $rootScope.server_message = gettext(results.submitMessage);
+                $rootScope.hide_message_banner = false;
 
+                $location.path('/');
                 $timeout(function() {
-                    $scope.hide_message_banner = true;
+                    $rootScope.hide_message_banner = true;
                 }, $scope.server_message_hide_delay);
 
             },
@@ -46,5 +47,4 @@ app.controller('homeController', function($scope, $window, $document, $timeout, 
     $scope.getStanzas($scope.tab, "");
     $scope.route_change_render_ejs($scope);
     $scope.timerFunc();
-    angular.element("#stanza_text_area").arabisk();
 });

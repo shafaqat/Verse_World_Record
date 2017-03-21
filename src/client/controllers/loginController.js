@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('loginController', function($scope, $location, $timeout, UserService) {
+app.controller('loginController', function($scope, $rootScope, $location, $timeout, UserService) {
 
     $scope.userEmail = '';
     $scope.userPassword = '';
@@ -16,14 +16,14 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
 
     $scope.login = function() {
         UserService.logIn($scope.userEmail, $scope.userPassword).then(function(payload) {
-            $scope.$parent.server_message = gettext(payload);
-            $scope.$parent.hide_message_banner = false;
+            $scope.server_message = gettext(payload);
+            $scope.hide_message_banner = false;
             $scope.$parent.isJudgeLogin = true;
 
             $scope.setJudgeInfo();
 
             $timeout(function() {
-                $scope.$parent.hide_message_banner = true;
+                $scope.hide_message_banner = true;
             }, $scope.server_message_hide_delay);
         });
 
@@ -36,11 +36,13 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
     $scope.forgotPassword = function() {
         UserService.forgotPassword($scope.userEmail).then(
             function(payload) {
-                $scope.$parent.server_message = gettext(payload);
-                $scope.$parent.hide_message_banner = false;
+                console.log(payload);
+                $rootScope.server_message = gettext(payload);
+                $rootScope.hide_message_banner = false;
 
+                $location.path('/login');
                 $timeout(function() {
-                    $scope.$parent.hide_message_banner = true;
+                    $rootScope.hide_message_banner = true;
                 }, $scope.server_message_hide_delay);
             }
         );
@@ -48,11 +50,11 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
 
     $scope.resetPassword = function() {
         if ($scope.userPassword != $scope.confirmUserPassword) {
-            $scope.$parent.server_message = gettext("Passwords do not match");
-            $scope.$parent.hide_message_banner = false;
+            $scope.server_message = gettext("Passwords do not match");
+            $scope.hide_message_banner = false;
 
             $timeout(function() {
-                $scope.$parent.hide_message_banner = true;
+                $scope.hide_message_banner = true;
             }, $scope.server_message_hide_delay);
             return;
         }
@@ -67,16 +69,16 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
                 function(data) {
                     if (data.updateStatus) {
                         $scope.updateStatus = true;
-                        $scope.$parent.server_message = gettext('password changed successfully');
+                        $scope.server_message = gettext('password changed successfully');
                     } else if (!data.updateStatus) {
                         $scope.updateStatus = true;
-                        $scope.$parent.server_message = gettext('reset failed');
+                        $scope.server_message = gettext('reset failed');
                     }
                     $scope.$parent.hide_message_banner = false;
 
 
                     $timeout(function() {
-                        $scope.$parent.hide_message_banner = true;
+                        $scope.hide_message_banner = true;
                     }, $scope.server_message_hide_delay);
                 }, errorhandler
             );

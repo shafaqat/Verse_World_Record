@@ -9,19 +9,21 @@
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
                                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-													<span class="sr-only"><%= gettext('Toggle navigation') %></span>
-													<span class="icon-bar"></span>
-													<span class="icon-bar"></span>
-													<span class="icon-bar"></span>
-												</button>
+                                        <span class="sr-only"><%= gettext('Toggle navigation') %></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
                                         <li ng-class="{active: tab == 'pending approval'}" ng-click="changeTab('pending approval')">
-                                            <a href="#">
-                                                <%= gettext('Draft') %> (09)<span class="sr-only">(<%= gettext('current') %></span></a>
+                                            <a href="#" dir="<%= gettext('lang_dir') %>">
+                                                <%= gettext('Draft') %> ({{drafts_count.toLocaleString(lang)}})
+                                                    <span class="sr-only">(<%= gettext('current') %>)</span>
+                                            </a>
                                         </li>
                                         <li ng-class="{active: tab == 'approved'}" ng-click="changeTab('approved')">
                                             <a href="#">
@@ -58,7 +60,15 @@
                             <div class="inner-container">
                                 <h2><strong><%= gettext('Website title') %></strong></h2>
                                 <p>{{no_of_submissions.toLocaleString(lang)}} &nbsp;&nbsp;
-                                    <span><%= gettext('Verse Submitted') %></span>
+                                    <span ng-if="tab=='pending approval' && !search_close_btn"><%= gettext('Verses left for acceptance') %></span>
+                                    <span ng-if="tab == 'approved' && !search_close_btn"><%= gettext('Verses left for publishing') %></span>
+                                    <span ng-if="tab == 'rejected' && !search_close_btn"><%= gettext('Verses rejected') %></span>
+                                    <span ng-if="tab == 'published' && !search_close_btn"><%= gettext('Verses published') %></span>
+
+                                    <span ng-if="tab == 'pending approval' && search_close_btn"><%= gettext('pending Verses found') %></span>
+                                    <span ng-if="tab == 'approved' && search_close_btn"><%= gettext('accepted Verses found') %></span>
+                                    <span ng-if="tab == 'rejected' && search_close_btn"><%= gettext('rejected Verses found') %></span>
+                                    <span ng-if="tab == 'published' && search_close_btn"><%= gettext('published Verses found') %></span>
                                 </p>
 
                             </div>
@@ -68,12 +78,13 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-if="no_of_submissions == 0 && !hide_search_error_message">
+                            <div class="clearfix " ng-if="no_of_submissions == 0 && search_close_btn && !hide_search_error_message ">
                                 <div class="col-sm-12 ">
                                     <div class="clearfix p_stanza">
                                         <div class="stanza-starts clearfix ">
-                                            <div class="col-sm-12 text-center" dir= "<%= gettext('lang_dir') %>" >
-                                                <p><%= gettext('Nothing Found for')%> "{{search_query}}"</p>
+                                            <div class="col-sm-12 text-center" dir="<%= gettext('lang_dir') %>">
+                                                <p>
+                                                    <%= gettext('Nothing Found for')%> "{{search_query}}"</p>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +179,7 @@
                                                     <i class="fa fa-check green "></i>
                                                     <span><%= gettext('Accepted') %></span>
                                                 </a>
-                                                <a href=" " ng-click="show_edit_area=true;set_edit_stanza_vars($index) ">
+                                                <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index) ">
                                                     <i class="fa fa-pencil "></i>
                                                     <span><%= gettext('Edit') %></span>
                                                 </a>

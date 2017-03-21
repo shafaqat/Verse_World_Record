@@ -52,6 +52,10 @@ h3 {
     overflow: hidden;
 }
 
+.right-section .nav.navbar-right {
+    margin-right: 0px;
+}
+
 .navs-list-wrapper ul.nav.navbar.nav {
     float: left;
 }
@@ -74,6 +78,7 @@ h3 {
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
 }
 
@@ -146,7 +151,7 @@ li>a.nav-separator {
     background-color: transparent;
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 0px;
-    width: 50%;
+    margin-right: 20px;
     font-size: 18px;
     padding: 8px;
     color: #ffffff;
@@ -378,9 +383,13 @@ li.active a {
     }
     .right-section .panel-container .carousel-indicators {
         text-align: center;
+        bottom: 40px;
     }
-    .fa.fa-circle-o-notch.fa-spin{
+    .fa.fa-circle-o-notch.fa-spin {
         left: 37%;
+    }
+    .btn-home-sticky {
+        margin-right: 0px;
     }
 }
 
@@ -392,7 +401,7 @@ li.active a {
 
 @media only screen and (min-width: 375px) and (max-width: 667px) {
     .scroll-div .navbar-brand {
-        margin: 0 134px;
+        margin: 0 145px;
     }
     .navs-list-wrapper .division-dots {
         width: 470px;
@@ -411,11 +420,12 @@ li.active a {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .btn-home-sticky {
-        width: 30%;
+        width: 20%;
         font-size: 14px;
+        margin-right: 20px;
     }
     .scroll-div {
-        height: 50px;
+        height: 60px;
     }
     .carousel-indicators {
         bottom: 15px;
@@ -428,7 +438,10 @@ li.active a {
     }
     .header-indicator-container .slider {
         padding: 0px;
+        position: absolute;
         float: right;
+        top: -29px;
+        left: 330px;
     }
     .right-section .panel-container .carousel-indicators {
         position: static;
@@ -450,25 +463,27 @@ li.active a {
     .navs-list-wrapper .panel-division-dots {
         width: 200px;
     }
-    .fa.fa-circle-o-notch.fa-spin{
+    .fa.fa-circle-o-notch.fa-spin {
         left: 47%;
     }
-   
+    .panel-division-dots .slider {
+        padding-left: 230px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
-    .btn-home-sticky {
-        width: 30%;
-    }
     .navs-list-wrapper .division-dots {
         width: 48%;
     }
-    .fa.fa-circle-o-notch.fa-spin{
+    .fa.fa-circle-o-notch.fa-spin {
         left: 47%;
     }
 }
-    /*loading spinner*/
-.fa.fa-circle-o-notch.fa-spin{
+
+
+/*loading spinner*/
+
+.fa.fa-circle-o-notch.fa-spin {
     font-size: 90px;
     color: rgba(60, 37, 3, 0.6);
     position: fixed;

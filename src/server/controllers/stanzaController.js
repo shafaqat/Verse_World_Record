@@ -7,8 +7,9 @@ const getStanzas = function(req, res) {
     var search_query = req.params.search_query;
 
     stanzaManager.load(status, currentPage, search_query, function(error, results) {
-        if (!error)
+        if (!error) {
             res.json(results);
+        }
     });
 };
 
