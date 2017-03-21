@@ -12,7 +12,6 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
 
             scope.route_change_render_ejs = function(child_scope) {
                 angular.element(document).ready(function() {
-                    console.log("!locale", scope.no_of_submissions);
                     // $timeout(function() {
 
                     ng_view_child_scope = child_scope;
