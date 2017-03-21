@@ -15,7 +15,7 @@ class stanzaManager {
             if (!err) {
                 DbConnection.query(query, status, function(err, row_count) {
                     results.push(row_count);
-                    console.log(results.length + ' from ' + offset + ' to ' + (offeset + stanzasLimit) + 'sending records of type \"' + status + '\"');
+                    console.log(results.length + ' from ' + offset + ' to ' + (offset + stanzasLimit) + 'sending records of type \"' + status + '\"');
                     return callback(null, results);
                 });
             } else
