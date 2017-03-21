@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('loginController', function($scope, $location, $timeout, UserService) {
+app.controller('loginController', function($scope, $rootScope, $location, $timeout, UserService) {
 
     $scope.userEmail = '';
     $scope.userPassword = '';
@@ -36,11 +36,13 @@ app.controller('loginController', function($scope, $location, $timeout, UserServ
     $scope.forgotPassword = function() {
         UserService.forgotPassword($scope.userEmail).then(
             function(payload) {
-                $scope.server_message = gettext(payload);
-                $scope.hide_message_banner = false;
+                console.log(payload);
+                $rootScope.server_message = gettext(payload);
+                $rootScope.hide_message_banner = false;
 
+                $location.path('/login');
                 $timeout(function() {
-                    $scope.hide_message_banner = true;
+                    $rootScope.hide_message_banner = true;
                 }, $scope.server_message_hide_delay);
             }
         );

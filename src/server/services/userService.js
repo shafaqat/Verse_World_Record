@@ -70,7 +70,7 @@ const destroySession = function(req, res) {
 };
 
 
-const sendMail = function(receiver) {
+const sendMail = function(res, receiver) {
 
     var encrypted = crypto.createHash('md5').update(receiver).digest("hex");
     var url = 'http:/localhost:8080/reset-password';
@@ -89,9 +89,11 @@ const sendMail = function(receiver) {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            AppUtils.sendResponse(res, error, 'mail sending error', true, 'contact web admin');
             return console.log("Error sending mail, message: ", error);
         }
         console.log('recovery message %s sent: %s', info.messageId, info.response);
+        AppUtils.sendResponse(res, error, 'url', 'sent', 'use url to signup');
     });
 };
 
@@ -101,9 +103,7 @@ const startPasswordRecovery = function(req, res) {
 
     UserManager.find(req, res, function(err, isUserAuthenticated) {
         if (isUserAuthenticated) {
-            sendMail(user.userEmail);
-
-            AppUtils.sendResponse(res, err, 'url', 'sent', 'use url to signup');
+            sendMail(res, user.userEmail);
         } else {
             AppUtils.sendResponse(res, err, 'authenticated', false, 'cant signup');
         }
