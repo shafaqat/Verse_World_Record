@@ -22,7 +22,7 @@
                                         <li ng-class="{active: tab == 'pending approval'}" ng-click="changeTab('pending approval')">
                                             <a href="#" dir="<%= gettext('lang_dir') %>">
                                                 <%= gettext('Draft') %> ({{drafts_count.toLocaleString(lang)}})
-                                                    <span class="sr-only">(<%= gettext('current') %></span>
+                                                    <span class="sr-only">(<%= gettext('current') %>)</span>
                                             </a>
                                         </li>
                                         <li ng-class="{active: tab == 'approved'}" ng-click="changeTab('approved')">
@@ -179,7 +179,7 @@
                                                     <i class="fa fa-check green "></i>
                                                     <span><%= gettext('Accepted') %></span>
                                                 </a>
-                                                <a href=" " ng-click="show_edit_area=true;set_edit_stanza_vars($index) ">
+                                                <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index) ">
                                                     <i class="fa fa-pencil "></i>
                                                     <span><%= gettext('Edit') %></span>
                                                 </a>

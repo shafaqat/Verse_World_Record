@@ -25,14 +25,13 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('textarea').arabisk();
 
-        console.log($scope.p_stanza.scope().show_edit_area);
+        console.log($scope.p_stanza.html());
+        console.log($scope.p_stanza.scope());
 
         if ($scope.tab.includes('pending'))
             $scope.edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
         else
             $scope.edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
-
-
     };
 
     $scope.update_stanza = function(update_behavior, stanza_id, index, stanza_text) {
@@ -60,7 +59,7 @@ app.controller('panelController', function($scope, $document, $timeout, $locatio
                             $scope.current_stanzas[index].stanza_text = stanza_text;
 
                             $scope.p_stanza.scope().show_edit_area = false;
-                            console.log($scope.p_stanza.scope().show_edit_area);
+                            console.log($scope.p_stanza.scope());
 
                         } else if (update_behavior == 'published') {
                             $scope.stanzas_to_add = $scope.published_stanzas;
