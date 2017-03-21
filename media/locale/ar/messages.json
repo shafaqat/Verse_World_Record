@@ -78,7 +78,7 @@
    ],
    "PANEL": [
       null,
-      "فريق"
+      "لوحة القاضي"
    ],
    "LOGIN": [
       null,
@@ -180,9 +180,9 @@
       null,
       "بحث"
    ],
-   "Accepted": [
+   "Accept": [
       null,
-      "قبلت"
+      "قبول"
    ],
    "Edit": [
       null,
@@ -297,7 +297,7 @@
    ],
    "Forgot Password": [
       null,
-      "?هل نسيت كلمة المرور"
+      "هل نسيت كلمة المرور ؟"
    ],
    "This needs to be a valid email": [
       null,

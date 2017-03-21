@@ -391,6 +391,9 @@ li.active a {
     .btn-home-sticky {
         margin-right: 0px;
     }
+    li a.nav-separator {
+        display: none;
+    }
 }
 
 

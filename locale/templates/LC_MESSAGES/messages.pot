@@ -200,7 +200,7 @@ msgstr ""
 #: src/views/templates/panel.html:199
 #: src/views/templates/panel.html:150
 #: src/views/templates/panel.html:206
-msgid "Accepted"
+msgid "Accept"
 msgstr ""
 
 #: src/views/templates/panel.html:155

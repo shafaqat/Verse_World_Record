@@ -177,7 +177,7 @@
                                             <div class="edit-icons " ng-show="isChiefJudge ">
                                                 <a href=" " ng-click="update_stanza( 'published', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
-                                                    <span><%= gettext('Accepted') %></span>
+                                                    <span><%= gettext('Accept') %></span>
                                                 </a>
                                                 <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index) ">
                                                     <i class="fa fa-pencil "></i>
@@ -244,7 +244,7 @@
                                             <div class="edit-icons" ng-show="!isChiefJudge">
                                                 <a href=" " ng-click="update_stanza( 'approved', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
-                                                    <span><%= gettext('Accepted') %></span>
+                                                    <span><%= gettext('Accept') %></span>
                                                 </a>
                                                 <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index)">
                                                     <i class="fa fa-pencil "></i>

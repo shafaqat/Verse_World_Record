@@ -30,7 +30,7 @@ app.use(
 
 var x = path.resolve('./media/locale');
 
-app.use(express.static(__dirname + "/../src"));
+app.use(express.static(__dirname + "/../dist"));
 app.use(cookieParser());
 app.use(session({
     secret: 'user_session_state',

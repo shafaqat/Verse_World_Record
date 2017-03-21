@@ -163,8 +163,8 @@ msgstr "Search"
 
 #: src/views/templates/panel.html:151 src/views/templates/panel.html:199
 #: src/views/templates/panel.html:150 src/views/templates/panel.html:206
-msgid "Accepted"
-msgstr "Accepted"
+msgid "Accept"
+msgstr "Accept"
 
 #: src/views/templates/panel.html:155 src/views/templates/panel.html:203
 #: src/views/templates/panel.html:154 src/views/templates/panel.html:210
