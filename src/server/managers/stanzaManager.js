@@ -5,6 +5,7 @@ class stanzaManager {
     load(status, currentPage, search_query, callback) {
         var offset = currentPage * 100;
         var stanzasLimit = 100;
+
         search_query = (!search_query) ? ("'%%'") : ("'%" + search_query + "%'");
 
         var query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND stanza_text LIKE ' + search_query + ' AND statuses.type = ? LIMIT ? OFFSET ?';
@@ -14,7 +15,7 @@ class stanzaManager {
             if (!err) {
                 DbConnection.query(query, status, function(err, row_count) {
                     results.push(row_count);
-                    console.log(results.length + ' sending records of type \"' + status + '\"');
+                    console.log(results.length + ' from ' + offset + ' to ' + (offeset + stanzasLimit) + 'sending records of type \"' + status + '\"');
                     return callback(null, results);
                 });
             } else

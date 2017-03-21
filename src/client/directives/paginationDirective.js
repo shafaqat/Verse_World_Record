@@ -25,6 +25,7 @@ app.directive("paginationDirective", function($compile) {
         },
         controller: function($scope) {
             $scope.get_stanzas_from_navigation = function(event, page) {
+                console.log('called');
                 if (page == 'pre') {
                     $scope.current_page.level = ($scope.current_page.level > 0) ? ($scope.current_page.level - 1) : $scope.current_page.level;
                 } else if (page == 'next') {
@@ -33,7 +34,7 @@ app.directive("paginationDirective", function($compile) {
                 } else
                     $scope.current_page.level = page / 100;
 
-                if (($scope.current_page.level > 0 && ($scope.no_of_submissions > ($scope.current_page.level * 100 + 100))) && ($scope.no_of_submissions > 100) && (($scope.current_page.level * 100) < $scope.no_of_submissions)) {
+                if (($scope.no_of_submissions > 100) && (($scope.current_page.level * 100) < $scope.no_of_submissions)) {
                     $scope.getStanzas($scope.tab, "");
                 }
             };
