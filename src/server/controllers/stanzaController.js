@@ -5,6 +5,7 @@ const getStanzas = function(req, res) {
     var status = req.params.status;
     var currentPage = req.params.currentPage;
     var search_query = req.params.search_query;
+    var offset = req.params.offset;
 
     stanzaManager.load(status, currentPage, search_query, function(error, results) {
         if (!error) {

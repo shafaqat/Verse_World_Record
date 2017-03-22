@@ -26,9 +26,6 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('textarea').arabisk();
 
-        console.log($scope.p_stanza.html());
-        console.log($scope.p_stanza.scope());
-
         if ($scope.tab.includes('pending')) $scope.edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
         else $scope.edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
     };
@@ -53,7 +50,7 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
                     $scope.current_stanzas[index].stanza_text = stanza_text;
 
                     $scope.p_stanza.scope().show_edit_area = false;
-                    console.log($scope.p_stanza.scope());
+
                 } else if (update_behavior == 'published') {
                     $scope.stanzas_to_add = $scope.published_stanzas;
                 }
@@ -68,8 +65,7 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
                 if (update_behavior != 'updated') {
                     // $scope.stanzas_to_add.splice(0, 0, $scope.current_stanzas[index]);
 
-                    if (update_behavior == 'published')
-                        $scope.approved_stanzas.splice(index, 1);
+                    if (update_behavior == 'published') $scope.approved_stanzas.splice(index, 1);
                     else {
                         $scope.drafts_count--;
                         $scope.current_stanzas.splice(index, 1);
@@ -86,6 +82,7 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
 
     $scope.search_in_stanzas = function() {
         $scope.search_close_btn = true;
+        $scope.search_query_changed = true;
         $scope.getStanzas($scope.tab, $scope.search_query);
     };
 

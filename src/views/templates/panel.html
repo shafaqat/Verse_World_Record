@@ -46,7 +46,7 @@
                                             <span class="btn-search" ng-show="search_close_btn" ng-click="reset_search_in_stanzas()">
                                                 <i class="fa fa-close"></i>
                                             </span>
-                                            <input id="search-input" type="search" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>" />
+                                            <input id="search-input" type="search" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>" ng-change="search_query_changed=false" />
                                             <span class="btn-search" ng-click="search_in_stanzas();">
                                                 <i class="fa fa-search"></i>
                                             </span>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-if="no_of_submissions == 0 && search_close_btn">
+                            <div class="clearfix " ng-if="no_of_submissions == 0 && search_close_btn && search_query_changed">
                                 <div class="col-sm-12 ">
                                     <div class="clearfix p_stanza">
                                         <div class="stanza-starts clearfix ">
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix " ng-show="tab == 'published'">
+                            <div class="clearfix " ng-if="tab == 'published'">
                                 <div class="col-sm-12 p_stanza" ng-repeat="stanza in published_stanzas">
                                     <div class="col-sm-2 hover-display ">
                                         <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-show="tab == 'rejected'">
+                            <div class="clearfix " ng-if="tab == 'rejected'">
                                 <div class="col-sm-12 ">
                                     <div class="clearfix p_stanza" ng-repeat="stanza in rejected_stanzas">
                                         <div class="stanza-starts clearfix ">
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix" ng-show="tab == 'approved'">
+                            <div class="clearfix" ng-if="tab == 'approved'">
                                 <div class=" p_stanza" ng-repeat="stanza in approved_stanzas">
                                     <div class="col-sm-12 edit-bg" ng-show="show_edit_area">
                                         <div class="col-sm-3 hover-display edit-bg " style="margin-top: 9%;">
@@ -190,7 +190,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-show="tab=='pending approval'">
+                            <div class="clearfix " ng-if="tab=='pending approval'">
                                 <div class="clearfix p_stanza " ng-repeat="stanza in pending_stanzas ">
                                     <div class="col-sm-12 edit-bg " ng-show="show_edit_area">
                                         <div class="col-sm-3 hover-display edit-bg " style="margin-top: 9%; ">

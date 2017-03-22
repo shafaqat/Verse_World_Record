@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('app');
 
 app.directive("paginationDirective", function($compile) {
@@ -14,7 +16,6 @@ app.directive("paginationDirective", function($compile) {
                 scope.pagination_template_container.html($compile(html)(scope));
 
                 angular.element('[data-toggle="tooltip"]').tooltip();
-
             };
             scope.$watch(function() { return scope.no_of_submissions; }, function(newVal, oldVal) {
                 if (newVal && newVal !== oldVal) {
@@ -25,7 +26,6 @@ app.directive("paginationDirective", function($compile) {
         },
         controller: function($scope) {
             $scope.get_stanzas_from_navigation = function(event, page) {
-                console.log('called');
                 if (page == 'pre') {
                     $scope.current_page.level = ($scope.current_page.level > 0) ? ($scope.current_page.level - 1) : $scope.current_page.level;
                 } else if (page == 'next') {

@@ -62,6 +62,6 @@ app.get('/locale/:lang', baseController.changedLocale);
 app.get('/logInStatus', baseController.sendStatus);
 app.get('*', baseController.sendIndex);
 
-app.listen(8080, function() {
-    console.log('server started at port 8080 ...');
+app.listen(80, function() {
+    console.log('server started at port 80 ...');
 });

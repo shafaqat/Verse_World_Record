@@ -7,8 +7,10 @@
                     <li class="next-prev-icon" ng-click="get_stanzas_from_navigation($event, 'pre')">
                         <i class="fa fa-angle-left"></i>
                     </li>
-                    <% for(var i=0;  i < no_of_submissions; i+=100) { %>
-                        <li class="nav-dots" ng-class="{active:(current_page.level*100) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{ (<%= i%>).toLocaleString(lang) }} - {{ (<%= i%>+100).toLocaleString(lang) }}">
+                    <% 
+                    var offset=Math.ceil(no_of_submissions/1000)*100;
+                    for(var i=0;  i < no_of_submissions; i+=offset) { %>
+                        <li class="nav-dots" ng-class="{active:(current_page.level*<%= offset %>) == <%= i%>}" ng-click="get_stanzas_from_navigation($event,  <%= i%>)" class="top" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="{{ (<%= i %>).toLocaleString(lang) }} - {{ (<%= i+offset %>).toLocaleString(lang) }}">
                         </li>
 
                         <% } %>

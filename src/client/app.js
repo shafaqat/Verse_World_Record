@@ -36,8 +36,6 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
     $scope.drafts_count = 0;
     $scope.pagination_level = 0;
 
-
-
     $scope.lang = $window.localStorage.getItem('lang') || 'ar';
 
     authService.checkLogIn().then(function(payload) {
@@ -81,20 +79,21 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
             $scope.current_stanzas = $scope.rejected_stanzas;
         }
 
-        stanzaService.getStanzas(stanza_status, $scope.current_page.level, search_query).then(function(result) {
-            $rootScope.no_of_submissions = result[result.length - 1][0]['COUNT(*)'];
-            result.splice(result.length - 1, 1);
+        stanzaService.getStanzas(stanza_status, $scope.current_page.level, search_query)
+            .then(function(result) {
+                $rootScope.no_of_submissions = result[result.length - 1];
+                result.splice(result.length - 1, 1);
 
-            if (stanza_status == 'pending approval' && search_query == "") {
-                $scope.drafts_count = angular.copy($scope.no_of_submissions);
-            }
+                if (stanza_status == 'pending approval' && search_query == "") {
+                    $scope.drafts_count = angular.copy($scope.no_of_submissions);
+                }
 
-            $scope.current_stanzas.length = 0;
-            result.forEach(function(item) {
-                $scope.current_stanzas.push(item);
-            });
-            $scope.show_loading_spinner = false;
-        }, function(error) {});
+                $scope.current_stanzas.length = 0;
+                result.forEach(function(item) {
+                    $scope.current_stanzas.push(item);
+                });
+                $scope.show_loading_spinner = false;
+            }, function(error) {});
     };
 
     $scope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
