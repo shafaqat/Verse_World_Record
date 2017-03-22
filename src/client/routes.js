@@ -19,7 +19,7 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/login', {
             templateUrl: 'views/templates/login.html',
             controller: 'loginController',
-            access: { requiredLogin: false }
+            access: { requiredLogin: false, redirectIfLogin: true }
         })
         .when('/submit', {
             templateUrl: 'views/templates/submit.html',
@@ -29,12 +29,12 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/forget-password', {
             templateUrl: 'views/templates/forget-password.html',
             controller: 'loginController',
-            access: { requiredLogin: false }
+            access: { requiredLogin: false, redirectIfLogin: true }
         })
         .when('/reset-password', {
             templateUrl: 'views/templates/reset-password.html',
             controller: 'loginController',
-            access: { requiredLogin: false }
+            access: { requiredLogin: false, redirectIfLogin: true }
         })
         .otherwise({
             template: "<h1>404</h1><p>Nothing has been found</p>",
@@ -49,7 +49,7 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.run(function($rootScope, authService, $location) {
     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
-        if (nextRoute.access.requiredLogin || nextRoute.originalPath == '/login') {
+        if (nextRoute.access.requiredLogin || nextRoute.access.redirectIfLogin) {
             authService.checkJudgeType().then(function(judge) {
                 if (!judge.logInStatus)
                     $location.path('/login');

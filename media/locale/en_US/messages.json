@@ -121,21 +121,9 @@
       null,
       "Verses published"
    ],
-   "published Verses found": [
+   "results found": [
       null,
-      "published Verses found"
-   ],
-   "accepted Verses found": [
-      null,
-      "accepted Verses found"
-   ],
-   "rejected Verses found": [
-      null,
-      "rejected Verses found"
-   ],
-   "pending Verses found": [
-      null,
-      "pending Verses found"
+      " results found"
    ],
    "USERNAME": [
       null,
@@ -207,7 +195,7 @@
    ],
    "You will not be able to edit or delete the verse once you have sumitted it.": [
       null,
-      "You will not be able to edit or delete the verse once you have sumitted it."
+      "You will not be able to edit or delete the verse once you have submitted it."
    ],"The stanza should contain exactly two verses separated by a new line.": [
       null,
       "The stanza should contain exactly two verses separated by a new line."
@@ -387,9 +375,5 @@
    "Nothing Found for": [
       null,
       "Nothing Found for "
-   ],
-   "submissions close message": [
-      null,
-      "The Submissions has been closed"
    ]
 }}
