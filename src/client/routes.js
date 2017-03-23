@@ -41,3 +41,11 @@ app.config(function($routeProvider, $locationProvider) {
         requireBase: false
     });
 });
+
+// app.run(function($rootScope, $location) {
+//     $rootScope.$on("$routeChangeStart", function(event, next, current) {
+//         if ($location.path().includes('submit') && $rootScope.submissions_closed) {
+//             $location.path("/");
+//         }
+//     });
+// });

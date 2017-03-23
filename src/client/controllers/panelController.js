@@ -84,12 +84,14 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
 
     $scope.search_in_stanzas = function() {
         $scope.search_close_btn = true;
-        $scope.search_query_changed = true;
+        $scope.search = $scope.search_query;
+
         $scope.getStanzas($scope.tab, $scope.search_query);
     };
 
     $scope.reset_search_in_stanzas = function() {
         $scope.search_query = "";
+        $scope.search = $scope.search_query;
         $scope.search_close_btn = false;
         $scope.getStanzas($scope.tab, "");
     };

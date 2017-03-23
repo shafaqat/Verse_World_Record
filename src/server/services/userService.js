@@ -71,7 +71,7 @@ const destroySession = function(req, res) {
 const sendMail = function(res, receiver) {
 
     var encrypted = crypto.createHash('md5').update(receiver).digest("hex");
-    var url = 'http:/localhost:8080/reset-password';
+    var url = 'http:/54.190.16.0/reset-password';
     //to resolve the self signed certificate error
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 

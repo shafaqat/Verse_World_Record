@@ -22,7 +22,8 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
     $scope.current_stanzas = null;
     $scope.isChiefJudge = false;
     $scope.isJudgeLogin = false;
-    $scope.submissions_closed = false;
+    $rootScope.submissions_closed = false;
+    $scope.submissions_closed_date = "March 28, 2017 00:00:00";
 
     $scope.published_stanzas = [];
     $scope.published_stanzas_page = { level: 0 };

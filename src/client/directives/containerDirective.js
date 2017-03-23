@@ -60,10 +60,9 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             };
 
             scope.timerFunc = function() {
-                var endDate = "March 23, 2017 00:00:00";
                 angular.element('.countdown.styled')
                     .countdown({
-                        date: endDate,
+                        date: scope.submissions_closed_date,
                         render: function(data) {
                             $(this.el).html(
                                 "<div>" + parseInt(this.leadingZeros(data.days, 2)).toLocaleString(scope.lang) +
@@ -75,8 +74,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                                 parseInt(this.leadingZeros(data.sec, 2)).toLocaleString(scope.lang) + " <span>sec</span></div>");
                         },
                         onEnd: function() {
-                            scope.submissions_closed = true;
-                            scope.$apply();
+                            scope.set_submissions_closed();
                         }
                     });
             };
@@ -91,6 +89,12 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                 }
             });
             changeLocale = scope.changeLocale;
+        },
+        controller: function($scope, $rootScope) {
+            $scope.set_submissions_closed = function() {
+                $rootScope.submissions_closed = true;
+                $scope.$apply();
+            };
         }
     };
 });

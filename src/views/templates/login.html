@@ -43,7 +43,7 @@
                                             <label for="user_password"><%= gettext('PASSWORD') %> *</label>
                                             <input class="form-control" name="user_password" ng-model="userPassword" ng-minlength="5" type='password' placeholder="<%= gettext('enter password') %>" required/>
 
-                                            <a href="/forget-password" class="pull-right color">
+                                            <a href="/forgot-password" class="pull-right color">
                                                 <%= gettext('Forgot Password') %>
                                             </a>
                                             <div class="help-block" ng-messages="userForm.user_password.$error" ng-if="userForm.user_password.$dirty && userForm.user_email.$invalid">
