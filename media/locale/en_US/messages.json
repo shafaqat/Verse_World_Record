@@ -1,383 +1,389 @@
 {
-  "messages": {
-   "": {
-      "project-id-version": "PACKAGE VERSION",
-      "report-msgid-bugs-to": "",
-      "pot-creation-date": "2017-03-13 04:06+0000",
-      "po-revision-date": "2017-03-09 13:04+0000",
-      "last-translator": "Automatically generated",
-      "language-team": "none",
-      "mime-version": "1.0",
-      "content-type": "text/plain; charset=UTF-8",
-      "content-transfer-encoding": "8bit",
-      "language": "",
-      "plural-forms": "nplurals=2; plural=(n != 1);"
-   },
-   "lang_dir": [
-      null,
-      "ltr"
-   ],
-   "Website title": [
-      null,
-      "Verse"
-   ],
-   "CONFIRM PASSWORD head": [
-      null,
-      "Confirm Password"
-   ],
-   "Enter Validation Code lbl": [
-      null,
-      "Enter confirmation Code"
-   ],
-   "Enter Name txt": [
-      null,
-      "Enter Name"
-   ],
-   "Enter new password lbl": [
-      null,
-      "Enter new password"
-   ],
-   "Enter Password txt": [
-      null,
-      "Enter Password"
-   ],
-   "Confirm password txt": [
-      null,
-      "Confirm password"
-   ],
-   "Confirm Password btn": [
-      null,
-      "Confirm Password"
-   ],
-   "CHANGE PASSWORD": [
-      null,
-      "CHANGE PASSWORD"
-   ],
-   "FORGOT YOUR PASSWORD? head": [
-      null,
-      "Forgot your password?"
-   ],
-   "E-mail lbl": [
-      null,
-      "E-mail"
-   ],
-   "Enter email address txt": [
-      null,
-      "Enter email address"
-   ],
-   "SEND VALIDATION CODE ": [
-      null,
-      "SEND VALIDATION CODE"
-   ],
-   "Toggle navigation": [
-      null,
-      "Toggle navigation"
-   ],
-   "HOME": [
-      null,
-      "Home"
-   ],
-   "PANEL": [
-      null,
-      "Judge's Panel"
-   ],
-   "LOGIN": [
-      null,
-      "Login"
-   ],
-   "LOGOUT": [
-      null,
-      "Logout"
-   ],
-   "motivational quote": [
-      null,
-      "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence. Helen Keller"
-   ],
-   "SUBMIT NOW": [
-      null,
-      "SUBMIT NOW"
-   ],
-   "Time Remaining For Submission": [
-      null,
-      "Time Remaining For Submission"
-   ],
-   "All verses": [
-      null,
-      "All verses"
-   ],
-   "Verses left for acceptance": [
-      null,
-      "Verses left for review"
-   ],
-   "Verses left for publishing": [
-      null,
-      "Verses left for publishing"
-   ],
-   "Verses rejected": [
-      null,
-      "Verses rejected"
-   ],
-   "Verses published": [
-      null,
-      "Verses published"
-   ],
-   "results found": [
-      null,
-      " results found"
-   ],
-   "USERNAME": [
-      null,
-      "Email Address"
-   ],
-   "Enter email address": [
-      null,
-      "Enter email address"
-   ],
-   "PASSWORD": [
-      null,
-      "Password"
-   ],
-   "enter password": [
-      null,
-      "Enter Password"
-   ],
-   "Forgot Password": [
-      null,
-      "Forgot Password ?"
-   ],
-   "Draft": [
-      null,
-      "Draft"
-   ],
-   "current": [
-      null,
-      "current"
-   ],
-   "Pending": [
-      null,
-      "Pending"
-   ],
-   "Rejected": [
-      null,
-      "Rejected"
-   ],
-   "Published": [
-      null,
-      "Published"
-   ],
-   "Search": [
-      null,
-      "Search"
-   ],
-   "Accept": [
-      null,
-      "Accept"
-   ],
-   "Edit": [
-      null,
-      "Edit"
-   ],
-   "Reject": [
-      null,
-      "Reject"
-   ],
-   "SUBMIT YOUR VERSE": [
-      null,
-      "SUBMIT YOUR VERSE"
-   ],
-   "Note :": [
-      null,
-      "Note :"
-   ],
-   "You can submit one verse only.": [
-      null,
-      "You can submit one verse only."
-   ],
-   "You will not be able to edit or delete the verse once you have sumitted it.": [
-      null,
-      "You will not be able to edit or delete the verse once you have submitted it."
-   ],"The stanza should contain exactly two verses separated by a new line.": [
-      null,
-      "The stanza should contain exactly two verses separated by a new line."
-   ],
-   "enter your verse here": [
-      null,
-      "Enter your verse here"
-   ],
-   "FULL NAME": [
-      null,
-      "Full Name"
-   ],
-   "Enter your name": [
-      null,
-      "Enter your name"
-   ],
-   "NATIONAL ID": [
-      null,
-      "National ID"
-   ],
-   "enter 12 to 16 numbered National ID": [
-      null,
-      "Enter 12 to 16 numbered National ID"
-   ],
-   "TWITTER ACCOUNT": [
-      null,
-      "Twitter Account"
-   ],
-   "Enter account username": [
-      null,
-      "Enter account username"
-   ],
-   "MOBILE NUMBER": [
-      null,
-      "Mobile Number"
-   ],
-   "Enter mobile number": [
-      null,
-      "Enter mobile number"
-   ],
-   "enter 12 to 16 numbers": [
-      null,
-      "Enter 12 to 16 numbers"
-   ],
-   "U.A.E": [
-      null,
-      "Arabic"
-   ],
-   "US": [
-      null,
-      "English"
-   ],
-   "Your token is required.": [
-      null,
-      "Validation Code sent to you is required to reset the password"
-   ],
-   "Your password is too short.": [
-      null,
-      "Password is too short."
-   ],
-   "Your password is required.": [
-      null,
-      "Password is required."
-   ],
-   "Your username is too short.": [
-      null,
-      "Username is too short."
-   ],
-   "Your username is too long.": [
-      null,
-      "Username is too long."
-   ],
-   "This needs to be a valid Stanza.": [
-      null,
-      "This needs to be a valid Stanza containing two verses with separated by a new line."
-   ],
-   "This needs to be a valid email.": [
-      null,
-      "This needs to be a valid email."
-   ],
-   "Your username is required.": [
-      null,
-      "Email is required."
-   ],
-   "This needs to be a valid email": [
-      null,
-      "This needs to be a valid email."
-   ],
-   "To submit, stanza is required.": [
-      null,
-      "To submit, stanza is required."
-   ],
-   "This needs to be a valid NAME.": [
-      null,
-      "This needs to be a valid name."
-   ],
-   "Your name is too short.": [
-      null,
-      "Name is too short."
-   ],
-   "Your name is too long.": [
-      null,
-      "Name is too long."
-   ],
-   "Your name is required.": [
-      null,
-      "Name is required."
-   ],
-   "This needs to be a valid NUMBER.": [
-      null,
-      "This needs to be a valid number."
-   ],
-   "Your number is too short.": [
-      null,
-      "Number is too short."
-   ],
-   "Your number is too long.": [
-      null,
-      "Number is too long."
-   ],
-   "Your number is required.": [
-      null,
-      "Number is required."
-   ],
-   "stanza has already created, you cannot create anymore": [
-      null,
-      "This stanza has already submitted."
-   ],
-   "stanza submitted for approval, after approval, will be available to the public": [
-      null,
-      "Your stanza has been submitted to us. Our judges will review it and after approval it will be published publicly."
-   ],
-   "login failed": [
-      null,
-      "Login failed"
-   ],
-   "url sent": [
-      null,
-      "Password Reset Email Sent. Please check your email account for an email with a confirmation code that you can use to reset your password."
-   ],
-   "Passwords do not match": [
-      null,
-      "Passwords do not match"
-   ],
-   "password changed successfully": [
-      null,
-      "Password changed successfully"
-   ],
-   "reset failed": [
-      null,
-      "Failed to reset password"
-   ],
-   "The stanza is published": [
-      null,
-      "The stanza is published"
-   ],
-   "The stanza is updated": [
-      null,
-      "The stanza is updated"
-   ],
-   "The stanza is rejected": [
-      null,
-      "The stanza is rejected"
-   ],
-   "The stanza is approved": [
-      null,
-      "The stanza is approved"
-   ],
-   "save txt": [
-      null,
-      "Save"
-   ],
-   "cancel txt": [
-      null,
-      "Cancel"
-   ],
-   "Nothing Found for": [
-      null,
-      "Nothing Found for "
-   ],
-   "submissions close message": [
-      null,
-      "Submissions has been closed. we are currently working on the compiling of submissions."
-   ]
-}}
+    "messages": {
+        "": {
+            "project-id-version": "PACKAGE VERSION",
+            "report-msgid-bugs-to": "",
+            "pot-creation-date": "2017-03-13 04:06+0000",
+            "po-revision-date": "2017-03-09 13:04+0000",
+            "last-translator": "Automatically generated",
+            "language-team": "none",
+            "mime-version": "1.0",
+            "content-type": "text/plain; charset=UTF-8",
+            "content-transfer-encoding": "8bit",
+            "language": "",
+            "plural-forms": "nplurals=2; plural=(n != 1);"
+        },
+        "lang_dir": [
+            null,
+            "ltr"
+        ],
+        "Website title": [
+            null,
+            "Verse"
+        ],
+        "CONFIRM PASSWORD head": [
+            null,
+            "Confirm Password"
+        ],
+        "Enter Validation Code lbl": [
+            null,
+            "Enter confirmation Code"
+        ],
+        "Enter Name txt": [
+            null,
+            "Enter Name"
+        ],
+        "Enter new password lbl": [
+            null,
+            "Enter new password"
+        ],
+        "Enter Password txt": [
+            null,
+            "Enter Password"
+        ],
+        "Confirm password txt": [
+            null,
+            "Confirm password"
+        ],
+        "Confirm Password btn": [
+            null,
+            "Confirm Password"
+        ],
+        "CHANGE PASSWORD": [
+            null,
+            "CHANGE PASSWORD"
+        ],
+        "FORGOT YOUR PASSWORD? head": [
+            null,
+            "Forgot your password?"
+        ],
+        "E-mail lbl": [
+            null,
+            "E-mail"
+        ],
+        "Enter email address txt": [
+            null,
+            "Enter email address"
+        ],
+        "SEND VALIDATION CODE ": [
+            null,
+            "SEND VALIDATION CODE"
+        ],
+        "Toggle navigation": [
+            null,
+            "Toggle navigation"
+        ],
+        "HOME": [
+            null,
+            "Home"
+        ],
+        "PANEL": [
+            null,
+            "Judge's Panel"
+        ],
+        "LOGIN": [
+            null,
+            "Login"
+        ],
+        "LOGOUT": [
+            null,
+            "Logout"
+        ],
+        "motivational quote": [
+            null,
+            "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence. Helen Keller"
+        ],
+        "SUBMIT NOW": [
+            null,
+            "SUBMIT NOW"
+        ],
+        "Time Remaining For Submission": [
+            null,
+            "Time Remaining For Submission"
+        ],
+        "All verses": [
+            null,
+            "All verses"
+        ],
+        "Verses left for acceptance": [
+            null,
+            "Verses left for review"
+        ],
+        "Verses left for publishing": [
+            null,
+            "Verses left for publishing"
+        ],
+        "Verses rejected": [
+            null,
+            "Verses rejected"
+        ],
+        "Verses published": [
+            null,
+            "Verses published"
+        ],
+        "results found": [
+            null,
+            " results found"
+        ],
+        "USERNAME": [
+            null,
+            "Email Address"
+        ],
+        "Enter email address": [
+            null,
+            "Enter email address"
+        ],
+        "PASSWORD": [
+            null,
+            "Password"
+        ],
+        "enter password": [
+            null,
+            "Enter Password"
+        ],
+        "Forgot Password": [
+            null,
+            "Forgot Password ?"
+        ],
+        "Draft": [
+            null,
+            "Draft"
+        ],
+        "current": [
+            null,
+            "current"
+        ],
+        "Pending": [
+            null,
+            "Pending"
+        ],
+        "Rejected": [
+            null,
+            "Rejected"
+        ],
+        "Published": [
+            null,
+            "Published"
+        ],
+        "Search": [
+            null,
+            "Search"
+        ],
+        "Accept": [
+            null,
+            "Accept"
+        ],
+        "Edit": [
+            null,
+            "Edit"
+        ],
+        "Reject": [
+            null,
+            "Reject"
+        ],
+        "SUBMIT YOUR VERSE": [
+            null,
+            "SUBMIT YOUR VERSE"
+        ],
+        "Note :": [
+            null,
+            "Note :"
+        ],
+        "You can submit one verse only.": [
+            null,
+            "You can submit one verse only."
+        ],
+        "You will not be able to edit or delete the verse once you have sumitted it.": [
+            null,
+            "You will not be able to edit or delete the verse once you have submitted it."
+        ],
+        "The stanza should contain exactly two verses separated by a new line.": [
+            null,
+            "The stanza should contain exactly two verses separated by a new line."
+        ],
+        "enter your verse here": [
+            null,
+            "Enter your verse here"
+        ],
+        "FULL NAME": [
+            null,
+            "Full Name"
+        ],
+        "Enter your name": [
+            null,
+            "Enter your name"
+        ],
+        "NATIONAL ID": [
+            null,
+            "National ID"
+        ],
+        "enter 12 to 16 numbered National ID": [
+            null,
+            "Enter 12 to 16 numbered National ID"
+        ],
+        "TWITTER ACCOUNT": [
+            null,
+            "Twitter Account"
+        ],
+        "Enter account username": [
+            null,
+            "Enter account username"
+        ],
+        "MOBILE NUMBER": [
+            null,
+            "Mobile Number"
+        ],
+        "Enter mobile number": [
+            null,
+            "Enter mobile number"
+        ],
+        "enter 12 to 16 numbers": [
+            null,
+            "Enter 12 to 16 numbers"
+        ],
+        "U.A.E": [
+            null,
+            "Arabic"
+        ],
+        "US": [
+            null,
+            "English"
+        ],
+        "Your token is required.": [
+            null,
+            "Validation Code sent to you is required to reset the password"
+        ],
+        "Your password is too short.": [
+            null,
+            "Password is too short."
+        ],
+        "Your password is required.": [
+            null,
+            "Password is required."
+        ],
+        "Your username is too short.": [
+            null,
+            "Username is too short."
+        ],
+        "Your username is too long.": [
+            null,
+            "Username is too long."
+        ],
+        "This needs to be a valid Stanza.": [
+            null,
+            "This needs to be a valid Stanza containing two verses with separated by a new line."
+        ],
+        "This needs to be a valid email.": [
+            null,
+            "This needs to be a valid email."
+        ],
+        "Your username is required.": [
+            null,
+            "Email is required."
+        ],
+        "This needs to be a valid email": [
+            null,
+            "This needs to be a valid email."
+        ],
+        "To submit, stanza is required.": [
+            null,
+            "To submit, stanza is required."
+        ],
+        "This needs to be a valid NAME.": [
+            null,
+            "This needs to be a valid name."
+        ],
+        "Your name is too short.": [
+            null,
+            "Name is too short."
+        ],
+        "Your name is too long.": [
+            null,
+            "Name is too long."
+        ],
+        "Your name is required.": [
+            null,
+            "Name is required."
+        ],
+        "This needs to be a valid NUMBER.": [
+            null,
+            "This needs to be a valid number."
+        ],
+        "Your number is too short.": [
+            null,
+            "Number is too short."
+        ],
+        "Your number is too long.": [
+            null,
+            "Number is too long."
+        ],
+        "Your number is required.": [
+            null,
+            "Number is required."
+        ],
+        "stanza has already created, you cannot create anymore": [
+            null,
+            "This stanza has already submitted."
+        ],
+        "stanza submitted for approval, after approval, will be available to the public": [
+            null,
+            "Your stanza has been submitted to us. Our judges will review it and after approval it will be published publicly."
+        ],
+        "login failed": [
+            null,
+            "Login failed"
+        ],
+        "url sent": [
+            null,
+            "Password Reset Email Sent. Please check your email account for an email with a confirmation code that you can use to reset your password."
+        ],
+        "user not found": [
+            null,
+            "That email address doesn't have an associated user account. Are you sure you've registered ? "
+        ],
+        "Passwords do not match": [
+            null,
+            "Passwords do not match"
+        ],
+        "password changed successfully": [
+            null,
+            "Password changed successfully"
+        ],
+        "reset failed": [
+            null,
+            "Failed to reset password"
+        ],
+        "The stanza is published": [
+            null,
+            "The stanza is published"
+        ],
+        "The stanza is updated": [
+            null,
+            "The stanza is updated"
+        ],
+        "The stanza is rejected": [
+            null,
+            "The stanza is rejected"
+        ],
+        "The stanza is approved": [
+            null,
+            "The stanza is approved"
+        ],
+        "save txt": [
+            null,
+            "Save"
+        ],
+        "cancel txt": [
+            null,
+            "Cancel"
+        ],
+        "Nothing Found for": [
+            null,
+            "Nothing Found for "
+        ],
+        "submissions close message": [
+            null,
+            "Submissions has been closed. we are currently working on the compiling of submissions."
+        ]
+    }
+}
