@@ -3,60 +3,41 @@ var app = angular.module('app');
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
-            redirectTo: '/home',
-            access: { requiredLogin: false }
+            redirectTo: '/home'
         })
         .when('/home', {
             templateUrl: 'views/templates/home.html',
-            controller: 'homeController',
-            access: { requiredLogin: false }
+            controller: 'homeController'
         })
         .when('/panel', {
             templateUrl: 'views/templates/panel.html',
-            controller: 'panelController',
-            access: { requiredLogin: true }
+            controller: 'panelController'
         })
         .when('/login', {
             templateUrl: 'views/templates/login.html',
-            controller: 'loginController',
-            access: { requiredLogin: false, redirectIfLogin: true }
+            controller: 'loginController'
         })
         .when('/submit', {
             templateUrl: 'views/templates/submit.html',
-            controller: 'homeController',
-            access: { requiredLogin: false }
+            controller: 'homeController'
         })
-        .when('/forget-password', {
-            templateUrl: 'views/templates/forget-password.html',
-            controller: 'loginController',
-            access: { requiredLogin: false, redirectIfLogin: true }
+        .when('/forgot-password', {
+            templateUrl: 'views/templates/forgot-password.html',
+            controller: 'loginController'
         })
         .when('/reset-password', {
             templateUrl: 'views/templates/reset-password.html',
-            controller: 'loginController',
-            access: { requiredLogin: false, redirectIfLogin: true }
+            controller: 'loginController'
+        })
+        .when('/404', {
+            templateUrl: 'views/templates/404.html'
         })
         .otherwise({
-            template: "<h1>404</h1><p>Nothing has been found</p>",
-            access: { requiredLogin: false }
-        });;
+            redirectTo: '/404'
+        });
 
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
-    });
-});
-
-app.run(function($rootScope, authService, $location) {
-    $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
-        if (nextRoute.access.requiredLogin || nextRoute.access.redirectIfLogin) {
-            authService.checkJudgeType().then(function(judge) {
-                if (!judge.logInStatus)
-                    $location.path('/login');
-                else
-                    $location.path('/panel');
-            });
-        }
-
     });
 });

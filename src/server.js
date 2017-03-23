@@ -12,13 +12,20 @@ import stanzaController from './server/controllers/stanzaController';
 var app = express();
 var DbConnect = dbController.connect();
 var i18n = require('i18n-abide');
-
-
+var authFilter = function(req, res, next) {
+    if (!req.session.email && req.originalUrl == '/panel')
+        res.redirect('/login');
+    else if (
+        req.session.email &&
+        (req.originalUrl == '/login' || req.originalUrl == '/reset-password' || req.originalUrl == '/forgot-password'))
+        res.redirect('/panel');
+    else
+        next();
+};
 
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
-
 
 app.use(
     i18n.abide({
@@ -27,9 +34,6 @@ app.use(
         translation_directory: path.resolve('./media/locale')
     })
 );
-
-var x = path.resolve('./media/locale');
-
 app.use(express.static(__dirname + "/../dist"));
 app.use(cookieParser());
 app.use(session({
@@ -37,6 +41,12 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+/**causing session to disturb**/
+//cookie: {
+//     secure: true,
+//     maxAge: new Date(Date.now() + (60 * 60 * 1000))
+// }
+
 app.use(bodyParser.urlencoded({
     'extended': 'true'
 }));
@@ -44,6 +54,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({
     type: 'application/vnd.api+json'
 }));
+app.use(authFilter);
 
 app.post('/login/validate', userController.login);
 app.post('/logout', userController.destroySession);
@@ -56,10 +67,10 @@ app.get('/stanza/get/:status/:currentPage/', stanzaController.getStanzas);
 app.post('/stanza/create', stanzaController.createStanza);
 app.post('/stanza/update', stanzaController.updateStanza);
 
-
 app.get('/locale', baseController.locale);
 app.get('/locale/:lang', baseController.changedLocale);
 app.get('/logInStatus', baseController.sendStatus);
+
 app.get('*', baseController.sendIndex);
 
 app.listen(80, function() {

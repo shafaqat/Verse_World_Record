@@ -43,13 +43,11 @@ const startSession = function(err, isUserAuthenticated, req, res) {
         session = req.session;
         var user = req.body;
 
-
         session.userid = user.id;
         session.email = user.userEmail;
         session.type = user.type;
 
         console.log('creating session for the user:' + session.email);
-
         AppUtils.sendResponse(res, err, 'isloggedIn', true, null);
     } else {
         AppUtils.sendResponse(res, err, 'isloggedIn', false, 'authentation failed');
