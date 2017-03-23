@@ -1,21 +1,23 @@
+'use strict';
+
 var app = angular.module('app', ['ngRoute', 'ngMessages']);
 var locale;
 var scope;
 var changeLocale;
 
 function gettext(key) {
-    if (locale == undefined || !locale[key])
-        return "";
+    if (locale == undefined || !locale[key]) return "";
     return locale[key][1];
 };
 
-
 app.controller('appController', function($scope, $rootScope, $document, $route, $compile, $window, $timeout, authService, UserService, stanzaService, localizationService) {
+    $rootScope.server_message = '';
+    $rootScope.hide_message_banner = true;
+    $rootScope.no_of_submissions = 0;
+
     $scope.location = '';
     $scope.tab = 'published';
     $scope.server_message_hide_delay = 6000;
-    $rootScope.server_message = '';
-    $rootScope.hide_message_banner = true;
     $scope.current_page = null;
     $scope.current_stanzas = null;
     $scope.isChiefJudge = false;
@@ -32,7 +34,6 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
     $scope.rejected_stanzas_page = { level: 0 };
 
     $scope.drafts_count = 0;
-    $scope.no_of_submissions = 0;
     $scope.pagination_level = 0;
 
     $scope.lang = $window.localStorage.getItem('lang') || 'ar';
@@ -43,13 +44,10 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
 
     scope = $scope;
     $scope.setJudgeInfo = function() {
-        authService.checkJudgeType().then(
-            function(userInfo) {
-                $scope.isJudgeLogin = userInfo.logInStatus;
-                $scope.isChiefJudge = (userInfo.judgeType == 'head') ? true : false;
-            }
-        );
-
+        authService.checkJudgeType().then(function(userInfo) {
+            $scope.isJudgeLogin = userInfo.logInStatus;
+            $scope.isChiefJudge = userInfo.judgeType == 'head' ? true : false;
+        });
     };
 
     $scope.logout = function() {
@@ -58,13 +56,10 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
         });
     };
 
-    localizationService.getchangedLocale($scope.lang).then(
-        function(result) {
-            $scope.locale = result.messages;
-            locale = $scope.locale;
-
-        }
-    );
+    localizationService.getchangedLocale($scope.lang).then(function(result) {
+        $scope.locale = result.messages;
+        locale = $scope.locale;
+    });
 
     $scope.getStanzas = function(stanza_status, search_query) {
         $scope.tab = stanza_status;
@@ -85,30 +80,24 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
         }
 
         stanzaService.getStanzas(stanza_status, $scope.current_page.level, search_query)
-            .then(
-                function(result) {
-                    $scope.no_of_submissions = result[result.length - 1][0]['COUNT(*)'];
-                    result.splice(result.length - 1, 1);
+            .then(function(result) {
+                $rootScope.no_of_submissions = result[result.length - 1];
+                result.splice(result.length - 1, 1);
 
-                    if (stanza_status == 'pending approval') {
-                        $scope.drafts_count = $scope.no_of_submissions;
-                    }
+                if (stanza_status == 'pending approval' && search_query == "") {
+                    $scope.drafts_count = angular.copy($scope.no_of_submissions);
+                }
 
-                    $scope.current_stanzas.length = 0;
-                    result.forEach(function(item) {
-                        $scope.current_stanzas.push(item);
-                    });
-                    $scope.show_loading_spinner = false;
-                },
-                function(error) {}
-            );
-
+                $scope.current_stanzas.length = 0;
+                result.forEach(function(item) {
+                    $scope.current_stanzas.push(item);
+                });
+                $scope.show_loading_spinner = false;
+            }, function(error) {});
     };
 
     $scope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
         $scope.location = nextRoute.originalPath;
         $scope.setJudgeInfo();
-
     });
-
 });

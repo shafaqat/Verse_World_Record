@@ -36,7 +36,6 @@ app.controller('loginController', function($scope, $rootScope, $location, $timeo
     $scope.forgotPassword = function() {
         UserService.forgotPassword($scope.userEmail).then(
             function(payload) {
-                console.log(payload);
                 $rootScope.server_message = gettext(payload);
                 $rootScope.hide_message_banner = false;
 

@@ -79,7 +79,7 @@
    ],
    "PANEL": [
       null,
-      "Panel"
+      "Judge's Panel"
    ],
    "LOGIN": [
       null,
@@ -121,21 +121,9 @@
       null,
       "Verses published"
    ],
-   "published Verses found": [
+   "results found": [
       null,
-      "published Verses found"
-   ],
-   "accepted Verses found": [
-      null,
-      "accepted Verses found"
-   ],
-   "rejected Verses found": [
-      null,
-      "rejected Verses found"
-   ],
-   "pending Verses found": [
-      null,
-      "pending Verses found"
+      " results found"
    ],
    "USERNAME": [
       null,
@@ -181,9 +169,9 @@
       null,
       "Search"
    ],
-   "Accepted": [
+   "Accept": [
       null,
-      "Accepted"
+      "Accept"
    ],
    "Edit": [
       null,
@@ -207,7 +195,7 @@
    ],
    "You will not be able to edit or delete the verse once you have sumitted it.": [
       null,
-      "You will not be able to edit or delete the verse once you have sumitted it."
+      "You will not be able to edit or delete the verse once you have submitted it."
    ],"The stanza should contain exactly two verses separated by a new line.": [
       null,
       "The stanza should contain exactly two verses separated by a new line."
@@ -266,19 +254,19 @@
    ],
    "Your password is too short.": [
       null,
-      "password is too short."
+      "Password is too short."
    ],
    "Your password is required.": [
       null,
-      "password is required."
+      "Password is required."
    ],
    "Your username is too short.": [
       null,
-      "username is too short."
+      "Username is too short."
    ],
    "Your username is too long.": [
       null,
-      "username is too long."
+      "Username is too long."
    ],
    "This needs to be a valid Stanza.": [
       null,
@@ -290,7 +278,7 @@
    ],
    "Your username is required.": [
       null,
-      "email is required."
+      "Email is required."
    ],
    "This needs to be a valid email": [
       null,
@@ -306,15 +294,15 @@
    ],
    "Your name is too short.": [
       null,
-      "name is too short."
+      "Name is too short."
    ],
    "Your name is too long.": [
       null,
-      "name is too long."
+      "Name is too long."
    ],
    "Your name is required.": [
       null,
-      "name is required."
+      "Name is required."
    ],
    "This needs to be a valid NUMBER.": [
       null,
@@ -322,15 +310,15 @@
    ],
    "Your number is too short.": [
       null,
-      "number is too short."
+      "Number is too short."
    ],
    "Your number is too long.": [
       null,
-      "number is too long."
+      "Number is too long."
    ],
    "Your number is required.": [
       null,
-      "number is required."
+      "Number is required."
    ],
    "stanza has already created, you cannot create anymore": [
       null,
@@ -354,11 +342,11 @@
    ],
    "password changed successfully": [
       null,
-      "password changed successfully"
+      "Password changed successfully"
    ],
    "reset failed": [
       null,
-      "reset failed"
+      "Failed to reset password"
    ],
    "The stanza is published": [
       null,
@@ -378,11 +366,11 @@
    ],
    "save txt": [
       null,
-      "save"
+      "Save"
    ],
    "cancel txt": [
       null,
-      "cancel"
+      "Cancel"
    ],
    "Nothing Found for": [
       null,
@@ -390,6 +378,6 @@
    ],
    "submissions close message": [
       null,
-      "The Submissions has been closed"
+      "Submissions has been closed. we are currently working on the compiling of submissions."
    ]
 }}

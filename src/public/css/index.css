@@ -391,6 +391,9 @@ li.active a {
     .btn-home-sticky {
         margin-right: 0px;
     }
+    li a.nav-separator {
+        display: none;
+    }
 }
 
 
@@ -480,8 +483,12 @@ li.active a {
     }
 }
 
+.help-block {
+    font-size: 10px;
+}
 
-/*loading spinner*/
+
+/*loading spinner + 404 page*/
 
 .fa.fa-circle-o-notch.fa-spin {
     font-size: 90px;
@@ -489,6 +496,12 @@ li.active a {
     position: fixed;
     top: 50%;
     z-index: 30;
+}
+
+.not_found_section {
+    text-align: center;
+    font-size: larger;
+    padding: 19%;
 }
 
 

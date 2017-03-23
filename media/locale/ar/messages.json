@@ -78,7 +78,7 @@
    ],
    "PANEL": [
       null,
-      "فريق"
+      "لوحة القاضي"
    ],
    "LOGIN": [
       null,
@@ -120,21 +120,9 @@
       null,
       "الآيات نشرت"
    ],
-   "published Verses found": [
+   "results found": [
       null,
-      "وجدت آيات المنشورة"
-   ],
-   "accepted Verses found": [
-      null,
-      "وجدت آيات المقبولة"
-   ],
-   "rejected Verses found": [
-      null,
-      "وجدت آيات رفض"
-   ],
-   "pending Verses found": [
-      null,
-      "في انتظار الآيات وجدت"
+      " العثور على نتائج"
    ],
    "USERNAME": [
       null,
@@ -180,9 +168,9 @@
       null,
       "بحث"
    ],
-   "Accepted": [
+   "Accept": [
       null,
-      "قبلت"
+      "قبول"
    ],
    "Edit": [
       null,
@@ -206,7 +194,7 @@
    ],
    "You will not be able to edit or delete the verse once you have sumitted it.": [
       null,
-      "فإنك لن تكون قادرا على تعديل أو حذف الآية بمجرد تقديمه."
+      "فإنك لن تكون قادرا على تعديل أو حذف الآية مرة واحدة كنت قد قدمته."
    ],"The stanza should contain exactly two verses separated by a new line.": [
       null,
       "يجب أن يحتوي على مقطع بالضبط آيتين مفصولة سطر جديد."
@@ -297,7 +285,7 @@
    ],
    "Forgot Password": [
       null,
-      "?هل نسيت كلمة المرور"
+      "هل نسيت كلمة المرور ؟"
    ],
    "This needs to be a valid email": [
       null,
@@ -401,6 +389,6 @@
    ],
    "submissions close message": [
       null,
-      "تم إغلاق التقديمات"
+      "تم إغلاق الطلبات. ونحن نعمل حاليا على تجميع التقارير"
    ]
 }}

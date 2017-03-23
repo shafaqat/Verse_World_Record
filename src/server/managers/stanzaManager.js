@@ -3,24 +3,25 @@ var DbConnection = dbController.connection;
 
 class stanzaManager {
     load(status, currentPage, search_query, callback) {
-        var offset = currentPage * 100;
-        var stanzasLimit = 100;
-
         search_query = (!search_query) ? ("'%%'") : ("'%" + search_query + "%'");
 
-        var query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND stanza_text LIKE ' + search_query + ' AND statuses.type = ? LIMIT ? OFFSET ?';
 
-        DbConnection.query(query, [status, stanzasLimit, offset], function(err, results) {
-            query = 'SELECT COUNT(*) FROM stanzas, statuses WHERE stanzas.status_id = statuses.id AND statuses.type = ? AND stanza_text LIKE ' + search_query;
+        var query = 'SELECT COUNT(*) FROM stanzas, statuses WHERE stanzas.status_id = statuses.id AND statuses.type = ? AND stanza_text LIKE ' + search_query;
+        DbConnection.query(query, status, function(err, row_count) {
+            row_count = row_count[0]['COUNT(*)'];
+            var stanzasLimit = Math.ceil(row_count / 1000) * 100;
+            var offset = currentPage * stanzasLimit;
+
             if (!err) {
-                DbConnection.query(query, status, function(err, row_count) {
+                query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND stanza_text LIKE ' + search_query + ' AND statuses.type = ? LIMIT ? OFFSET ?';
+
+                DbConnection.query(query, [status, stanzasLimit, offset], function(err, results) {
                     results.push(row_count);
-                    console.log(results.length + ' from ' + offset + ' to ' + (offset + stanzasLimit) + 'sending records of type \"' + status + '\"');
+
+                    console.log((results.length - 1) + ' records from ' + offset + ' to ' + (offset + stanzasLimit) + ' sending records of type \"' + status + '\"');
                     return callback(null, results);
                 });
-            } else
-                console.log('err:', err);
-
+            } else console.log('err:', err);
         });
     }
 

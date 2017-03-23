@@ -46,8 +46,8 @@
                                             <span class="btn-search" ng-show="search_close_btn" ng-click="reset_search_in_stanzas()">
                                                 <i class="fa fa-close"></i>
                                             </span>
-                                            <input id="search-input" type="search" ng-model="search_query" ng-change="hide_search_error_message = true" class="form-control" placeholder="<%= gettext('Search') %>" />
-                                            <span class="btn-search" ng-click="search_in_stanzas();hide_search_error_message=false">
+                                            <input id="search-input" type="search" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>" ng-change="search_query_changed=false" />
+                                            <span class="btn-search" ng-click="search_in_stanzas();">
                                                 <i class="fa fa-search"></i>
                                             </span>
                                         </div>
@@ -65,10 +65,7 @@
                                     <span ng-if="tab == 'rejected' && !search_close_btn"><%= gettext('Verses rejected') %></span>
                                     <span ng-if="tab == 'published' && !search_close_btn"><%= gettext('Verses published') %></span>
 
-                                    <span ng-if="tab == 'pending approval' && search_close_btn"><%= gettext('pending Verses found') %></span>
-                                    <span ng-if="tab == 'approved' && search_close_btn"><%= gettext('accepted Verses found') %></span>
-                                    <span ng-if="tab == 'rejected' && search_close_btn"><%= gettext('rejected Verses found') %></span>
-                                    <span ng-if="tab == 'published' && search_close_btn"><%= gettext('published Verses found') %></span>
+                                    <span ng-if="search_close_btn"><%= gettext('results found') %></span>
                                 </p>
 
                             </div>
@@ -78,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-if="no_of_submissions == 0 && search_close_btn && !hide_search_error_message ">
+                            <div class="clearfix " ng-if="no_of_submissions == 0 && search_close_btn && search_query_changed">
                                 <div class="col-sm-12 ">
                                     <div class="clearfix p_stanza">
                                         <div class="stanza-starts clearfix ">
@@ -90,7 +87,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix " ng-show="tab == 'published'">
+                            <div class="clearfix " ng-if="tab == 'published'">
                                 <div class="col-sm-12 p_stanza" ng-repeat="stanza in published_stanzas">
                                     <div class="col-sm-2 hover-display ">
                                         <h5 class="text-centre "><strong>{{stanza.submitter_name}}</strong></h5>
@@ -111,7 +108,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-show="tab == 'rejected'">
+                            <div class="clearfix " ng-if="tab == 'rejected'">
                                 <div class="col-sm-12 ">
                                     <div class="clearfix p_stanza" ng-repeat="stanza in rejected_stanzas">
                                         <div class="stanza-starts clearfix ">
@@ -126,7 +123,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix" ng-show="tab == 'approved'">
+                            <div class="clearfix" ng-if="tab == 'approved'">
                                 <div class=" p_stanza" ng-repeat="stanza in approved_stanzas">
                                     <div class="col-sm-12 edit-bg" ng-show="show_edit_area">
                                         <div class="col-sm-3 hover-display edit-bg " style="margin-top: 9%;">
@@ -140,7 +137,7 @@
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right">
                                                             <div class="btn-group" role="group" aria-label="...">
-                                                                <button type="submit" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
+                                                                <button type="submit" ng-disabled="stanzaForm.$invalid" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
@@ -177,7 +174,7 @@
                                             <div class="edit-icons " ng-show="isChiefJudge ">
                                                 <a href=" " ng-click="update_stanza( 'published', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
-                                                    <span><%= gettext('Accepted') %></span>
+                                                    <span><%= gettext('Accept') %></span>
                                                 </a>
                                                 <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index) ">
                                                     <i class="fa fa-pencil "></i>
@@ -193,7 +190,7 @@
                                 </div>
                             </div>
 
-                            <div class="clearfix " ng-show="tab=='pending approval'">
+                            <div class="clearfix " ng-if="tab=='pending approval'">
                                 <div class="clearfix p_stanza " ng-repeat="stanza in pending_stanzas ">
                                     <div class="col-sm-12 edit-bg " ng-show="show_edit_area">
                                         <div class="col-sm-3 hover-display edit-bg " style="margin-top: 9%; ">
@@ -207,7 +204,7 @@
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right">
                                                             <div class="btn-group" role="group" aria-label="...">
-                                                                <button type="submit" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
+                                                                <button type="submit" ng-disabled="stanzaForm.$invalid" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
@@ -244,7 +241,7 @@
                                             <div class="edit-icons" ng-show="!isChiefJudge">
                                                 <a href=" " ng-click="update_stanza( 'approved', stanza.id, $index) ">
                                                     <i class="fa fa-check green "></i>
-                                                    <span><%= gettext('Accepted') %></span>
+                                                    <span><%= gettext('Accept') %></span>
                                                 </a>
                                                 <a href=" " ng-click="show_edit_area=true; set_edit_stanza_vars($index)">
                                                     <i class="fa fa-pencil "></i>
