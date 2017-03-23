@@ -483,6 +483,10 @@ li.active a {
     }
 }
 
+.help-block {
+    font-size: 10px;
+}
+
 
 /*loading spinner + 404 page*/
 

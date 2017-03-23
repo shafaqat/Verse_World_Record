@@ -137,7 +137,7 @@
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right">
                                                             <div class="btn-group" role="group" aria-label="...">
-                                                                <button type="submit" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
+                                                                <button type="submit" ng-disabled="stanzaForm.$invalid" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
@@ -204,7 +204,7 @@
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right">
                                                             <div class="btn-group" role="group" aria-label="...">
-                                                                <button type="submit" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
+                                                                <button type="submit" ng-disabled="stanzaForm.$invalid" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
