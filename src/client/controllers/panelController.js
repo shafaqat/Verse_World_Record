@@ -26,8 +26,10 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('textarea').arabisk();
 
-        if ($scope.tab.includes('pending')) $scope.edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
-        else $scope.edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
+        if ($scope.tab.includes('pending'))
+            $scope.p_stanza.scope().edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
+        else
+            $scope.p_stanza.scope().edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
     };
 
     $scope.update_stanza = function(update_behavior, stanza_id, index, stanza_text) {
