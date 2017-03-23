@@ -155,7 +155,6 @@ li>a.nav-separator {
     font-size: 18px;
     padding: 8px;
     color: #ffffff;
-    margin-top: 10px;
 }
 
 .home-submit-btn {
@@ -172,7 +171,7 @@ li>a.nav-separator {
 /*language dropdown*/
 
 .dd .ddTitle .ddTitleText {
-    padding: 7px 20px 5px 9px;
+    padding: 7px;
 }
 
 .dd .ddTitle {
@@ -275,9 +274,14 @@ li.active a {
     width: 110%;
 }
 
-.dd {
-    margin-right: 4%;
-    margin-left: 4%;
+.navigation li.drop-down {
+    margin-top:10px;
+    margin-left: 10px;
+    border:none;
+}
+
+.navigation li.drop-down .ddcommon {
+    width: 0px;
 }
 
 
@@ -332,28 +336,21 @@ li.active a {
     padding-top: 9px;
 }
 
-.scroll-div .division-dots {
-    PADDING-TOP: 65px;
-    padding-left: 148px;
-}
-
-.navs-list-wrapper .division-dots {
-    width: 426px;
-}
-
 .panel-carousel-indicators {
     bottom: -4px;
 }
+
+.right-section .panel-container .slider {
+    padding: 0;
+    width: 300px;
+  }
 
 
 /***for iphone 5 & 5s****/
 
 @media only screen and (min-width: 320px) and (max-width: 568px) {
     .scroll-div {
-        height: 180px;
-    }
-    .scroll-div .navbar-brand {
-        margin: 0 120px;
+        height: 130px;
     }
     .on-mobile {
         text-align: center;
@@ -376,11 +373,7 @@ li.active a {
     .division-dots li {
         padding-left: 0px;
     }
-    .scroll-div .division-dots {
-        PADDING-TOP: 50px;
-        padding-left: 0px;
-        margin-left: -50px;
-    }
+
     .right-section .panel-container .carousel-indicators {
         text-align: center;
         bottom: 40px;
@@ -394,6 +387,24 @@ li.active a {
     li a.nav-separator {
         display: none;
     }
+    .navs-list-wrapper .division-dots {
+      padding: 0px;
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 568px) and (orientation : landscape) {
+ .right-section {
+      margin-top: 0px;
+    }
+
+    .right-section .panel-container .carousel-indicators {
+      bottom: 10px;
+    }
+
+    .scroll-div {
+    height: 70px;
+}
+
 }
 
 
@@ -403,9 +414,6 @@ li.active a {
 /*iphone 6 & 6s*/
 
 @media only screen and (min-width: 375px) and (max-width: 667px) {
-    .scroll-div .navbar-brand {
-        margin: 0 145px;
-    }
     .navs-list-wrapper .division-dots {
         width: 470px;
     }
@@ -414,8 +422,31 @@ li.active a {
     }
 }
 
-.right-section .panel-container .slider {
-    padding: 0;
+
+
+@media only screen and (min-width : 375px) and (max-width : 667px) and (orientation : landscape) { 
+  .right-section .nav.navbar-right {
+    text-align: right;
+  }
+
+  .panel-carousel-indicators {
+     bottom: 10px; 
+  }
+
+  .navs-list-wrapper .division-dots {
+    padding: 0px;
+  }
+
+}
+
+@media only screen and (min-width : 414px) and (max-width : 736px) and (orientation : landscape) {
+  .panel-carousel-indicators {
+    bottom: 8px;
+  }
+
+  .right-section .nav.navbar-right {
+    text-align: right;
+  }
 }
 
 
@@ -423,9 +454,9 @@ li.active a {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .btn-home-sticky {
-        width: 20%;
         font-size: 14px;
-        margin-right: 20px;
+        margin-right: 10px;
+        margin-top: 10px;
     }
     .scroll-div {
         height: 60px;
@@ -445,6 +476,7 @@ li.active a {
         float: right;
         top: -29px;
         left: 330px;
+        bottom: -80px;
     }
     .right-section .panel-container .carousel-indicators {
         position: static;
@@ -472,6 +504,11 @@ li.active a {
     .panel-division-dots .slider {
         padding-left: 230px;
     }
+
+    .dd .ddTitle .ddTitleText,
+    .dd .ddChild li {
+    padding: 6px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -481,6 +518,20 @@ li.active a {
     .fa.fa-circle-o-notch.fa-spin {
         left: 47%;
     }
+
+     .header-indicator-container .slider {
+        padding: 0px;
+        position: absolute;
+        float: right;
+        top: -29px;
+        left: 455px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+.header-indicator {
+      bottom: -80px;
+  }
 }
 
 .help-block {
