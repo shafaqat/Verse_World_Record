@@ -6,7 +6,7 @@
                 <div class="col-md-6 col-md-offset-3 time-section">
                     <div class="clearfix">
                         <div class="col-xs-12">
-                            <div class="text-right">
+                            <div class="text-right flip">
                                 <a href="/"><i class="fa fa-close form-btn"></i></a>
                             </div>
 
@@ -17,10 +17,10 @@
                                 <div class="clearfix">
                                     <div class="col-xs-10 col-xs-offset-1">
 
-                                        <div class="form-group text-left" ng-class="{ 'has-error': userForm.user_email.$dirty && userForm.user_email.$invalid }">
+                                        <div class="form-group text-left flip" ng-class="{ 'has-error': userForm.user_email.$dirty && userForm.user_email.$invalid }">
 
-                                            <label for="user_email"><%= gettext('USERNAME') %> *</label>
-                                            <input class="form-control" name="user_email" ng-model="userEmail" ng-minlength="5" ng-maxlength="35" type='email' placeholder="<%= gettext('Enter email address') %>" required/>
+                                            <label for="user_email"><%= gettext('USERNAME') %></label>
+                                            <input class="form-control" name="user_email" ng-model="userEmail" ng-minlength="5" ng-maxlength="35" type='email' placeholder="<%= gettext('Enter email address') %>" required dir="<%= gettext('lang_dir')%>" />
 
                                             <div class="help-block" ng-messages="userForm.user_email.$error" ng-if="userForm.user_email.$dirty && userForm.user_email.$invalid">
                                                 <p ng-message="minlength">
@@ -38,12 +38,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group text-left" ng-class="{ 'has-error': userForm.user_password.$dirty && userForm.user_password.$invalid }">
+                                        <div class="form-group text-left flip" ng-class="{ 'has-error': userForm.user_password.$dirty && userForm.user_password.$invalid }">
 
-                                            <label for="user_password"><%= gettext('PASSWORD') %> *</label>
-                                            <input class="form-control" name="user_password" ng-model="userPassword" ng-minlength="5" type='password' placeholder="<%= gettext('enter password') %>" required/>
+                                            <label for="user_password"><%= gettext('PASSWORD') %></label>
+                                            <input class="form-control" name="user_password" ng-model="userPassword" ng-minlength="5" type='password' placeholder="<%= gettext('enter password') %>" required dir="<%= gettext('lang_dir')%>" />
 
-                                            <a href="/forgot-password" class="pull-right color">
+                                            <a href="/forgot-password" class="pull-right color flip">
                                                 <%= gettext('Forgot Password') %>
                                             </a>
                                             <div class="help-block" ng-messages="userForm.user_password.$error" ng-if="userForm.user_password.$dirty && userForm.user_email.$invalid">

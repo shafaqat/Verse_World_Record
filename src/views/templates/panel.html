@@ -41,13 +41,13 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <form class="navbar-form navbar-right search-form" ng-submit="search_in_stanzas()">
+                                    <form class="navbar-form navbar-right flip search-form" ng-submit="search_in_stanzas()">
                                         <div class="form-group">
-                                            <span class="btn-search" ng-show="search_close_btn" ng-click="reset_search_in_stanzas()">
+                                            <span class="btn-search pull-left flip" ng-show="search_close_btn" ng-click="reset_search_in_stanzas()">
                                                 <i class="fa fa-close"></i>
                                             </span>
                                             <input id="search-input" type="search" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>" />
-                                            <span class="btn-search" ng-click="search_in_stanzas();">
+                                            <span class="btn-search pull-right flip" ng-click="search_in_stanzas();">
                                                 <i class="fa fa-search"></i>
                                             </span>
                                         </div>
@@ -113,10 +113,10 @@
                                     <div class="clearfix p_stanza" ng-repeat="stanza in rejected_stanzas">
                                         <div class="stanza-starts clearfix ">
                                             <div class="col-sm-6 ">
-                                                <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                                <p class="pull-right ">{{stanza.stanza_text.split('\n')[0]}}</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                                <p class="pull-left ">{{stanza.stanza_text.split('\n')[1]}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -135,13 +135,13 @@
                                                 <form class="form" name="stanzaForm" ng-submit="update_stanza('approved',null, edit_stanza_index, edit_stanza_text)">
                                                     <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
-                                                        <div class="col-sm-offset-3  col-sm-9 text-right">
+                                                        <div class="col-sm-offset-3  col-sm-9 text-right flip">
                                                             <div class="btn-group" role="group" aria-label="...">
                                                                 <button type="submit" ng-disabled="stanzaForm.$invalid" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
-                                                        <div dir="<%= gettext('lang_dir') %>" class="help-block text-left" ng-messages="stanzaForm.edit_stanza_text_area.$error" ng-if="stanzaForm.edit_stanza_text_area.$touched">
+                                                        <div dir="<%= gettext('lang_dir') %>" class="help-block text-left flip" ng-messages="stanzaForm.edit_stanza_text_area.$error" ng-if="stanzaForm.edit_stanza_text_area.$touched">
                                                             <p ng-message="required">
                                                                 <%= gettext('To submit, stanza is required.') %>
                                                             </p>
@@ -161,7 +161,7 @@
                                         </div>
                                         <div class="col-sm-7 ">
                                             <div class="clearfix stanza-starts ">
-                                                <div class="pull-left col-sm-6 ">
+                                                <div class="pull-left  col-sm-6 ">
                                                     <p class="">{{stanza.stanza_text.split('\n')[0]}}</p>
                                                 </div>
                                                 <div class=" pull-right col-sm-6">
@@ -202,13 +202,13 @@
                                                 <form class="form" name="stanzaForm" ng-submit="update_stanza('pending approval',null, edit_stanza_index, edit_stanza_text)">
                                                     <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
-                                                        <div class="col-sm-offset-3  col-sm-9 text-right">
+                                                        <div class="col-sm-offset-3  col-sm-9 text-right flip">
                                                             <div class="btn-group" role="group" aria-label="...">
                                                                 <button type="submit" ng-disabled="stanzaForm.$invalid" class="btn btn-default btn-finised"><%= gettext('save txt') %></button>
                                                                 <button type="button" class="btn btn-default btn-cancel" ng-click="show_edit_area = false"><%= gettext('cancel txt') %></button>
                                                             </div>
                                                         </div>
-                                                        <div dir="<%= gettext('lang_dir') %>" class="help-block text-left" ng-messages="stanzaForm.edit_stanza_text_area.$error" ng-if="stanzaForm.edit_stanza_text_area.$touched">
+                                                        <div dir="<%= gettext('lang_dir') %>" class="help-block text-left flip" ng-messages="stanzaForm.edit_stanza_text_area.$error" ng-if="stanzaForm.edit_stanza_text_area.$touched">
                                                             <p ng-message="required">
                                                                 <%= gettext('To submit, stanza is required.') %>
                                                             </p>
@@ -228,10 +228,10 @@
                                         </div>
                                         <div class="col-sm-7 ">
                                             <div class="clearfix stanza-starts ">
-                                                <div class=" pull-right col-sm-6 ">
+                                                <div class=" pull-right  col-sm-6 ">
                                                     <p class="">{{stanza.stanza_text.split('\n')[0]}}</p>
                                                 </div>
-                                                <div class=" pull-left col-sm-6">
+                                                <div class=" pull-left  col-sm-6">
                                                     <p class="  ">{{stanza.stanza_text.split('\n')[1]}}</p>
                                                 </div>
                                             </div>

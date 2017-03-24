@@ -27,7 +27,7 @@
         ],
         "Enter Validation Code lbl": [
             null,
-            "Enter confirmation Code"
+            "Enter confirmation Code *"
         ],
         "Enter Name txt": [
             null,
@@ -35,7 +35,7 @@
         ],
         "Enter new password lbl": [
             null,
-            "Enter new password"
+            "Enter new password *"
         ],
         "Enter Password txt": [
             null,
@@ -43,7 +43,7 @@
         ],
         "Confirm password txt": [
             null,
-            "Confirm password"
+            "Confirm password *"
         ],
         "Confirm Password btn": [
             null,
@@ -59,7 +59,7 @@
         ],
         "E-mail lbl": [
             null,
-            "E-mail"
+            "E-mail *"
         ],
         "Enter email address txt": [
             null,
@@ -127,7 +127,7 @@
         ],
         "USERNAME": [
             null,
-            "Email Address"
+            "Email Address *"
         ],
         "Enter email address": [
             null,
@@ -135,7 +135,7 @@
         ],
         "PASSWORD": [
             null,
-            "Password"
+            "Password *"
         ],
         "enter password": [
             null,
@@ -207,7 +207,7 @@
         ],
         "FULL NAME": [
             null,
-            "Full Name"
+            "Full Name *"
         ],
         "Enter your name": [
             null,
@@ -215,7 +215,7 @@
         ],
         "NATIONAL ID": [
             null,
-            "National ID"
+            "National ID *"
         ],
         "enter 12 to 16 numbered National ID": [
             null,
@@ -231,7 +231,7 @@
         ],
         "MOBILE NUMBER": [
             null,
-            "Mobile Number"
+            "Mobile Number *"
         ],
         "Enter mobile number": [
             null,

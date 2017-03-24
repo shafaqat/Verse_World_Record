@@ -9,6 +9,8 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             var ng_view_template;
             var ng_view_child_scope;
             var nav_header_template;
+            var rtl_bootstrap_style_link_el = '<link css-layout-type="rtl" rel="stylesheet" type="text/css" href="/public/libs/bootstrap-rtl.min.css" />';
+            var head_el = angular.element('head');
 
             scope.route_change_render_ejs = function(child_scope) {
                 angular.element(document).ready(function() {
@@ -24,6 +26,9 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
 
                     angular.element('#ng_view_container').find('#countries').val(scope.lang);
                     enable_function_of_dropdown_timer_arabic_inputs();
+
+                    if (scope.lang.includes('ar') && head_el.find('[css-layout-type="rtl"]').length < 1)
+                        head_el.append(rtl_bootstrap_style_link_el);
 
                     // }, 150);
                 });
@@ -44,6 +49,14 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                         var html = ejs.render(template, { no_of_submissions: scope.no_of_submissions });
                         html = $compile(html)(ng_view_child_scope);
                         ng_view.html(html);
+
+                        var rtl_bootstrap_DOM_link_el = head_el.find('[css-layout-type="rtl"]');
+
+                        if ((rtl_bootstrap_DOM_link_el.length < 1) && scope.lang.includes('ar'))
+                            head_el.append(rtl_bootstrap_style_link_el);
+                        else if ((rtl_bootstrap_DOM_link_el.length > 0) && scope.lang.includes('en'))
+                            rtl_bootstrap_DOM_link_el.remove();
+
 
                         ng_view.find('#countries').val(lang);
                         enable_function_of_dropdown_timer_arabic_inputs();

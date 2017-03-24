@@ -1,6 +1,6 @@
 <script id="navigation_header" type="text/template">
     <div class="message_banner sample-show-hide" ng-hide="hide_message_banner">
-        <div class="text-right">
+        <div class="text-right flip">
             <a href="" ng-click="server_message='';hide_message_banner=true" aria-label="Toggle ngHide"><i class="fa fa-close form-btn"></i></a>
         </div>
         <div class="message_banner_text">{{server_message}}</div>
@@ -9,7 +9,7 @@
     <header class="navigation ">
         <nav class="navbar navbar-default" ng-class="{header_on_scroll: boolChangeHeaderClass}">
             <div class="container-fluid">
-                <div class="navbar-header">
+                <div class="navbar-header flip">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#verseTopNav" aria-expanded="false">
                         <span class="sr-only">
                             <%= gettext("Toggle navigation") %>
@@ -19,11 +19,11 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class=" navbar-brand" href="/">
-                        <%= gettext("Website title") %>
+                        <img src="/public/images/new-verse-logo.png" alt="<%= gettext('Website title') %>" class=" navbar-brand img-responsive"/>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="verseTopNav">
-                    <ul class="nav navbar-nav navbar-right main-menu breadcrumbs">
+                    <ul class="nav navbar-nav navbar-right main-menu breadcrumbs flip">
                         <li ng-if="!location.includes('home')" ng-class="{active: location.includes('home')}">
                             <a href="/">
                                 <%= gettext("HOME") %>
@@ -52,13 +52,14 @@
             </div>
         </nav>
         <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('panel')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
-            <div class="logo-wrapper division">
+            <div class="logo-wrapper division pull-left flip">
                 <a class=" navbar-brand" href="/">
-                    <%= gettext("Website title") %>
+                    <img src="/public/images/new-verse-logo.png" alt="<%= gettext('Website title') %>" class=" navbar-brand img-responsive"/>
+                   
                 </a>
             </div>
             <div class="right-section">
-                <div class="division-tabs">
+                <div class="division-tabs pull-left flip">
                     <div class="navs-list-wrapper">
                         <ul class="nav navbar-nav nav-list" ng-hide='!location.includes("panel")'>
                             <li ng-class="{active: tab == 'pending approval'}" ng-click="changeTab('pending approval')">
@@ -95,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-                <div ng-if="!submissions_closed" class="nav navbar-right on-mobile" ng-hide='!location.includes("home")'><a href="/submit"><button type="button" class="btn-sm-main btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div>
+                <div ng-if="!submissions_closed" class="nav navbar-right flip on-mobile" ng-hide='!location.includes("home")'><a href="/submit"><button type="button" class="btn-sm-main btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div>
             </div>
         </div>
     </header>

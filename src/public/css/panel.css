@@ -148,7 +148,8 @@
     margin-top: 5px;
 }
 
-.panel-container .btn-finised {
+.panel-container .btn-finised,
+.panel-container .btn-finised:active:focus {
     color: #fff;
     background-color: #b88a3d;
     border: none;

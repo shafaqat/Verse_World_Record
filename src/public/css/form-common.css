@@ -55,7 +55,7 @@ p.note-submit {
 }
 
 .form-container .form-control {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(236, 192, 88, 0.5);
     border: none;
 }
 
@@ -90,6 +90,18 @@ button.btn-primary.btn-sm:active {
     color: #AE8851;
     background-color: #432E0F;
     border: 1px solid black;
+}
+
+button[disabled],
+html input[disabled],
+html input[disabled]:hover,
+button[disabled]:hover,
+button[disabled].btn-primary.btn-sm:hover,
+button[disabled].btn-primary.btn-sm:focus,
+button[disabled].btn-sm-main:focus,
+button[disabled].btn-sm-main:hover {
+    cursor: not-allowed;
+    background-color: rgba(236, 192, 88, 0.5);
 }
 
 input {
