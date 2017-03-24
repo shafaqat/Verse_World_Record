@@ -3,6 +3,11 @@ body {
     color: #ffffff;
 }
 
+.navbar-brand>img {
+    width: 80px;
+    height: 50px;
+}
+
 .increase-arabic-font {
     font-size: 17px;
 }
@@ -400,6 +405,17 @@ li.active a {
         display: none;
     }
     .navs-list-wrapper .division-dots {
+        padding: 0px;
+    }
+    .home-submit-btn {
+        width: 70%;
+        padding: 10px;
+    }
+    p.submit-note,
+    p.note-submit {
+        text-align: center;
+    }
+    .navbar-brand {
         padding: 0px;
     }
 }
