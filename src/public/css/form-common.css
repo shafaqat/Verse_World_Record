@@ -157,4 +157,15 @@ button.btn-primary.btn-sm:focus,
 }
 
 
+/***for iphone 5 & 5s****/
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .btn-primary,
+    .btn-primary:hover {
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+
 /*end*/

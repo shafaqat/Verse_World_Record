@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('homeController', function($scope, $rootScope, $window, $document, $timeout, $location, stanzaService) {
+app.controller('homeController', function($scope, $interval, $rootScope, $window, $document, $timeout, $location, stanzaService) {
 
     $scope.tab = "published";
     $scope.currentPage = 0;
@@ -42,9 +42,15 @@ app.controller('homeController', function($scope, $rootScope, $window, $document
         );
     };
 
+    var checkForScriptLoad = $interval(function() {
+            if ($scope.isDirectiveLoaded) {
+                $interval.cancel(checkForScriptLoad);
 
+                $scope.route_change_render_ejs($scope);
+                $scope.timerFunc();
+            }
+        },
+        100);
 
     $scope.getStanzas($scope.tab, "");
-    $scope.route_change_render_ejs($scope);
-    $scope.timerFunc();
 });

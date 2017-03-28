@@ -13,8 +13,9 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
             var head_el = angular.element('head');
 
             scope.route_change_render_ejs = function(child_scope) {
-                angular.element(document).ready(function() {
-                    // $timeout(function() {
+                localizationService.getchangedLocale(scope.lang).then(function(result) {
+                    scope.locale = result.messages;
+                    locale = scope.locale;
 
                     ng_view_child_scope = child_scope;
                     var ng_view = angular.element('#ngView');
@@ -30,7 +31,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                     if (scope.lang.includes('ar') && head_el.find('[css-layout-type="rtl"]').length < 1)
                         head_el.append(rtl_bootstrap_style_link_el);
 
-                    // }, 150);
+
                 });
             };
 
@@ -69,6 +70,12 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                 angular.element("#search-input").arabisk();
                 angular.element("textarea").arabisk();
                 angular.element("#countries").msDropdown();
+
+                angular.element(".dd.ddcommon.borderRadius").click(function() {
+                    var verseTopNav = angular.element('#verseTopNav');
+                    verseTopNav.animate({ scrollTop: verseTopNav.prop("scrollHeight") }, 300);
+                });
+
                 scope.timerFunc();
             };
 
@@ -108,6 +115,11 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                 $rootScope.submissions_closed = true;
                 $scope.$apply();
             };
+
+            var checkForDirectiveLoaded = function() {
+                $scope.isDirectiveLoaded = true;
+            };
+            checkForDirectiveLoaded();
         }
     };
 });

@@ -15,6 +15,8 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
     $rootScope.hide_message_banner = true;
     $rootScope.no_of_submissions = 0;
 
+    $scope.isDirectiveLoaded = false;
+
     $scope.location = '';
     $scope.tab = 'published';
     $scope.server_message_hide_delay = 6000;
@@ -56,11 +58,6 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
             $scope.isJudgeLogin = false;
         });
     };
-
-    localizationService.getchangedLocale($scope.lang).then(function(result) {
-        $scope.locale = result.messages;
-        locale = $scope.locale;
-    });
 
     $scope.getStanzas = function(stanza_status, search_query) {
         $scope.tab = stanza_status;
