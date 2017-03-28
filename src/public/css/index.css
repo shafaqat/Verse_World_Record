@@ -17,7 +17,30 @@ body {
 }
 
 .increase-arabic-font .panel-carousel-indicators {
-    left: 160px;
+    left: 140px;
+}
+
+.increase-arabic-font .header-indicator-container .slider {
+  padding: 0px;
+  position: absolute;
+  float: right;
+  top: -29px;
+  left: 415px;
+}
+
+.navbar-brand {
+    padding: 3px 15px 0;
+    height: 60px;
+}
+
+.increase-arabic-font .btn-home-sticky {
+  margin-left: 20px;
+} 
+
+.increase-arabic-font .navigation li.drop-down {
+  margin-top: 10px;
+  border: none;
+  margin-right: 10px;
 }
 
 h1,
@@ -293,8 +316,8 @@ li.active a {
     border: none;
 }
 
-.navigation li.drop-down .ddcommon {
-    width: 0px;
+.increase-arabic-font .navigation li.drop-down .ddcommon {
+    width: 100px !important;
 }
 
 
@@ -392,6 +415,10 @@ li.active a {
     }
     .fa.fa-circle-o-notch.fa-spin {
         left: 37%;
+    }
+
+    .increase-arabic-font .btn-home-sticky {
+     margin-left: 0px; 
     }
     .btn-home-sticky {
         margin-right: 0px;
