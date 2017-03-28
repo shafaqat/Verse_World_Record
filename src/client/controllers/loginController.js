@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('loginController', function($scope, $rootScope, $location, $timeout, UserService) {
+app.controller('loginController', function($scope, $interval, $rootScope, $location, $timeout, UserService) {
 
     $scope.userEmail = '';
     $scope.userPassword = '';
@@ -82,5 +82,13 @@ app.controller('loginController', function($scope, $rootScope, $location, $timeo
                 }, errorhandler
             );
     };
-    $scope.route_change_render_ejs($scope);
+
+    var checkForScriptLoad = $interval(function() {
+            if ($scope.isDirectiveLoaded) {
+                $interval.cancel(checkForScriptLoad);
+
+                $scope.route_change_render_ejs($scope);
+            }
+        },
+        100);
 });

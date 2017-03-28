@@ -2,7 +2,7 @@
 
 var app = angular.module('app');
 
-app.controller('panelController', function($scope, $rootScope, $document, $timeout, $location, stanzaService, UserService) {
+app.controller('panelController', function($scope, $interval, $rootScope, $document, $timeout, $location, stanzaService, UserService) {
 
     $scope.tab = 'pending approval';
     $scope.edit_stanza_id = '';
@@ -96,5 +96,14 @@ app.controller('panelController', function($scope, $rootScope, $document, $timeo
         $scope.getStanzas($scope.tab, "");
     };
     $scope.getStanzas($scope.tab, "", $scope);
-    $scope.route_change_render_ejs($scope);
+
+    var checkForScriptLoad = $interval(function() {
+            if ($scope.isDirectiveLoaded) {
+                $interval.cancel(checkForScriptLoad);
+
+                $scope.route_change_render_ejs($scope);
+            }
+        },
+        100);
+
 });
