@@ -26,11 +26,11 @@ body {
 }
 
 .increase-arabic-font .header-indicator-container .slider {
-  padding: 0px;
-  position: absolute;
-  float: right;
-  top: -29px;
-  left: 415px;
+    padding: 0px;
+    position: absolute;
+    float: right;
+    top: -29px;
+    left: 415px;
 }
 
 .navbar-brand {
@@ -39,13 +39,13 @@ body {
 }
 
 .increase-arabic-font .btn-home-sticky {
-  margin-left: 20px;
-} 
+    margin-left: 20px;
+}
 
 .increase-arabic-font .navigation li.drop-down {
-  margin-top: 10px;
-  border: none;
-  margin-right: 10px;
+    margin-top: 10px;
+    border: none;
+    margin-right: 10px;
 }
 
 h1,
@@ -325,6 +325,10 @@ li.active a {
     width: 100px !important;
 }
 
+.ddcommonIphoneClass {
+    overflow-y: visible !important;
+}
+
 
 /*end*/
 
@@ -421,9 +425,8 @@ li.active a {
     .fa.fa-circle-o-notch.fa-spin {
         left: 37%;
     }
-
     .increase-arabic-font .btn-home-sticky {
-     margin-left: 0px; 
+        margin-left: 0px;
     }
     .btn-home-sticky {
         margin-right: 0px;
