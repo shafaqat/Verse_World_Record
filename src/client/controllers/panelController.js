@@ -26,12 +26,13 @@ app.controller('panelController', function($scope, $interval, $rootScope, $docum
         $scope.p_stanza = angular.element('.p_stanza:nth-child(' + (index + 1) + ')');
         $scope.p_stanza.find('textarea').arabisk();
 
-        if ($scope.tab.includes('pending'))
-            $scope.p_stanza.scope().edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
-        else
-            $scope.p_stanza.scope().edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
+        if ($scope.tab.includes('pending')) $scope.p_stanza.scope().edit_stanza_text = $scope.pending_stanzas[index].stanza_text;
+        else $scope.p_stanza.scope().edit_stanza_text = $scope.approved_stanzas[index].stanza_text;
     };
-
+    $scope.cancelEditStanza = function() {
+        $scope.edit_stanza_index = -1;
+        $scope.edit_stanza_text = null;
+    };
     $scope.update_stanza = function(update_behavior, stanza_id, index, stanza_text) {
         $scope.hide_message_banner = true;
         if ($scope.tab == 'approved') $scope.current_stanzas = $scope.approved_stanzas;
@@ -41,20 +42,22 @@ app.controller('panelController', function($scope, $interval, $rootScope, $docum
         else {
             stanza_id = $scope.current_stanzas[index].id;
         }
+
         stanzaService.updateStanza(update_behavior, stanza_id, stanza_text).then(function(updated) {
             if (updated) {
+
                 if (update_behavior == 'approved') {
                     $scope.stanzas_to_add = $scope.approved_stanzas;
                 } else if (update_behavior == 'rejected') {
                     $scope.stanzas_to_add = $scope.rejected_stanzas;
-                } else if (update_behavior == 'pending approval') {
-                    update_behavior = 'updated';
-                    $scope.current_stanzas[index].stanza_text = stanza_text;
-
-                    $scope.p_stanza.scope().show_edit_area = false;
-
                 } else if (update_behavior == 'published') {
                     $scope.stanzas_to_add = $scope.published_stanzas;
+                }
+
+                if ($scope.edit_stanza_index > -1) {
+                    $scope.current_stanzas[index].stanza_text = stanza_text;
+                    update_behavior = 'updated';
+                    $scope.p_stanza.scope().show_edit_area = false;
                 }
 
                 $scope.server_message = gettext('The stanza is ' + update_behavior);
@@ -75,9 +78,7 @@ app.controller('panelController', function($scope, $interval, $rootScope, $docum
 
                     $rootScope.no_of_submissions--;
                 }
-
-                $scope.edit_stanza_index = null;
-                $scope.edit_stanza_text = null;
+                $scope.cancelEditStanza();
             }
         }, errorhandler);
     };
@@ -98,12 +99,10 @@ app.controller('panelController', function($scope, $interval, $rootScope, $docum
     $scope.getStanzas($scope.tab, "", $scope);
 
     var checkForScriptLoad = $interval(function() {
-            if ($scope.isDirectiveLoaded) {
-                $interval.cancel(checkForScriptLoad);
+        if ($scope.isDirectiveLoaded) {
+            $interval.cancel(checkForScriptLoad);
 
-                $scope.route_change_render_ejs($scope);
-            }
-        },
-        100);
-
+            $scope.route_change_render_ejs($scope);
+        }
+    }, 100);
 });
