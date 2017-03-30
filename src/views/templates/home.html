@@ -44,11 +44,11 @@
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="stanza-starts clearfix ">
-                                        <div class="col-sm-6">
-                                            <p class="pull-right">{{stanza.stanza_text.split('\n')[0]}}</p>
+                                        <div class="pull-right col-sm-6">
+                                            <p>{{stanza.stanza_text.split('\n')[0]}}</p>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <p class="pull-left">{{stanza.stanza_text.split('\n')[1]}}</p>
+                                        <div class="pull-left col-sm-6">
+                                            <p>{{stanza.stanza_text.split('\n')[1]}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -56,6 +56,7 @@
                                     <h5 class="text-centre "><strong>{{(published_stanzas_page.level*100+$index+1).toLocaleString(lang)}}</strong></h5>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
