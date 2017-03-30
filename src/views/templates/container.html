@@ -54,37 +54,37 @@
         <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('panel')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
 
             <div class="dots-wr">
-            <div class="clearfix slider">
-              <pagination-directive />
-            </div>
-              
+                <div class="clearfix slider">
+                    <pagination-directive />
+                </div>
+
             </div>
 
             <div class="left-side">
-              <div class="logo-wrapper division">
-                <a class=" navbar-brand" href="/" ng-show="lang!='ar'">
+                <div class="logo-wrapper division">
+                    <a class=" navbar-brand" href="/" ng-show="lang!='ar'">
                     <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>        
                 </a>
-                 <a href="/submit" ng-show="lang=='ar'">
-                    <button type="button" class="btn-sm-main btn-home-sticky">
+                    <a href="/submit" ng-show="lang=='ar'">
+                        <button type="button" class="btn-sm-main btn-home-sticky">
                       <%= gettext("SUBMIT NOW") %>
                     </button>
-                 </a>
-              </div>
+                    </a>
+                </div>
             </div>
 
             <div class="right-side">
-              <div class="logo-wrapper division">
-                
-                 <a class=" navbar-brand" href="/" ng-show="lang=='ar'">
+                <div class="logo-wrapper division">
+
+                    <a class=" navbar-brand" href="/" ng-show="lang=='ar'">
                         <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>
                   </a>
-                 <a href="/submit" ng-show="lang!='ar'">
-                    <button type="button" class="btn-sm-main btn-home-sticky">
+                    <a href="/submit" ng-show="lang!='ar'">
+                        <button type="button" class="btn-sm-main btn-home-sticky">
                       <%= gettext("SUBMIT NOW") %>
                     </button>
-                 </a>
-              </div>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -95,6 +95,7 @@
       <div class="loader">
           <i class="fa fa-circle-o-notch fa-spin"></i>
       </div>
+
     </div>
 </script>
 
