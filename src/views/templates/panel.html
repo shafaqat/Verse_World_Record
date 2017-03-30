@@ -46,7 +46,7 @@
                                             <span class="btn-search pull-left flip" ng-show="search_close_btn" ng-click="reset_search_in_stanzas()">
                                                 <i class="fa fa-close"></i>
                                             </span>
-                                            <input id="search-input" type="search" ng-model="search_query" class="form-control" placeholder="<%= gettext('Search') %>" />
+                                            <input id="search-input" type="search" ng-model="search_query" class="form-control search-area" placeholder="<%= gettext('Search') %>" />
                                             <span class="btn-search pull-right flip" ng-click="search_in_stanzas();">
                                                 <i class="fa fa-search"></i>
                                             </span>
@@ -133,7 +133,7 @@
                                             <div class="stanza-starts" ng-class="{ 'has-error': stanzaForm.edit_stanza_text_area.$touched && stanzaForm.edit_stanza_text_area.$invalid }">
 
                                                 <form class="form" name="stanzaForm" ng-submit="update_stanza('approved',null, edit_stanza_index, edit_stanza_text)">
-                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
+                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control panel-area custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right flip">
                                                             <div class="btn-group" role="group" aria-label="...">
@@ -200,7 +200,7 @@
                                             <div class="stanza-starts" ng-class="{ 'has-error': stanzaForm.edit_stanza_text_area.$touched && stanzaForm.edit_stanza_text_area.$invalid }">
 
                                                 <form class="form" name="stanzaForm" ng-submit="update_stanza('pending approval',null, edit_stanza_index, edit_stanza_text)">
-                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
+                                                    <textarea dir='rtl' id="edit_stanza_text_area" name="edit_stanza_text_area" class="form-control panel-area custom-control" rows="7" cols="80" style="resize:none" ng-model="edit_stanza_text" ng-pattern="/^[\S ]+[\n]+[\S ]+$/" required>{{edit_stanza_text}</textarea>
                                                     <div class="clearfix inner-penal-bg">
                                                         <div class="col-sm-offset-3  col-sm-9 text-right flip">
                                                             <div class="btn-group" role="group" aria-label="...">
