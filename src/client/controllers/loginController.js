@@ -34,12 +34,15 @@ app.controller('loginController', function($scope, $interval, $rootScope, $locat
     };
 
     $scope.forgotPassword = function() {
+        $scope.show_loading_spinner = true;
         UserService.forgotPassword($scope.userEmail).then(
             function(payload) {
                 $rootScope.server_message = gettext(payload);
                 $rootScope.hide_message_banner = false;
+                $scope.show_loading_spinner = false;
 
-                $location.path('/login');
+                if (payload === 'url sent')
+                    $location.path('/login');
                 $timeout(function() {
                     $rootScope.hide_message_banner = true;
                 }, $scope.server_message_hide_delay);
