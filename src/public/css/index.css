@@ -3,11 +3,6 @@ body {
     color: #ffffff;
 }
 
-.navbar-brand>img {
-    width: 80px;
-    height: 50px;
-}
-
 .increase-arabic-font {
     font-size: 17px;
 }
@@ -22,7 +17,7 @@ body {
 }
 
 .increase-arabic-font .panel-carousel-indicators {
-    left: 140px;
+    left: calc(50% - 30%);
 }
 
 .increase-arabic-font .header-indicator-container .slider {
@@ -39,8 +34,9 @@ body {
 }
 
 .increase-arabic-font .btn-home-sticky {
-    margin-left: 20px;
-}
+  margin-left: 20px;
+  margin-top: 10px;
+} 
 
 .increase-arabic-font .navigation li.drop-down {
     margin-top: 10px;
@@ -73,7 +69,6 @@ h3 {
 .scroll-div {
     position: fixed;
     width: 100%;
-    height: 70px;
     z-index: 100;
     top: 0;
     background-color: rgba(60, 37, 3, 0.8) !important;
@@ -84,9 +79,9 @@ h3 {
     top: 8px;
 }
 
-.logo-wrapper {
+/*.logo-wrapper {
     float: left;
-}
+}*/
 
 .right-section {
     margin-left: 100px;
@@ -107,9 +102,9 @@ h3 {
     padding: 9px 0;
 }
 
-.scroll-div .division-dots {
+/*.scroll-div .division-dots {
     top: 32px;
-}
+}*/
 
 .scroll-div .panel-container {
     padding-right: 15px;
@@ -390,9 +385,24 @@ li.active a {
     width: 300px;
 }
 
+/*.left-side, .dots-wr, .right-side
+{
+    padding: 10px;
+}*/
 
-/***for iphone 5 & 5s****/
+.right-side, .left-side {
+    width: 160px;
+}
+.left-side {
+    float: left;
+}
 
+<<<<<<< HEAD
+.right-side {
+    float: right;
+    text-align: right;
+
+=======
 @media only screen and (min-width: 320px) and (max-width: 568px) {
     .scroll-div {
         height: 130px;
@@ -448,146 +458,27 @@ li.active a {
     .navbar-brand {
         padding: 0px;
     }
+>>>>>>> 016c595027ab21711c483adead87c63c9172c3a8
 }
-
-@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
-    .right-section {
-        margin-top: 0px;
-    }
-    .right-section .panel-container .carousel-indicators {
-        bottom: 10px;
-    }
-    .scroll-div {
-        height: 70px;
-    }
+.right-side .btn-home-sticky {
+    margin-top: 10px;
+}
+.dots-wr {
+    position: absolute;
+    right: 0px;
+    text-align: center;
 }
 
 
-/***/
 
-
-/*iphone 6 & 6s*/
-
-@media only screen and (min-width: 375px) and (max-width: 667px) {
-    .navs-list-wrapper .division-dots {
-        width: 470px;
-    }
-    .right-section .panel-container .carousel-indicators {
-        text-align: center;
-    }
+.dots-wr ol.carousel-indicators li.next-prev-icon {
+    text-indent: 0;
+    border: none;
+    color: #BA861F;
+    font-size: 20px;
 }
-
-@media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
-    .right-section .nav.navbar-right {
-        text-align: right;
-    }
-    .panel-carousel-indicators {
-        bottom: 10px;
-    }
-    .navs-list-wrapper .division-dots {
-        padding: 0px;
-    }
-}
-
-@media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
-    .panel-carousel-indicators {
-        bottom: 8px;
-    }
-    .right-section .nav.navbar-right {
-        text-align: right;
-    }
-}
-
-
-/*for ipad*/
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .btn-home-sticky {
-        font-size: 14px;
-        margin-right: 10px;
-        margin-top: 10px;
-    }
-    .scroll-div {
-        height: 60px;
-    }
-    .carousel-indicators {
-        bottom: 15px;
-    }
-    .header-indicator {
-        position: static;
-    }
-    .scroll-div .header-indicator-container {
-        padding-right: 0px;
-    }
-    .header-indicator-container .slider {
-        padding: 0px;
-        position: absolute;
-        float: right;
-        top: -29px;
-        left: 330px;
-        bottom: -80px;
-    }
-    .right-section .panel-container .carousel-indicators {
-        position: static;
-        margin: 0 15px;
-        width: auto;
-        text-align: left;
-    }
-    .scroll-div .division-dots {
-        top: 32px;
-        padding-top: 7px;
-        padding-left: 80px;
-    }
-    .right-section {
-        padding-top: 0px;
-    }
-    .navs-list-wrapper .division-dots {
-        width: 362px;
-    }
-    .navs-list-wrapper .panel-division-dots {
-        width: 200px;
-    }
-    .fa.fa-circle-o-notch.fa-spin {
-        left: 47%;
-    }
-    .panel-division-dots .slider {
-        padding-left: 230px;
-    }
-    .dd .ddTitle .ddTitleText,
-    .dd .ddChild li {
-        padding: 6px;
-    }
-    .increase-arabic-font .header-indicator-container .slider {
-        left: 0;
-    }
-    .increase-arabic-font .panel-division-dots .panel-container .slider {
-        padding-left: 110px;
-    }
-    .increase-arabic-font .panel-carousel-indicators {
-        left: 121px;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .navs-list-wrapper .division-dots {
-        width: 48%;
-    }
-    .fa.fa-circle-o-notch.fa-spin {
-        left: 47%;
-    }
-    .header-indicator-container .slider {
-        padding: 0px;
-        position: absolute;
-        float: right;
-        top: -29px;
-        left: 455px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .header-indicator {
-        bottom: -80px;
-    }
+.dots-wr .carousel-indicators li {
+    border: 1px solid #BA861F;
 }
 
 
@@ -595,9 +486,12 @@ li.active a {
 
 .fa.fa-circle-o-notch.fa-spin {
     font-size: 90px;
+    width: 90px;
+    height: 90px;
     color: rgba(60, 37, 3, 0.8);
     position: fixed;
-    top: 50%;
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
     z-index: 30;
 }
 
@@ -607,5 +501,89 @@ li.active a {
     padding: 19%;
 }
 
+
+/*end*/
+
+
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) { 
+    .dots-wr {
+    width: calc(100% - 0px);
+    left: 0px;
+    margin-top: 100px;
+    }
+        .scroll-div {
+    height: 130px;
+    }
+
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) { 
+    .dots-wr {
+    width: calc(100% - 0px);
+    left: 0px;
+    margin-top: 100px;
+    }
+        .scroll-div {
+    height: 130px;
+    }
+
+    .btn-home-sticky {
+        font-size: 14px;
+        padding: 6px;
+    }
+ }
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+    .dots-wr {
+    width: calc(100% - 340px);
+    left: 170px;
+    margin-top: 30px;
+    }
+        .scroll-div {
+    height: 70px;
+    }
+ }
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) { 
+    .dots-wr {
+    width: calc(100% - 340px);
+    left: 170px;
+    margin-top: 30px;
+    }
+        .scroll-div {
+    height: 70px;
+    }
+ }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    .dots-wr {
+    width: calc(100% - 340px);
+    left: 170px;
+    margin-top: 30px;
+    }
+    .scroll-div {
+    height: 70px;
+    }
+}
+
+
+/*for iphone 5*/
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+    .home-submit-btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .btn-home-sticky {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+ }
 
 /*end*/

@@ -18,9 +18,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
                     <a class=" navbar-brand" href="/">
-                        <img src="/public/images/Logo_White (1).png" alt="<%= gettext('Website title') %>"/>
+                        <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="verseTopNav">
@@ -53,57 +52,48 @@
             </div>
         </nav>
         <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('panel')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
-            <div class="logo-wrapper division pull-left flip">
-                <a class=" navbar-brand logo" href="/">
-                    <img src="/public/images/new-verse-logo.png" alt="<%= gettext('Website title') %>" class="  img-responsive"/>
-                   
-                </a>
-            </div>
-            <div class="right-section">
-                <div class="division-tabs pull-left flip">
-                    <div class="navs-list-wrapper">
-                        <ul class="nav navbar-nav nav-list" ng-hide='!location.includes("panel")'>
-                            <li ng-class="{active: tab == 'pending approval'}" ng-click="changeTab('pending approval')">
-                                <a href="#" dir="<%= gettext('lang_dir') %>">
-                                    <%= gettext('Draft') %> ({{drafts_count.toLocaleString(lang)}})
-                                        <span class="sr-only">
-                                            (<%= gettext('current') %>)
-                                        </span>
-                                </a>
-                            </li>
-                            <li ng-class="{active: tab == 'approved'}" ng-click="changeTab('approved')">
-                                <a href="#">
-                                    <%= gettext("Pending") %>
-                                </a>
-                            </li>
-                            <li ng-class="{active: tab == 'rejected'}" ng-click="changeTab('rejected')">
-                                <a href="#">
-                                    <%= gettext("Rejected") %>
-                                </a>
-                            </li>
-                            <li ng-class="{active: tab == 'published'}" ng-click="changeTab('published')">
-                                <a href="#">
-                                    <%= gettext("Published") %>
-                                </a>
-                            </li>
-                        </ul>
 
-                        <div class="division-dots" ng-class="{'panel-division-dots': location.includes('panel')}">
-                            <div class="panel-container header-indicator-container">
-                                <div class=" slider">
-                                    <pagination-directive class="carousel-indicators header-indicator" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="dots-wr">
+                <div class="clearfix slider">
+                    <pagination-directive />
                 </div>
-                <div ng-if="!submissions_closed" class="nav navbar-right flip on-mobile" ng-hide='!location.includes("home")'><a href="/submit"><button type="button" class="btn-sm-main btn-home-sticky"><%= gettext("SUBMIT NOW") %></button></a></div>
+
+            </div>
+
+            <div class="left-side">
+                <div class="logo-wrapper division">
+                    <a class=" navbar-brand" href="/" ng-show="lang!='ar'">
+                    <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>        
+                </a>
+                    <a href="/submit" ng-show="lang=='ar'">
+                        <button type="button" class="btn-sm-main btn-home-sticky">
+                      <%= gettext("SUBMIT NOW") %>
+                    </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="logo-wrapper division">
+
+                    <a class=" navbar-brand" href="/" ng-show="lang=='ar'">
+                        <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>
+                  </a>
+                    <a href="/submit" ng-show="lang!='ar'">
+                        <button type="button" class="btn-sm-main btn-home-sticky">
+                      <%= gettext("SUBMIT NOW") %>
+                    </button>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <div ng-if="show_loading_spinner">
-        <i class="fa fa-circle-o-notch fa-spin"></i>
+
+    <div class="clearfix text-center" ng-if="show_loading_spinner">
+        <div class="loader">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
     </div>
 </script>
 
