@@ -34,7 +34,6 @@
                                 <%= gettext("PANEL") %>
                             </a>
                         </li>
-                        <li ng-if=""><a href="#" class="nav-separator">|</a></li>
                         <li ng-if="!isJudgeLogin && !location.includes('login')" ng-class="{active: location.includes('login')}">
                             <a href="/login">
                                 <%= gettext("LOGIN") %>
@@ -45,7 +44,6 @@
                                 <%= gettext("LOGOUT") %>
                             </a>
                         </li>
-                        <li><a href="#" class="nav-separator">|</a></li>
                         <li class="drop-down"><select name="countries" id="countries" onchange="changeLocale(value)" style="width: 80px"><option value="ar" data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag sa" ><%= gettext("U.A.E") %></option><option value="en" data-image="public/libs/msdropdown/blank.gif" data-imagecss="flag us"><%= gettext("US") %></option></select></li>
                     </ul>
                 </div>

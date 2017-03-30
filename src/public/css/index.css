@@ -21,11 +21,11 @@ body {
 }
 
 .increase-arabic-font .header-indicator-container .slider {
-  padding: 0px;
-  position: absolute;
-  float: right;
-  top: -29px;
-  left: 415px;
+    padding: 0px;
+    position: absolute;
+    float: right;
+    top: -29px;
+    left: 415px;
 }
 
 .navbar-brand {
@@ -34,14 +34,14 @@ body {
 }
 
 .increase-arabic-font .btn-home-sticky {
-  margin-left: 20px;
-  margin-top: 10px;
-} 
+    margin-left: 20px;
+    margin-top: 10px;
+}
 
 .increase-arabic-font .navigation li.drop-down {
-  margin-top: 10px;
-  border: none;
-  margin-right: 10px;
+    margin-top: 10px;
+    border: none;
+    margin-right: 10px;
 }
 
 h1,
@@ -79,6 +79,7 @@ h3 {
     top: 8px;
 }
 
+
 /*.logo-wrapper {
     float: left;
 }*/
@@ -101,6 +102,7 @@ h3 {
     width: 300px;
     padding: 9px 0;
 }
+
 
 /*.scroll-div .division-dots {
     top: 32px;
@@ -225,6 +227,10 @@ li>a.nav-separator {
 
 .ddcommon .shadow {
     box-shadow: none;
+}
+
+.ddcommonIphoneClass {
+    overflow: visible !important;
 }
 
 .dd .arrow {
@@ -381,14 +387,17 @@ li.active a {
     width: 300px;
 }
 
+
 /*.left-side, .dots-wr, .right-side
 {
     padding: 10px;
 }*/
 
-.right-side, .left-side {
+.right-side,
+.left-side {
     width: 160px;
 }
+
 .left-side {
     float: left;
 }
@@ -396,18 +405,17 @@ li.active a {
 .right-side {
     float: right;
     text-align: right;
-
 }
+
 .right-side .btn-home-sticky {
     margin-top: 10px;
 }
+
 .dots-wr {
     position: absolute;
     right: 0px;
     text-align: center;
 }
-
-
 
 .dots-wr ol.carousel-indicators li.next-prev-icon {
     text-indent: 0;
@@ -415,6 +423,7 @@ li.active a {
     color: #BA861F;
     font-size: 20px;
 }
+
 .dots-wr .carousel-indicators li {
     border: 1px solid #BA861F;
 }
@@ -444,84 +453,91 @@ li.active a {
 
 
 /*// Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575px) { 
-    .dots-wr {
-    width: calc(100% - 0px);
-    left: 0px;
-    margin-top: 100px;
-    }
-        .scroll-div {
-    height: 130px;
-    }
 
+@media (max-width: 575px) {
+    .dots-wr {
+        width: calc(100% - 0px);
+        left: 0px;
+        margin-top: 100px;
+    }
+    .scroll-div {
+        height: 130px;
+    }
 }
 
-/*// Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767px) { 
-    .dots-wr {
-    width: calc(100% - 0px);
-    left: 0px;
-    margin-top: 100px;
-    }
-        .scroll-div {
-    height: 130px;
-    }
 
+/*// Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .dots-wr {
+        width: calc(100% - 0px);
+        left: 0px;
+        margin-top: 100px;
+    }
+    .scroll-div {
+        height: 130px;
+    }
     .btn-home-sticky {
         font-size: 14px;
         padding: 6px;
     }
- }
+}
+
 
 /*// Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991px) { 
-    .dots-wr {
-    width: calc(100% - 340px);
-    left: 170px;
-    margin-top: 30px;
-    }
-        .scroll-div {
-    height: 70px;
-    }
- }
 
-/*// Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199px) { 
+@media (min-width: 768px) and (max-width: 991px) {
     .dots-wr {
-    width: calc(100% - 340px);
-    left: 170px;
-    margin-top: 30px;
-    }
-        .scroll-div {
-    height: 70px;
-    }
- }
-
-/*// Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { 
-    .dots-wr {
-    width: calc(100% - 340px);
-    left: 170px;
-    margin-top: 30px;
+        width: calc(100% - 340px);
+        left: 170px;
+        margin-top: 30px;
     }
     .scroll-div {
-    height: 70px;
+        height: 70px;
+    }
+}
+
+
+/*// Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .dots-wr {
+        width: calc(100% - 340px);
+        left: 170px;
+        margin-top: 30px;
+    }
+    .scroll-div {
+        height: 70px;
+    }
+}
+
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+
+@media (min-width: 1200px) {
+    .dots-wr {
+        width: calc(100% - 340px);
+        left: 170px;
+        margin-top: 30px;
+    }
+    .scroll-div {
+        height: 70px;
     }
 }
 
 
 /*for iphone 5*/
-@media only screen and (min-width : 320px) and (max-width : 568px) {
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
     .home-submit-btn {
         font-size: 15px;
         padding: 10px;
     }
-
     .btn-home-sticky {
         font-size: 14px;
         padding: 6px;
     }
+}
 
- }
 
 /*end*/
