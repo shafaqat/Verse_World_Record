@@ -16,7 +16,7 @@ app.factory('authService', function($http, $location, $q) {
     }
 
     function showError(err) {
-        console.log('error:', error);
+        console.log('error:', err);
     }
 
     return {

@@ -70,7 +70,7 @@ app.factory('UserService', function($http, authService, $location, $q) {
             };
 
             $http.post('forgot-password', user).then(function(response) {
-                if (response.data.authenticated) {
+                if (response.data.url) {
                     deferred.resolve('url sent');
                 } else
                     deferred.resolve('user not found');

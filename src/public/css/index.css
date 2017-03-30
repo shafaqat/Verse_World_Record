@@ -21,11 +21,11 @@ body {
 }
 
 .increase-arabic-font .header-indicator-container .slider {
-  padding: 0px;
-  position: absolute;
-  float: right;
-  top: -29px;
-  left: 415px;
+    padding: 0px;
+    position: absolute;
+    float: right;
+    top: -29px;
+    left: 415px;
 }
 
 .navbar-brand {
@@ -39,9 +39,9 @@ body {
 } 
 
 .increase-arabic-font .navigation li.drop-down {
-  margin-top: 10px;
-  border: none;
-  margin-right: 10px;
+    margin-top: 10px;
+    border: none;
+    margin-right: 10px;
 }
 
 h1,
@@ -320,6 +320,10 @@ li.active a {
     width: 100px !important;
 }
 
+.ddcommonIphoneClass {
+    overflow-y: visible !important;
+}
+
 
 /*end*/
 
@@ -393,10 +397,68 @@ li.active a {
     float: left;
 }
 
+<<<<<<< HEAD
 .right-side {
     float: right;
     text-align: right;
 
+=======
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .scroll-div {
+        height: 130px;
+    }
+    .on-mobile {
+        text-align: center;
+    }
+    .scroll-div .panel-container {
+        padding-right: 0px;
+    }
+    .iphone-panel-height {
+        height: 280px;
+    }
+    .right-section {
+        margin-left: 0px;
+        overflow: none;
+        margin-top: 50px;
+    }
+    .division-tabs li.active,
+    .division-tabs li {
+        padding-left: 10px;
+    }
+    .division-dots li {
+        padding-left: 0px;
+    }
+    .right-section .panel-container .carousel-indicators {
+        text-align: center;
+        bottom: 40px;
+    }
+    .fa.fa-circle-o-notch.fa-spin {
+        left: 37%;
+    }
+    .increase-arabic-font .btn-home-sticky {
+        margin-left: 0px;
+    }
+    .btn-home-sticky {
+        margin-right: 0px;
+    }
+    li a.nav-separator {
+        display: none;
+    }
+    .navs-list-wrapper .division-dots {
+        padding: 0px;
+    }
+    .home-submit-btn {
+        width: 70%;
+        padding: 10px;
+    }
+    p.submit-note,
+    p.note-submit {
+        text-align: center;
+    }
+    .navbar-brand {
+        padding: 0px;
+    }
+>>>>>>> 016c595027ab21711c483adead87c63c9172c3a8
 }
 .right-side .btn-home-sticky {
     margin-top: 10px;

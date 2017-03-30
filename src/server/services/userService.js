@@ -91,7 +91,7 @@ const sendMail = function(res, receiver) {
             return console.log("Error sending mail, message: ", error);
         }
         console.log('recovery message %s sent: %s', info.messageId, info.response);
-        AppUtils.sendResponse(res, error, 'url', 'sent', 'use url to signup');
+        AppUtils.sendResponse(res, error, 'url', true, 'use url to signup');
     });
 };
 
@@ -103,7 +103,7 @@ const startPasswordRecovery = function(req, res) {
         if (isUserAuthenticated) {
             sendMail(res, user.userEmail);
         } else {
-            AppUtils.sendResponse(res, err, 'authenticated', false, 'cant signup');
+            AppUtils.sendResponse(res, err, 'url', false, 'cant signup');
         }
     });
 };

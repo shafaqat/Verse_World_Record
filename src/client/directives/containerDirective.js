@@ -71,10 +71,16 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                 angular.element("textarea").arabisk();
                 angular.element("#countries").msDropdown();
 
-                angular.element(".dd.ddcommon.borderRadius").click(function() {
-                    var verseTopNav = angular.element('#verseTopNav');
-                    verseTopNav.animate({ scrollTop: verseTopNav.prop("scrollHeight") }, 300);
+
+                var verseTopNav = angular.element('#verseTopNav');
+                angular.element("#countries_msdd").click(function() {
+                    verseTopNav.toggleClass('ddcommonIphoneClass');
+                    // verseTopNav.animate({ scrollTop: verseTopNav.prop("scrollHeight") }, 300);
                 });
+                angular.element("button[data-target='#verseTopNav']").click(function() {
+                    verseTopNav.removeClass('ddcommonIphoneClass');
+                });
+
 
                 scope.timerFunc();
             };
