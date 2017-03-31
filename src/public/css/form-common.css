@@ -22,6 +22,14 @@
 .send-validation-caode-btn,
 .send-validation-caode-btn:hover {
     padding: 15px;
+    font-size: 16px;
+}
+
+.change-password-btn,
+.change-password-btn:hover {
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
 }
 
 .landing-content {
@@ -89,6 +97,12 @@ p.note-submit {
     height: 40px;
     margin: 5px 0;
     border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .color,
