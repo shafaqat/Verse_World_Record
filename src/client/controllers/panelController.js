@@ -71,10 +71,10 @@ app.controller('panelController', function($scope, $interval, $rootScope, $docum
                     // $scope.stanzas_to_add.splice(0, 0, $scope.current_stanzas[index]);
 
                     if (update_behavior == 'published') $scope.approved_stanzas.splice(index, 1);
-                    else {
+                    else $scope.current_stanzas.splice(index, 1);
+
+                    if ($scope.tab.includes("pending"))
                         $scope.drafts_count--;
-                        $scope.current_stanzas.splice(index, 1);
-                    }
 
                     $rootScope.no_of_submissions--;
                 }

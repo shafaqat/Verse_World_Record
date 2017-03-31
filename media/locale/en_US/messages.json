@@ -49,6 +49,10 @@
             null,
             "Confirm Password"
         ],
+        "Confirm Password inpu label": [
+            null,
+            "Confirm Password"
+        ],
         "CHANGE PASSWORD": [
             null,
             "CHANGE PASSWORD"

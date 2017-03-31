@@ -19,6 +19,11 @@
     color: #ffffff;
 }
 
+.send-validation-caode-btn,
+.send-validation-caode-btn:hover {
+    padding: 15px;
+}
+
 .landing-content {
     padding: 20px 20px 50px;
 }
@@ -67,7 +72,7 @@ p.note-submit {
     box-shadow: none;
 }
 
-.has-error .help-block{
+.has-error .help-block {
     color: #FF8224;
 }
 

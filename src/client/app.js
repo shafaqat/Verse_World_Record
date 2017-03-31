@@ -46,6 +46,10 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
     });
 
     scope = $scope;
+    $scope.reset_message_banner = function() {
+        $rootScope.server_message = '';
+        $rootScope.hide_message_banner = true;
+    }
     $scope.setJudgeInfo = function() {
         authService.checkJudgeType().then(function(userInfo) {
             $scope.isJudgeLogin = userInfo.logInStatus;

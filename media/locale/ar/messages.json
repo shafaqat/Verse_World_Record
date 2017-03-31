@@ -1,400 +1,404 @@
 {
-	"messages": {
-		"": {
-			"project-id-version": "PACKAGE VERSION",
-			"report-msgid-bugs-to": "",
-			"pot-creation-date": "2017-03-13 04:06+0000",
-			"po-revision-date": "2017-03-09 13:04+0000",
-			"last-translator": "Automatically generated",
-			"language-team": "none",
-			"mime-version": "1.0",
-			"content-type": "text/plain; charset=UTF-8",
-			"content-transfer-encoding": "8bit",
-			"language": ""
-		},
-		"lang_dir": [
-			null,
-			"rtl"
-		],
-		"Website title": [
-			null,
-			"بيت شعر"
-		],
-		"CONFIRM PASSWORD head": [
-			null,
-			"تأكيد كلمة المرور"
-		],
-		"Enter Validation Code lbl": [
-			null,
-			"* أدخل رمز التأكيد"
-		],
-		"Enter Name txt": [
-			null,
-			"أدخل الاسم"
-		],
-		"Enter new password lbl": [
-			null,
-			"* أدخل كلمة المرور الجديدة"
-		],
-		"Enter Password txt": [
-			null,
-			"أدخل كلمة المرور"
-		],
-		"Confirm password txt": [
-			null,
-			"* تأكيد كلمة المرور"
-		],
-		"Confirm Password btn": [
-			null,
-			"تأكيد كلمة المرور"
-		],
-		"CHANGE PASSWORD": [
-			null,
-			"تغيير كلمة السر"
-		],
-		"FORGOT YOUR PASSWORD? head": [
-			null,
-			"نسيت رقمك السري؟"
-		],
-		"E-mail lbl": [
-			null,
-			"* البريد الإلكتروني"
-		],
-		"Enter email address txt": [
-			null,
-			"أدخل عنوان البريد الالكتروني"
-		],
-		"SEND VALIDATION CODE ": [
-			null,
-			"أرسل التحقق من صحة رمز"
-		],
-		"Toggle navigation": [
-			null,
-			"الملاحة تبديل"
-		],
-		"HOME": [
-			null,
-			"الصفحة الرئيسية"
-		],
-		"PANEL": [
-			null,
-			"لوحة القاضي"
-		],
-		"LOGIN": [
-			null,
-			"تسجيل الدخول"
-		],
-		"LOGOUT": [
-			null,
-			"الخروج"
-		],
-		"motivational quote": [
-			null,
-			"التفاؤل هو الإيمان الذي يؤدي إلى الإنجاز. لا شيء يمكن أن يتم دون الأمل والثقة. هيلين كيلر"
-		],
-		"SUBMIT NOW": [
-			null,
-			"تقدم الآن"
-		],
-		"Time Remaining For Submission": [
-			null,
-			"الوقت المتبقي لتقديم"
-		],
-		"All verses": [
-			null,
-			"كل الآيات"
-		],
-		"Verses left for acceptance": [
-			null,
-			"الآيات ترك للقبول"
-		],
-		"Verses left for publishing": [
-			null,
-			"الآيات ترك للنشر"
-		],
-		"Verses rejected": [
-			null,
-			"الآيات رفضت"
-		],
-		"Verses published": [
-			null,
-			"الآيات نشرت"
-		],
-		"results found": [
-			null,
-			" العثور على نتائج"
-		],
-		"USERNAME": [
-			null,
-			"* اسم المستخدم"
-		],
-		"Enter email address": [
-			null,
-			"أدخل عنوان البريد الالكتروني"
-		],
-		"PASSWORD": [
-			null,
-			"* كلمه السر"
-		],
-		"enter password": [
-			null,
-			"أدخل كلمة المرور"
-		],
-		"Forgot Passwor": [
-			null,
-			"هل نسيت كلمة المرور"
-		],
-		"Draft": [
-			null,
-			"مشروع"
-		],
-		"current": [
-			null,
-			"تيار"
-		],
-		"Pending": [
-			null,
-			"قيد الانتظار"
-		],
-		"Rejected": [
-			null,
-			"مرفوض"
-		],
-		"Published": [
-			null,
-			"نشرت"
-		],
-		"Search": [
-			null,
-			"بحث"
-		],
-		"Accept": [
-			null,
-			"قبول"
-		],
-		"Edit": [
-			null,
-			"تصحيح"
-		],
-		"Reject": [
-			null,
-			"رفض"
-		],
-		"SUBMIT YOUR VERSE": [
-			null,
-			"ترسل أي الآية الخاص بك"
-		],
-		"Note :": [
-			null,
-			": ملحوظة"
-		],
-		"You can submit one verse only.": [
-			null,
-			"يمكنك تقديم آية واحدة فقط."
-		],
-		"You will not be able to edit or delete the verse once you have sumitted it.": [
-			null,
-			"فإنك لن تكون قادرا على تعديل أو حذف الآية مرة واحدة كنت قد قدمته."
-		],
-		"The stanza should contain exactly two verses separated by a new line.": [
-			null,
-			"يجب أن يحتوي على مقطع بالضبط آيتين مفصولة سطر جديد."
-		],
-		"enter your verse here": [
-			null,
-			"إدخال الآية هنا"
-		],
-		"FULL NAME": [
-			null,
-			"* الاسم الكامل"
-		],
-		"Enter your name": [
-			null,
-			"أدخل أسمك"
-		],
-		"NATIONAL ID": [
-			null,
-			"* الهوية الوطنية"
-		],
-		"enter 12 to 16 numbered National ID": [
-			null,
-			"إدخال ١٢ إلى ١٦ مرقمة الهوية الوطنية"
-		],
-		"TWITTER ACCOUNT": [
-			null,
-			"حساب على موقع تويتر"
-		],
-		"Enter account username": [
-			null,
-			"إدخال اسم مستخدم الحساب"
-		],
-		"MOBILE NUMBER": [
-			null,
-			"* رقم الهاتف المحمول"
-		],
-		"Enter mobile number": [
-			null,
-			"أدخل رقم الجوال"
-		],
-		"enter 12 to 16 numbers": [
-			null,
-			"إدخال ١٢ إلى ١٦ أرقام"
-		],
-		"U.A.E": [
-			null,
-			"عربى"
-		],
-		"US": [
-			null,
-			"الإنجليزية"
-		],
-		"Your token is required.": [
-			null,
-			"مطلوب رمز أرسلت لكم لإعادة تعيين كلمة المرور"
-		],
-		"Your password is too short.": [
-			null,
-			"كلمة المرور قصيرة جدا"
-		],
-		"Your password is required.": [
-			null,
-			"كلمة المرور مطلوبة"
-		],
-		"Confirm password": [
-			null,
-			"تأكيد كلمة المرور"
-		],
-		"Confirm password btn": [
-			null,
-			"تأكيد كلمة المرور"
-		],
-		"Your username is too short.": [
-			null,
-			"اسم المستخدم قصيرة جدا"
-		],
-		"Your username is too long.": [
-			null,
-			"اسم المستخدم طويل جدا"
-		],
-		"This needs to be a valid email.": [
-			null,
-			"هذا يجب أن يكون عنوان بريد إلكتروني صالح."
-		],
-		"Your username is required.": [
-			null,
-			"البريد الالكتروني مطلوب"
-		],
-		"Forgot Password": [
-			null,
-			"هل نسيت كلمة المرور ؟"
-		],
-		"This needs to be a valid email": [
-			null,
-			"هذا يجب أن يكون عنوان بريد إلكتروني صالح"
-		],
-		"To submit, stanza is required.": [
-			null,
-			"أن يقدم، مطلوب مقطع."
-		],
-		"This needs to be a valid NAME.": [
-			null,
-			"هذا يحتاج إلى أن يكون اسما صالحا."
-		],
-		"This needs to be a valid Stanza.": [
-			null,
-			"هذا يحتاج إلى أن يكون مقطع صالح."
-		],
-		"Your name is too short.": [
-			null,
-			"الإسم قصير جدا"
-		],
-		"Your name is too long.": [
-			null,
-			"اسم طويل جدا"
-		],
-		"Your name is required.": [
-			null,
-			"مطلوب اسم"
-		],
-		"This needs to be a valid NUMBER.": [
-			null,
-			"هذا يحتاج إلى أن يكون عدد صحيح."
-		],
-		"Your number is too short.": [
-			null,
-			"عدد قصيرة جدا"
-		],
-		"Your number is too long.": [
-			null,
-			"عدد طويل جد"
-		],
-		"Your number is required.": [
-			null,
-			"مطلوب رقم"
-		],
-		"stanza has already created, you cannot create anymore": [
-			null,
-			"وقد قدمت بالفعل هذا المقطع."
-		],
-		"stanza submitted for approval, after approval, will be available to the public": [
-			null,
-			"وقد تم تقديم مقطع إلينا. وقضاتنا النظر فيه وبعد الموافقة سيتم نشره علنا"
-		],
-		"login failed": [
-			null,
-			"فشل تسجيل الدخول"
-		],
-		"url sent": [
-			null,
-			"إعادة تعيين كلمة المرور البريد الإلكتروني المرسلة. يرجى التحقق من حساب بريدك الإلكتروني للحصول على البريد الإلكتروني مع رمز التأكيد التي يمكنك استخدامها لإعادة تعيين كلمة المرور الخاصة بك"
-		],
-		"user not found": [
-			null,
-			"لا يحتوي عنوان البريد الإلكتروني هذا على حساب مستخدم مرتبط. هل أنت متأكد أنك قمت بالتسجيل؟"
-		],
-		"Passwords do not match": [
-			null,
-			"كلمات المرور غير متطابقة"
-		],
-		"password changed successfully": [
-			null,
-			"تم تغيير الرقم السري بنجاح"
-		],
-		"reset failed": [
-			null,
-			"فشل إعادة تعيين"
-		],
-		"The stanza is published": [
-			null,
-			"يتم نشر مقطع"
-		],
-		"The stanza is updated": [
-			null,
-			"يتم تحديث مقطع"
-		],
-		"The stanza is rejected": [
-			null,
-			"رفض مقطع"
-		],
-		"The stanza is approved": [
-			null,
-			"تمت الموافقة على مقطع"
-		],
-		"save txt": [
-			null,
-			"حفظ"
-		],
-		"cancel txt": [
-			null,
-			"إلغاء"
-		],
-		"Nothing Found for": [
-			null,
-			"وجدت شيئا ل "
-		],
-		"submissions close message": [
-			null,
-			"تم إغلاق الطلبات. ونحن نعمل حاليا على تجميع التقارير"
-		]
-	}
+    "messages": {
+        "": {
+            "project-id-version": "PACKAGE VERSION",
+            "report-msgid-bugs-to": "",
+            "pot-creation-date": "2017-03-13 04:06+0000",
+            "po-revision-date": "2017-03-09 13:04+0000",
+            "last-translator": "Automatically generated",
+            "language-team": "none",
+            "mime-version": "1.0",
+            "content-type": "text/plain; charset=UTF-8",
+            "content-transfer-encoding": "8bit",
+            "language": ""
+        },
+        "lang_dir": [
+            null,
+            "rtl"
+        ],
+        "Website title": [
+            null,
+            "بيت شعر"
+        ],
+        "CONFIRM PASSWORD head": [
+            null,
+            "تأكيد كلمة المرور"
+        ],
+        "Enter Validation Code lbl": [
+            null,
+            "* أدخل رمز التأكيد"
+        ],
+        "Enter Name txt": [
+            null,
+            "أدخل الاسم"
+        ],
+        "Enter new password lbl": [
+            null,
+            "* أدخل كلمة المرور الجديدة"
+        ],
+        "Enter Password txt": [
+            null,
+            "أدخل كلمة المرور"
+        ],
+        "Confirm password txt": [
+            null,
+            "* تأكيد كلمة المرور"
+        ],
+        "Confirm Password btn": [
+            null,
+            "تأكيد كلمة المرور"
+        ],
+        "CHANGE PASSWORD": [
+            null,
+            "تغيير كلمة السر"
+        ],
+        "FORGOT YOUR PASSWORD? head": [
+            null,
+            "نسيت رقمك السري؟"
+        ],
+        "E-mail lbl": [
+            null,
+            "* البريد الإلكتروني"
+        ],
+        "Enter email address txt": [
+            null,
+            "أدخل عنوان البريد الالكتروني"
+        ],
+        "SEND VALIDATION CODE ": [
+            null,
+            "أرسل التحقق من صحة رمز"
+        ],
+        "Toggle navigation": [
+            null,
+            "الملاحة تبديل"
+        ],
+        "HOME": [
+            null,
+            "الصفحة الرئيسية"
+        ],
+        "PANEL": [
+            null,
+            "لوحة القاضي"
+        ],
+        "LOGIN": [
+            null,
+            "تسجيل الدخول"
+        ],
+        "LOGOUT": [
+            null,
+            "الخروج"
+        ],
+        "motivational quote": [
+            null,
+            "التفاؤل هو الإيمان الذي يؤدي إلى الإنجاز. لا شيء يمكن أن يتم دون الأمل والثقة. هيلين كيلر"
+        ],
+        "SUBMIT NOW": [
+            null,
+            "تقدم الآن"
+        ],
+        "Time Remaining For Submission": [
+            null,
+            "الوقت المتبقي لتقديم"
+        ],
+        "All verses": [
+            null,
+            "كل الآيات"
+        ],
+        "Verses left for acceptance": [
+            null,
+            "الآيات ترك للقبول"
+        ],
+        "Verses left for publishing": [
+            null,
+            "الآيات ترك للنشر"
+        ],
+        "Verses rejected": [
+            null,
+            "الآيات رفضت"
+        ],
+        "Verses published": [
+            null,
+            "الآيات نشرت"
+        ],
+        "results found": [
+            null,
+            " العثور على نتائج"
+        ],
+        "USERNAME": [
+            null,
+            "* اسم المستخدم"
+        ],
+        "Enter email address": [
+            null,
+            "أدخل عنوان البريد الالكتروني"
+        ],
+        "PASSWORD": [
+            null,
+            "* كلمه السر"
+        ],
+        "enter password": [
+            null,
+            "أدخل كلمة المرور"
+        ],
+        "Forgot Passwor": [
+            null,
+            "هل نسيت كلمة المرور"
+        ],
+        "Draft": [
+            null,
+            "مشروع"
+        ],
+        "current": [
+            null,
+            "تيار"
+        ],
+        "Pending": [
+            null,
+            "قيد الانتظار"
+        ],
+        "Rejected": [
+            null,
+            "مرفوض"
+        ],
+        "Published": [
+            null,
+            "نشرت"
+        ],
+        "Search": [
+            null,
+            "بحث"
+        ],
+        "Accept": [
+            null,
+            "قبول"
+        ],
+        "Edit": [
+            null,
+            "تصحيح"
+        ],
+        "Reject": [
+            null,
+            "رفض"
+        ],
+        "SUBMIT YOUR VERSE": [
+            null,
+            "ترسل أي الآية الخاص بك"
+        ],
+        "Note :": [
+            null,
+            ": ملحوظة"
+        ],
+        "You can submit one verse only.": [
+            null,
+            "يمكنك تقديم آية واحدة فقط."
+        ],
+        "You will not be able to edit or delete the verse once you have sumitted it.": [
+            null,
+            "فإنك لن تكون قادرا على تعديل أو حذف الآية مرة واحدة كنت قد قدمته."
+        ],
+        "The stanza should contain exactly two verses separated by a new line.": [
+            null,
+            "يجب أن يحتوي على مقطع بالضبط آيتين مفصولة سطر جديد."
+        ],
+        "enter your verse here": [
+            null,
+            "إدخال الآية هنا"
+        ],
+        "FULL NAME": [
+            null,
+            "* الاسم الكامل"
+        ],
+        "Enter your name": [
+            null,
+            "أدخل أسمك"
+        ],
+        "NATIONAL ID": [
+            null,
+            "* الهوية الوطنية"
+        ],
+        "enter 12 to 16 numbered National ID": [
+            null,
+            "إدخال ١٢ إلى ١٦ مرقمة الهوية الوطنية"
+        ],
+        "TWITTER ACCOUNT": [
+            null,
+            "حساب على موقع تويتر"
+        ],
+        "Enter account username": [
+            null,
+            "إدخال اسم مستخدم الحساب"
+        ],
+        "MOBILE NUMBER": [
+            null,
+            "* رقم الهاتف المحمول"
+        ],
+        "Enter mobile number": [
+            null,
+            "أدخل رقم الجوال"
+        ],
+        "enter 12 to 16 numbers": [
+            null,
+            "إدخال ١٢ إلى ١٦ أرقام"
+        ],
+        "U.A.E": [
+            null,
+            "عربى"
+        ],
+        "US": [
+            null,
+            "الإنجليزية"
+        ],
+        "Your token is required.": [
+            null,
+            "مطلوب رمز أرسلت لكم لإعادة تعيين كلمة المرور"
+        ],
+        "Your password is too short.": [
+            null,
+            "كلمة المرور قصيرة جدا"
+        ],
+        "Your password is required.": [
+            null,
+            "كلمة المرور مطلوبة"
+        ],
+        "Confirm password": [
+            null,
+            "تأكيد كلمة المرور"
+        ],
+        "Confirm password btn": [
+            null,
+            "تأكيد كلمة المرور"
+        ],
+        "Confirm Password inpu label": [
+            null,
+            "تأكيد كلمة المرور"
+        ],
+        "Your username is too short.": [
+            null,
+            "اسم المستخدم قصيرة جدا"
+        ],
+        "Your username is too long.": [
+            null,
+            "اسم المستخدم طويل جدا"
+        ],
+        "This needs to be a valid email.": [
+            null,
+            "هذا يجب أن يكون عنوان بريد إلكتروني صالح."
+        ],
+        "Your username is required.": [
+            null,
+            "البريد الالكتروني مطلوب"
+        ],
+        "Forgot Password": [
+            null,
+            "هل نسيت كلمة المرور ؟"
+        ],
+        "This needs to be a valid email": [
+            null,
+            "هذا يجب أن يكون عنوان بريد إلكتروني صالح"
+        ],
+        "To submit, stanza is required.": [
+            null,
+            "أن يقدم، مطلوب مقطع."
+        ],
+        "This needs to be a valid NAME.": [
+            null,
+            "هذا يحتاج إلى أن يكون اسما صالحا."
+        ],
+        "This needs to be a valid Stanza.": [
+            null,
+            "هذا يحتاج إلى أن يكون مقطع صالح."
+        ],
+        "Your name is too short.": [
+            null,
+            "الإسم قصير جدا"
+        ],
+        "Your name is too long.": [
+            null,
+            "اسم طويل جدا"
+        ],
+        "Your name is required.": [
+            null,
+            "مطلوب اسم"
+        ],
+        "This needs to be a valid NUMBER.": [
+            null,
+            "هذا يحتاج إلى أن يكون عدد صحيح."
+        ],
+        "Your number is too short.": [
+            null,
+            "عدد قصيرة جدا"
+        ],
+        "Your number is too long.": [
+            null,
+            "عدد طويل جد"
+        ],
+        "Your number is required.": [
+            null,
+            "مطلوب رقم"
+        ],
+        "stanza has already created, you cannot create anymore": [
+            null,
+            "وقد قدمت بالفعل هذا المقطع."
+        ],
+        "stanza submitted for approval, after approval, will be available to the public": [
+            null,
+            "وقد تم تقديم مقطع إلينا. وقضاتنا النظر فيه وبعد الموافقة سيتم نشره علنا"
+        ],
+        "login failed": [
+            null,
+            "فشل تسجيل الدخول"
+        ],
+        "url sent": [
+            null,
+            "إعادة تعيين كلمة المرور البريد الإلكتروني المرسلة. يرجى التحقق من حساب بريدك الإلكتروني للحصول على البريد الإلكتروني مع رمز التأكيد التي يمكنك استخدامها لإعادة تعيين كلمة المرور الخاصة بك"
+        ],
+        "user not found": [
+            null,
+            "لا يحتوي عنوان البريد الإلكتروني هذا على حساب مستخدم مرتبط. هل أنت متأكد أنك قمت بالتسجيل؟"
+        ],
+        "Passwords do not match": [
+            null,
+            "كلمات المرور غير متطابقة"
+        ],
+        "password changed successfully": [
+            null,
+            "تم تغيير الرقم السري بنجاح"
+        ],
+        "reset failed": [
+            null,
+            "فشل إعادة تعيين"
+        ],
+        "The stanza is published": [
+            null,
+            "يتم نشر مقطع"
+        ],
+        "The stanza is updated": [
+            null,
+            "يتم تحديث مقطع"
+        ],
+        "The stanza is rejected": [
+            null,
+            "رفض مقطع"
+        ],
+        "The stanza is approved": [
+            null,
+            "تمت الموافقة على مقطع"
+        ],
+        "save txt": [
+            null,
+            "حفظ"
+        ],
+        "cancel txt": [
+            null,
+            "إلغاء"
+        ],
+        "Nothing Found for": [
+            null,
+            "وجدت شيئا ل "
+        ],
+        "submissions close message": [
+            null,
+            "تم إغلاق الطلبات. ونحن نعمل حاليا على تجميع التقارير"
+        ]
+    }
 }

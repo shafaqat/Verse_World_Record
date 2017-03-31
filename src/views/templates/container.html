@@ -1,7 +1,7 @@
 <script id="navigation_header" type="text/template">
     <div class="message_banner sample-show-hide" ng-hide="hide_message_banner">
         <div class="text-right flip">
-            <a href="" ng-click="server_message='';hide_message_banner=true" aria-label="Toggle ngHide"><i class="fa fa-close form-btn"></i></a>
+            <a href="" ng-click="reset_message_banner()" aria-label="Toggle ngHide"><i class="fa fa-close form-btn"></i></a>
         </div>
         <div class="message_banner_text">{{server_message}}</div>
     </div>

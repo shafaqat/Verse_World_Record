@@ -16,14 +16,15 @@ app.controller('loginController', function($scope, $interval, $rootScope, $locat
 
     $scope.login = function() {
         UserService.logIn($scope.userEmail, $scope.userPassword).then(function(payload) {
-            $scope.server_message = gettext(payload);
-            $scope.hide_message_banner = false;
-            $scope.$parent.isJudgeLogin = true;
+            $rootScope.server_message = gettext(payload);
+            $rootScope.hide_message_banner = false;
+            if (payload != "login failed")
+                $scope.$parent.isJudgeLogin = true;
 
             $scope.setJudgeInfo();
 
             $timeout(function() {
-                $scope.hide_message_banner = true;
+                $rootScope.hide_message_banner = true;
             }, $scope.server_message_hide_delay);
         });
 
@@ -52,11 +53,11 @@ app.controller('loginController', function($scope, $interval, $rootScope, $locat
 
     $scope.resetPassword = function() {
         if ($scope.userPassword != $scope.confirmUserPassword) {
-            $scope.server_message = gettext("Passwords do not match");
-            $scope.hide_message_banner = false;
+            $rootScope.server_message = gettext("Passwords do not match");
+            $rootScope.hide_message_banner = false;
 
             $timeout(function() {
-                $scope.hide_message_banner = true;
+                $rootScope.hide_message_banner = true;
             }, $scope.server_message_hide_delay);
             return;
         }
@@ -71,16 +72,16 @@ app.controller('loginController', function($scope, $interval, $rootScope, $locat
                 function(data) {
                     if (data.updateStatus) {
                         $scope.updateStatus = true;
-                        $scope.server_message = gettext('password changed successfully');
+                        $rootScope.server_message = gettext('password changed successfully');
                     } else if (!data.updateStatus) {
                         $scope.updateStatus = true;
-                        $scope.server_message = gettext('reset failed');
+                        $rootScope.server_message = gettext('reset failed');
                     }
                     $scope.$parent.hide_message_banner = false;
 
 
                     $timeout(function() {
-                        $scope.hide_message_banner = true;
+                        $rootScope.hide_message_banner = true;
                     }, $scope.server_message_hide_delay);
                 }, errorhandler
             );
