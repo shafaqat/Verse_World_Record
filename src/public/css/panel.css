@@ -36,15 +36,33 @@
 
 /*penal-starts*/
 
+.tabs-panel {
+  width: 100%;   
+}
+
+.affix {
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 9009;
+  background-color: rgba(60, 37, 3, .8);
+}
+
+.affix .tabs-panel {
+  width: 100%;
+  max-width: 66.666667%;
+  margin: auto;   
+}
+
 .penal-background {
-    min-height: 350px;
-    background: #ffffff;
+  min-height: 350px;
+  background: #ffffff;
 }
 
 .panel-container .form-group input {
-    height: 24px;
-    border-radius: 0;
-    margin: 5px;
+  height: 24px;
+  border-radius: 0;
+  margin: 5px;
 }
 
 .tabs-bg {
@@ -275,9 +293,5 @@ input.search-area {
         bottom: 0px;
     }
 }
-
-
-/***/
-
 
 /*end*/
