@@ -77,7 +77,7 @@ app.controller('loginController', function($scope, $interval, $rootScope, $locat
                         $scope.updateStatus = true;
                         $rootScope.server_message = gettext('reset failed');
                     }
-                    $scope.$parent.hide_message_banner = false;
+                    $rootScope.hide_message_banner = false;
 
 
                     $timeout(function() {
