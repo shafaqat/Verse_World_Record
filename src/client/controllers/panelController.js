@@ -73,8 +73,7 @@ app.controller('panelController', function($scope, $interval, $rootScope, $docum
                     if (update_behavior == 'published') $scope.approved_stanzas.splice(index, 1);
                     else $scope.current_stanzas.splice(index, 1);
 
-                    if ($scope.tab.includes("pending"))
-                        $scope.drafts_count--;
+                    if ($scope.tab.includes("pending")) $scope.drafts_count--;
 
                     $rootScope.no_of_submissions--;
                 }
