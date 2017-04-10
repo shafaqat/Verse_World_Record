@@ -28,11 +28,18 @@ app.controller('homeController', function($scope, $interval, $rootScope, $window
         };
 
         stanzaService.submitStanza(stanza).then(
-            function(results) {
-                $rootScope.server_message = gettext(results.submitMessage);
-                $rootScope.hide_message_banner = false;
+            function(response) {
 
-                $location.path('/');
+                if (response.status === 'failure')
+                    $rootScope.server_message = gettext(response.errormessage);
+                else {
+                    $rootScope.server_message = gettext(response.submitMessage);
+                    $rootScope.hide_message_banner = false;
+                    $location.path('/');
+                }
+
+
+
                 $timeout(function() {
                     $rootScope.hide_message_banner = true;
                 }, $scope.server_message_hide_delay);

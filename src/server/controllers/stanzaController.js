@@ -17,9 +17,9 @@ const getStanzas = function(req, res) {
 const createStanza = function(req, res) {
     var stanza = req.body;
     stanzaManager.find(stanza.submitter_n_id, function(err, results) {
-        if (!err && results.length > 0)
-            AppUtils.sendResponse(res, err, 'submitMessage', 'stanza has already created, you cannot create anymore', null);
-        else {
+        if (!err && results.length > 0) {
+            AppUtils.sendResponse(res, new Error(), null, null, 'stanza has already created, you cannot create anymore');
+        } else {
             stanzaManager.create(stanza, function(error, submitStatus) {
                 console.log('a stanza is created');
                 AppUtils.sendResponse(res, error, 'submitMessage', submitStatus, null);

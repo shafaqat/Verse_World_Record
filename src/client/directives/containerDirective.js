@@ -61,6 +61,7 @@ app.directive("containerDirective", function($timeout, $compile, $window, locali
                 angular.element("#search-input").arabisk();
                 angular.element("#search-input-sticky").arabisk();
                 angular.element("textarea").arabisk();
+                angular.element("#submitter_name").arabisk();
                 angular.element("#countries").msDropdown();
 
                 var verseTopNav = angular.element('#verseTopNav');

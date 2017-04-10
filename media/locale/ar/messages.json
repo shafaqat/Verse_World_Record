@@ -338,7 +338,7 @@
         ],
         "stanza has already created, you cannot create anymore": [
             null,
-            "وقد قدمت بالفعل هذا المقطع."
+            "لقد قدمت بالفعل مقطع"
         ],
         "stanza submitted for approval, after approval, will be available to the public": [
             null,

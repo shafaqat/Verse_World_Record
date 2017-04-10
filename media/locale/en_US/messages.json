@@ -327,7 +327,7 @@
         ],
         "stanza has already created, you cannot create anymore": [
             null,
-            "This stanza has already submitted."
+            "You have already submitted the stanza."
         ],
         "stanza submitted for approval, after approval, will be available to the public": [
             null,

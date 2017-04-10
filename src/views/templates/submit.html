@@ -60,8 +60,9 @@
                                         <div class="form-group text-left flip" ng-class="{ 'has-error': stanzaForm.user_fname.$dirty  && stanzaForm.user_fname.$invalid }">
 
                                             <label for="user_fname"><%= gettext('FULL NAME') %></label>
-                                            <input type="text" id="submitter_name" class="form-control" ng-minlength="3" ng-maxlength="25" ng-pattern="/^[A-z \s]*$/" name="user_fname" ng-model="submitter_name" placeholder="<%= gettext('Enter your name') %>" required dir="<%= gettext( 'lang_dir') %>"
-                                            />
+                                            <!--  Pattern for English ng-pattern="/^[A-z \s]*$/" -->
+                                            <input type="text" id="submitter_name" class="form-control" ng-pattern="/^[^[0-9()_&^%$#@!~':;|=\-+*?<>\/\\,\]]+$/" ng-minlength="3" ng-maxlength="25" name="user_fname" ng-model="submitter_name" placeholder="<%= gettext('Enter your name') %>" required
+                                                dir="<%= gettext( 'lang_dir') %>" />
 
                                             <div class="help-block" ng-messages="stanzaForm.user_fname.$error" ng-if="stanzaForm.user_fname.$dirty  && stanzaForm.user_fname.$invalid">
                                                 <p ng-message="pattern">
