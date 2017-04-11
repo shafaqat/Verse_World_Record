@@ -34,9 +34,9 @@ app.controller('homeController', function($scope, $interval, $rootScope, $window
                     $rootScope.server_message = gettext(response.errormessage);
                 else {
                     $rootScope.server_message = gettext(response.submitMessage);
-                    $rootScope.hide_message_banner = false;
                     $location.path('/');
                 }
+                $rootScope.hide_message_banner = false;
 
 
 
