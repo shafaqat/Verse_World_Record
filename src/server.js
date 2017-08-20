@@ -31,7 +31,7 @@ app.use(
     i18n.abide({
         supported_languages: ['en-US', 'ar'],
         default_lang: 'en-US',
-        translation_directory: path.resolve('./media/locale')
+        translation_directory: path.resolve('./dist/media/locale')
     })
 );
 app.use(express.static(__dirname + "/../dist"));

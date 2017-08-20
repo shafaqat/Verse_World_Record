@@ -63,7 +63,7 @@
                     <a class=" navbar-brand" href="/" ng-show="lang!='ar'">
                     <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>        
                 </a>
-                    <a href="/submit" ng-show="lang=='ar'">
+                    <a href="/submit" ng-show="lang=='ar' && !submissions_closed">
                         <button type="button" class="btn-sm-main btn-home-sticky">
                       <%= gettext("SUBMIT NOW") %>
                     </button>
@@ -77,7 +77,7 @@
                     <a class=" navbar-brand" href="/" ng-show="lang=='ar'">
                         <img src="/public/images/Logo_White (2).png" alt="<%= gettext('Website title') %>"/>
                   </a>
-                    <a href="/submit" ng-show="lang!='ar'">
+                    <a href="/submit" ng-show="lang!='ar' && !submissions_closed">
                         <button type="button" class="btn-sm-main btn-home-sticky">
                       <%= gettext("SUBMIT NOW") %>
                     </button>
