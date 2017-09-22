@@ -30,7 +30,7 @@ app.set('view engine', 'html');
 app.use(
     i18n.abide({
         supported_languages: ['en-US', 'ar'],
-        default_lang: 'en-US',
+        default_lang: 'ar',
         translation_directory: path.resolve('./media/locale')
     })
 );
