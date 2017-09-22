@@ -34,6 +34,11 @@
                                 <%= gettext("PANEL") %>
                             </a>
                         </li>
+                        <li ng-if="!location.includes('about') && !isJudgeLogin" ng-class="{active: location.includes('about')}">
+                            <a href="/about">
+                                <%= gettext("ABOUT") %>
+                            </a>
+                        </li>
                         <li ng-if="!isJudgeLogin && !location.includes('login')" ng-class="{active: location.includes('login')}">
                             <a href="/login">
                                 <%= gettext("LOGIN") %>

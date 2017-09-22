@@ -285,6 +285,26 @@ li.active a {
 .inner-container {
     padding-top: 30px;
 }
+.margin-t15{
+    margin-top: 15px;
+}
+.about-section{
+    background-image: url(../images/PoemBg.jpg);
+    color: black;
+    padding: 40px 40px 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.about-section h2{
+    color: black;
+}
+
+.arabic-list-style {
+    direction:rtl;
+    list-style-type: -moz-arabic-indic;
+    list-style: arabic-indic;
+}
 
 .inner-container h2,
 .inner-container p {

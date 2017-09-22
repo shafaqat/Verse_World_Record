@@ -13,6 +13,10 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'views/templates/panel.html',
             controller: 'panelController'
         })
+        .when('/about', {
+            templateUrl: 'views/templates/about.html',
+            controller: 'loginController'
+        })
         .when('/login', {
             templateUrl: 'views/templates/login.html',
             controller: 'loginController'

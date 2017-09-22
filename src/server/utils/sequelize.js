@@ -3,7 +3,7 @@ var cls = require('continuation-local-storage');
 
 let namespace = cls.createNamespace('verseDB-namespace');
 
-Sequelize.cls = namespace;
+Sequelize.useCLS(namespace);
 
 //  `const` is a signal that the variable won’t be reassigned.
 //  `let`, is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in an algorithm.
