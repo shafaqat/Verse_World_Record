@@ -332,6 +332,9 @@ li.active a {
     padding-bottom:10px;
     display: inline;
 }
+.padding-b95{
+    padding-bottom: 95px;
+}
 
 .home-container:hover,
 .search-btn {
