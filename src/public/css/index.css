@@ -126,7 +126,7 @@ h3 {
 
 .index-container {
     min-height: 350px;
-    margin-top: 4%;
+    /* margin-top: 4%; */
 }
 
 li>a.nav-separator {
@@ -319,6 +319,18 @@ li.active a {
 
 .hover-display {
     opacity: 0;
+}
+.home-info-section {
+    background-image: url('/public/images/footer-pattern.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #D7D0B8;
+    opacity:0.7;
+}
+.home-info-section-img {
+    padding-top:10px;
+    padding-bottom:10px;
+    display: inline;
 }
 
 .home-container:hover,

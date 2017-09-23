@@ -392,6 +392,18 @@
         "submissions close message": [
             null,
             "Submissions has been closed. we are currently working on the compiling of submissions."
+        ],
+        "prince-title": [
+            null,
+            "First House Poet"
+        ],
+        "prince-name": [
+            null,
+            "His Royal Highness Prince Badr bin Abdul Mohsen"
+        ],
+        "judges-title": [
+            null,
+            "Judgement committee"
         ]
     }
 }
