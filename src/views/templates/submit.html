@@ -54,7 +54,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-group" ng-class="{ 'has-error': stanzaForm.stanza_text_area.$dirty  && stanzaForm.stanza_text_area.$invalid }">
 
-                                            <textarea id="stanza_text_area" dir='rtl' name="stanza_text_area" class="form-control custom-control" rows="8" cols="100" style="resize:none" ng-model="stanza_text" placeholder="<%= gettext('enter your verse here') %>" ng-pattern="/^[\S ]+[\n]+[\S ]+$/"
+                                            <textarea id="stanza_text_area" dir='rtl' name="stanza_text_area" class="form-control custom-control" rows="8" cols="140" style="resize:none" ng-model="stanza_text" placeholder="<%= gettext('enter your verse here') %>" ng-pattern="/^[\S ]+[\n]+[\S ]+$/"
                                                 required></textarea>
                                             <div class="help-block text-left flip" ng-messages="stanzaForm.stanza_text_area.$error" ng-if="stanzaForm.stanza_text_area.$dirty  && stanzaForm.stanza_text_area.$invalid">
                                                 <p ng-message="required">
