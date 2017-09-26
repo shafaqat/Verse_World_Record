@@ -19,18 +19,18 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class=" navbar-brand" href="/">
-                        <img src="/public/images/log-verse-new.png"    alt="<%= gettext('Website title') %>"/>
+                        <img src="/public/images/logo-verse-81x51.png"    alt="<%= gettext('Website title') %>"/>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="verseTopNav">
 
                     <ul class="nav navbar-nav navbar-left main-menu breadcrumbs flip">
-                        <li ng-if="!location.includes('about') && !isJudgeLogin" ng-class="{active: location.includes('about')}">
+                        <li class="for-pt" ng-if="!location.includes('about') && !isJudgeLogin" ng-class="{active: location.includes('about')}">
                             <a href="/about">
                                 <%= gettext("ABOUT") %>
                             </a>
                         </li>
-                        <li ng-if="!isJudgeLogin && !location.includes('login')" ng-class="{active: location.includes('login')}">
+                        <li class="for-pt" ng-if="!isJudgeLogin && !location.includes('login')" ng-class="{active: location.includes('login')}">
                             <a href="/login">
                                 <%= gettext("LOGIN") %>
                             </a>
@@ -38,12 +38,12 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right main-menu breadcrumbs flip">
-                        <li ng-if="!location.includes('home')" ng-class="{active: location.includes('home')}">
+                        <li class="for-pt" ng-if="!location.includes('home')" ng-class="{active: location.includes('home')}">
                             <a href="/">
                                 <%= gettext("HOME") %>
                             </a>
                         </li>
-                        <li ng-if="location.includes('home') && isJudgeLogin" ng-class="{active: location.includes('panel')}">
+                        <li class="for-pt" ng-if="location.includes('home') && isJudgeLogin" ng-class="{active: location.includes('panel')}">
                             <a href="/panel">
                                 <%= gettext("PANEL") %>
                             </a>
@@ -58,7 +58,7 @@
                                 <%= gettext("LOGIN") %>
                             </a>
                         </li>-->
-                        <li ng-click="logout()" ng-show="isJudgeLogin">
+                        <li class="for-pt" ng-click="logout()" ng-show="isJudgeLogin">
                             <a href="#">
                                 <%= gettext("LOGOUT") %>
                             </a>
@@ -80,7 +80,7 @@
             <div class="left-side">
                 <div class="logo-wrapper division">
                     <a class=" navbar-brand" href="/" ng-show="lang!='ar'">
-                        <img src="/public/images/logo-verse-81x51.png"   alt="<%= gettext('Website title') %>"/>
+                        <img src="/public/images/logo-verse-81x51.png`"   alt="<%= gettext('Website title') %>"/>
                 </a>
                     <a href="/submit" ng-show="lang=='ar' && !submissions_closed">
                         <button type="button" class="btn-sm-main btn-home-sticky">

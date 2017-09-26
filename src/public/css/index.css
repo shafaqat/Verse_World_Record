@@ -261,13 +261,16 @@ li>a.nav-separator {
     margin: 0px;
 }
 
-footer .clearfix {
-    background-color: #583C14;
-    padding: 6px 2px 2px 2px;
+footer .footer-bg {
+    background-color: rgba(60, 37, 3, 0.8) !important;
 }
 
 .inner-container .inner-content {
     position: relative;
+}
+
+li.for-pt a {
+    padding-top: 23px;
 }
 
 .inner-container .inner-content .pull-left {
