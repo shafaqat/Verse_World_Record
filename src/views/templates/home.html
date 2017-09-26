@@ -1,21 +1,26 @@
 <div>
     <script id="ngView" type="text/template">
 
-
-
-        <section class="index-container">
+     <section class="index-container">
             <section>
                 <div class="clearfix text-center">
+
                     <div class="col-md-8 col-md-offset-2">
                         <div class="time-section">
-                            <h2><b> <%= gettext('motivational quote') %></b></h2>
                             <div class="clearfix for-static-stanza">
                                 <div class="col-sm-6 pull-right">
-                                     الجنون عيون وعيونك وطن
-
+                                    <h2>
+                                        <b>
+                                            الجنون عيون وعيونك وطن
+                                        </b>
+                                    </h2>
                                 </div>
                                 <div class="col-sm-6 pull-left">
-                                    والوطن من غير عينك وش يكون
+                                    <h2>
+                                        <b>
+                                            والوطن من غير عينك وش يكون
+                                        </b>
+                                    </h2>
                                 </div>
                             </div>
                             <div ng-show="!submissions_closed">
@@ -35,34 +40,27 @@
 
             <section class="content-poem">
                 <div class="clearfix text-center">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-2 hidden-xs">
+                        <div class="logos-part">
+                            <ul>
+                                <li>
+                                    <img class="img-size-reduce" src="/public/images/companylogo2.png"   />
+                                </li>
+                                <li>
+                                    <img class="img-size-reduce" src="/public/images/companylogo3.png"   />
+                                </li>
+                                <li>
+                                    <img class="img-size-reduce" src="/public/images/companylogo1.png"   />
+                                </li>
+                                <li>
+                                    <img class="img-size-reduce" src="/public/images/companylogo5.png"   />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 ">
                         <div class=" poem-bg">
                             <div class="inner-container">
-                                <div class="inner-content">
-                                    <div class="pull-left">
-                                        <ul>
-                                            <li>
-                                                <img src="/public/images/companylogo4.png"   />
-                                            </li>
-                                            <li>
-                                                <img src="/public/images/companylogo2.png"   />
-                                            </li>
-                                            <li>
-                                                <img src="/public/images/companylogo3.png"   />
-                                            </li>
-                                            <li>
-                                                <img src="/public/images/companylogo1.png"   />
-                                            </li>
-                                            <li>
-                                                <img src="/public/images/companylogo5.png"   />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="pull-right">
-                                       <img src="/public/images/kingnew.png">
-                                    </div>
-
-                                </div>
                                 <h2><strong><%= gettext('All verses') %></strong></h2>
                                 <p>{{no_of_submissions.toLocaleString(lang)}} &nbsp;&nbsp;
                                     <%= gettext('Verses published') %>
@@ -95,6 +93,9 @@
                             </div>
 
                         </div>
+                    </div>
+                    <div class="col-md-2 hidden-xs">
+                        <img src="/public/images/kingnew.png">
                     </div>
                 </div>
             </section>

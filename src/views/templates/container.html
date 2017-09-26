@@ -68,11 +68,11 @@
                 </div>
             </div>
         </nav>
-        <div class="clearfix scroll-div" ng-if="location.includes('home')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
+        <div class="clearfix scroll-div" ng-if="location.includes('home') || location.includes('about')" ng-show="boolShowStaticHeader" ng-class="{'iphone-panel-height': location.includes('panel') }">
 
             <div class="dots-wr">
                 <div class="clearfix slider">
-                    <pagination-directive />
+                    <pagination-directive ng-if="location.includes('home')" />
                 </div>
 
             </div>
