@@ -194,15 +194,15 @@
         ],
         "You can submit one verse only.": [
             null,
-            "يمكنك تقديم آية واحدة فقط."
+            "يمكنك كتابة بيت واحدفقط."
         ],
         "You will not be able to edit or delete the verse once you have sumitted it.": [
             null,
-            "فإنك لن تكون قادرا على تعديل أو حذف الآية مرة واحدة كنت قد قدمته."
+            "يجب مجاراة البيت الأول."
         ],
         "The stanza should contain exactly two verses separated by a new line.": [
             null,
-            "يجب أن يحتوي على مقطع بالضبط آيتين مفصولة سطر جديد."
+            "يجب الالتزام بالوزن والقافية."
         ],
         "enter your verse here": [
             null,
