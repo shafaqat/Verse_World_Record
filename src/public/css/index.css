@@ -1,6 +1,15 @@
 body {
-    font-family: "lato";
+    font-family: 'Harmattan', sans-serif;
     color: #ffffff;
+    font-size: 18px;
+}
+
+.form-control {
+    font-size: 18px;
+}
+
+label {
+    font-weight: normal;
 }
 
 .increase-arabic-font {
