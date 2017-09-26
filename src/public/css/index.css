@@ -247,12 +247,16 @@ li>a.nav-separator {
 
 .for-static-stanza {
     padding: 10px 10px 10px;
-    background: rgba(210, 202, 137, .5);
+   background-image: url(../images/PoemBg.jpg);
     margin-bottom: 20px;
 }
 
 .for-static-stanza h2 {
     margin-top: 0px;
+}
+
+.for-static-stanza h2 > b {
+    color: #3c2603;
 }
 
 .logos-part ul {
@@ -293,19 +297,19 @@ li.for-pt a {
 }
 
 footer ul.footer-social {
-    padding: 0;
+    padding: 15px 0px;
     list-style: none;
+    margin: 0;
 }
 
 footer ul.footer-social li {
     display: inline;
-    padding: 0 10px 0 0;
+    padding: 0 15px 0 0;
     float: left;
 }
 
 footer ul.footer-social li > a {
     color: #ffffff;
-    font-size: 32px;
 }
 
 
