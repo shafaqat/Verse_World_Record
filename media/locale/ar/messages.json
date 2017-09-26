@@ -82,7 +82,7 @@
         ],
         "ABOUT": [
             null,
-            "حول"
+            "عن المبادرة"
         ],
         "LOGIN": [
             null,
@@ -102,11 +102,11 @@
         ],
         "Time Remaining For Submission": [
             null,
-            "الوقت المتبقي لتقديم"
+            "الوقت المتبقي للتقديم"
         ],
         "All verses": [
             null,
-            "كل الآيات"
+            "أبيات القصيدة"
         ],
         "Verses left for acceptance": [
             null,
@@ -186,7 +186,7 @@
         ],
         "SUBMIT YOUR VERSE": [
             null,
-            "ترسل أي الآية الخاص بك"
+            "ارسال البيت الخاص بك"
         ],
         "Note :": [
             null,

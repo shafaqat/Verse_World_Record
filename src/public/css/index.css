@@ -103,6 +103,9 @@ h3 {
     padding: 9px 0;
 }
 
+.container-fluid{
+    padding-top:25px;
+}
 
 /*.scroll-div .division-dots {
     top: 32px;
@@ -241,6 +244,66 @@ li>a.nav-separator {
     padding: 5px 7px;
 }
 
+.for-static-stanza{
+    padding: 10px 10px 20px;
+}
+
+footer .clearfix {
+    background-color: #583C14;
+    padding: 15px;
+}
+
+.inner-container .inner-content {
+    position: relative;
+}
+
+.inner-container .inner-content .pull-left {
+    position: absolute;
+    left: 0px;
+}
+
+.inner-container .inner-content .pull-right {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.inner-container .inner-content .pull-left ul {
+    padding: 0px 10px;
+    list-style: none;
+}
+.inner-container .inner-content .pull-left ul > li {
+    padding-bottom: 20px;
+}
+
+footer ul.footer-social {
+    padding: 0;
+    list-style: none;
+}
+
+footer ul.footer-social li {
+    display: inline;
+    padding: 0 10px 0 0;
+    float: left;
+}
+
+footer ul.footer-social li > a {
+    color: #ffffff;
+    font-size: 32px;
+}
+
+
+footer ul.for-footer {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+footer ul.for-footer li {
+    padding: 0 10px;
+    font-size: 16px;
+}
+
 .dd,
 .dd .ddChild li .ddlabel,
 .dd .ddChild,
@@ -285,6 +348,8 @@ li.active a {
 .inner-container {
     padding-top: 30px;
 }
+
+
 .margin-t15{
     margin-top: 15px;
 }
@@ -298,6 +363,11 @@ li.active a {
 
 .about-section h2{
     color: black;
+}
+
+.about-section p,
+.about-section ul > li > ol > li {
+    font-size: 17px;
 }
 
 .arabic-list-style {
