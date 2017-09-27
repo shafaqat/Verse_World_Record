@@ -122,7 +122,7 @@
         ],
         "Verses published": [
             null,
-            "الآيات نشرت"
+            "الابيات المعتمدة"
         ],
         "results found": [
             null,
@@ -206,7 +206,7 @@
         ],
         "enter your verse here": [
             null,
-            "إدخال الآية هنا"
+            "ادخال البيت الشعري هنا"
         ],
         "FULL NAME": [
             null,
@@ -220,9 +220,9 @@
             null,
             "* الهوية الوطنية"
         ],
-        "enter 12 to 16 numbered National ID": [
+        "Enter 10 numbered National ID": [
             null,
-            "إدخال ١٢ إلى ١٦ مرقمة الهوية الوطنية"
+            "أدخل ١٠ الرقم القومي المرقمة"
         ],
         "TWITTER ACCOUNT": [
             null,

@@ -100,7 +100,7 @@
                                         <div class="form-group text-left flip" ng-class="{ 'has-error': stanzaForm.submitter_n_id.$dirty  && stanzaForm.submitter_n_id.$invalid }">
 
                                             <label for="submitter_n_id"><%= gettext('NATIONAL ID') %></label>
-                                            <input type="text" id="submitter_n_id" class="form-control" ng-minlength="12" ng-maxlength="16" ng-pattern="/^[\d+]*$/" name="submitter_n_id" ng-model="submitter_n_id" placeholder="<%= gettext('enter 12 to 16 numbered National ID') %>" required dir="<%= gettext( 'lang_dir') %>"
+                                            <input type="text" id="submitter_n_id" class="form-control" ng-minlength="12" ng-maxlength="16" ng-pattern="/^[\d+]*$/" name="submitter_n_id" ng-model="submitter_n_id" placeholder="<%= gettext('Enter 10 numbered National ID') %>" required dir="<%= gettext( 'lang_dir') %>"
                                             />
 
                                             <div class="help-block" ng-messages="stanzaForm.submitter_n_id.$error" ng-if="stanzaForm.submitter_n_id.$dirty  && stanzaForm.submitter_n_id.$invalid">
