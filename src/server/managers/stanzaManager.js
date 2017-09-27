@@ -3,18 +3,20 @@ var DbConnection = dbController.connection;
 
 class stanzaManager {
     load(status, currentPage, search_query, callback) {
+        if(search_query)
+            search_query = search_query.replace(/'/g, "^");
+
         search_query = (!search_query) ? ("'%%'") : ("'%" + search_query + "%'");
+        var sort_type = 'DESC';
 
-        var sort_type = (status == 'published') ? 'ASC' : 'DESC';
-
-        var query = 'SELECT COUNT(*) FROM stanzas, statuses WHERE stanzas.status_id = statuses.id AND statuses.type = ? AND stanza_text LIKE ' + search_query;
+        var query = 'SELECT COUNT(*) FROM stanzas, statuses WHERE stanzas.status_id = statuses.id AND statuses.type = ? AND REPLACE(stanza_text, "\'" , "^") LIKE ' + search_query;
         DbConnection.query(query, status, function(err, row_count) {
-            row_count = row_count[0]['COUNT(*)'];
-            var stanzasLimit = Math.ceil(row_count / 1000) * 100;
-            var offset = currentPage * stanzasLimit;
-
             if (!err) {
-                query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND stanza_text LIKE ' + search_query + ' AND statuses.type = ? ORDER BY stanzas.updated_at ' + sort_type + ' LIMIT ? OFFSET ?';
+                row_count = row_count[0]['COUNT(*)'];
+                var stanzasLimit = Math.ceil(row_count / 1000) * 100;
+                var offset = currentPage * stanzasLimit;
+
+                query = 'SELECT stanza_text, submitter_name, stanzas.id FROM stanzas, submitters, statuses WHERE stanzas.submitter_id = submitters.submitter_id AND stanzas.status_id = statuses.id AND REPLACE(stanza_text, "\'" , "^") LIKE ' + search_query + ' AND statuses.type = ? ORDER BY stanzas.updated_at ' + sort_type + ' LIMIT ? OFFSET ?';
 
                 DbConnection.query(query, [status, stanzasLimit, offset], function(err, results) {
                     results.push(row_count);
@@ -22,7 +24,9 @@ class stanzaManager {
                     console.log((results.length - 1) + ' records from ' + offset + ' to ' + (offset + stanzasLimit) + ' sending records of type \"' + status + '\"');
                     return callback(null, results);
                 });
-            } else console.log('err:', err);
+            } else{
+                console.log('err:', err);
+            }
         });
     }
 

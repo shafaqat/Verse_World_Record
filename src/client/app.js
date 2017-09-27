@@ -95,7 +95,9 @@ app.controller('appController', function($scope, $rootScope, $document, $route, 
                     $scope.current_stanzas.push(item);
                 });
                 $scope.show_loading_spinner = false;
-            }, function(error) {});
+            }, function(error) {
+                $scope.show_loading_spinner = false;
+            });
     };
 
     $scope.$on('$routeChangeSuccess', function(event, nextRoute, currentRoute) {
